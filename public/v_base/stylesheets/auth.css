@@ -1,0 +1,426 @@
+@charset "UTF-8";
+
+/*
+ * NOTE-jrockwood-2011-11-02!!!!!!!!!!!!!!!!!!!!!!!!!!
+ * There are two copies of this file: public\stylesheets and public\v_base\stylesheets. You need to keep them in sync.
+ * BUGZID 43658 tracks removing the duplication.
+ */
+
+/*
+ *      name:                   auth.css
+ *      description:    defines additional css for the Tableau Public serverpages authorization
+ *      author:                 werner glinka
+ *      email:                  werner@bussedesign.com
+ *      dependencies:   none
+ *
+ *      colors
+ *              light blue      #6eadd8   (was #92cfe8) used for nav links
+ *              text gray       #666
+ *              dark blue       #1f447d used for headlines and main nav
+ *              orange          #e8762c used for learn more and dominant links
+ *      light orage #eb912c
+ *
+ */
+
+body {
+  margin: 0; /* Clear the default browser styling of margin:8px; as it breaks the embedded and a authoring cases */
+}
+
+body.embedded {
+}
+
+.authTable {
+  border: 1px solid #E2E2E5;
+  display: inline-block;
+  margin-top: 50px;
+  text-align: left;
+  width: 550px;
+}
+
+.authTable.saas {
+  margin-left:auto;
+  margin-right:auto;
+  display: inline-block;
+  text-align: left;
+  width: auto;
+}
+
+/* BUG:61915 Format for display in authoring dialog */
+.authTable.tabAuthoring {
+  border: none;
+  margin-top: 0;
+  margin-left:auto;
+  margin-right:auto;
+  width: auto;
+}
+
+.authTable.tabAuthoring div.authHeader {
+  display: none;
+}
+
+.authContentContainer {
+}
+
+.authContentContainer.saas {
+  position: relative;
+  height: 370px;
+  width: 795px;
+  margin: 0 auto;
+}
+
+.authContentContainer.saas.noNotifications {
+  height: 345px;
+  width: 280px;
+}
+
+.authLoginContentTable {
+    margin:10px 0;
+}
+
+.authLoginContentTable.saas {
+  margin: 0;
+  border-spacing: 10px 15px;
+  margin: 10px 0;
+}
+
+td.authTableCellRight.saas {
+  text-align: right;
+}
+
+/* Apply a style only to the "Log in" button of the login page for Tableau Online. This button gets generated in the ERB by a helper function so we can't apply a css class directly.  */
+td.authTableCellRightWithButton.saas button {
+  margin: 0; /* Clear the margin so the button can be fully right aligned. */
+}
+
+td.authTableColumnLabel {
+  text-align: right;
+  width: 80px;
+}
+
+td.authTableColumnLabel.saas {
+  width: 70px;
+}
+
+td.authTableColumnInput {
+  width: 200px;
+}
+
+td.authTableColumnInput.saas {
+  width: 180px;
+}
+
+td.saas .formfield {
+  border: 1px solid #dcdcdc;
+}
+
+.authLoginPromptLabel {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.authLoginPromptLabel.saas {
+  font-weight: normal;
+  color: #979797;
+}
+
+.authLoginSecondaryPromptLabel {
+    color:#333;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    left:-12px;
+    padding-left:0;
+    position:relative;
+}
+
+.authLoginSecondaryPromptLabel.saas {
+  left: 0;
+  margin: 3px 0;
+  color: #979797;
+  font-size: 12px;
+}
+
+.authLoginTernaryPromptLabel {
+    color:#333;
+    margin:0 0 0 120px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+}
+
+.authLoginTernaryPromptLabel.saas {
+
+}
+
+.embedded
+.authTable {
+  border: 0px;
+  margin-top:0px;
+  margin-left:0px;
+}
+
+.authTable form {
+  padding:12px 17px;
+}
+
+/* Apply _only_ to the main saas login form, not the embedded login form. */
+.authLoginForm.saas {
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 60px;
+}
+
+.showAuthTableTopBorder {
+  border-top:1px dotted #cccccc;
+}
+
+.showAuthTableBottomBorder {
+  border-bottom:1px dotted #cccccc;
+}
+
+.helpAndVersion {
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+div.startupHeader {
+  width: 550px;
+  height: 35px;
+  background-color: #EBEEF3;
+  color: #1F437D;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div.authHeaderTitle
+{
+  width:50%;
+  font-family: Arial;
+  font-weight: bold;
+  padding:5px 0 0 20px;
+  color:#1F437D;
+  font-size:18px;
+}
+
+div.authHeaderTitle.saas {
+  width: auto;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  color: #666;
+}
+
+div.authHeader
+{
+  display:inline-block;
+  width:550px;
+  background-color:#EBEEF3;
+}
+
+div.authHeader.saas {
+  background-color: transparent;
+  border-bottom: 1px solid #dcdcdc;
+  display: block;
+  padding: 15px;
+  width: auto;
+}
+
+div.confirmHeader {
+  width:550px;
+  background-color: #EBEEF3;
+}
+
+a.authHeaderLink,
+a.shareVizHeaderLink {
+  display:block;
+  width:160px;
+  float:right;
+  max-height: 160px;
+  overflow: hidden;
+}
+
+a.authHeaderLink.saas {
+  float: none;
+}
+
+a.authHeaderLink img,
+a.shareVizHeaderLink img{
+  border:none;
+}
+
+p#required_label ul {
+  margin-bottom: 0;
+}
+
+.Textinsidetable {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333333;
+}
+
+/* Textinsidetable is used in many places, add the class authLogin to the default login page and move the inline style to here. */
+.Textinsidetable.authLogin {
+  margin-top: 0;
+}
+
+#flash.Textinsidetable.saas {
+  padding: 0;
+}
+
+.noTextinsidetable {
+  display:none;
+}
+
+.formInput {
+  width:480px;
+  margin:0 auto;
+  border-top:1px dotted #cccccc;
+  border-bottom:1px dotted #cccccc;
+}
+
+a.forgot,
+a.create,
+a.captcha{
+  color:#1f437d;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+  text-decoration:none;
+  padding-left:10px;
+}
+
+a.forgot.saas {
+  display: block;
+  font-size: 12px;
+  margin-top: 25px;
+  color: #eb762c;
+}
+
+a.forgot:hover,
+a.create:hover,
+a.captcha:hover {
+  text-decoration:underline;
+}
+
+td.authTableCellRight.saas .tab-styledButtonLeft,
+td.authTableCellRight.saas .tab-styledButtonRight {
+  display: none;
+}
+td.authTableCellRight.saas .tab-styledButtonMiddle {
+  background: none;
+  background-color: #eb762c;
+}
+
+.notificationsContainer {
+    height: 250px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 400px;
+}
+
+/*
+ *      share viz layout
+ *
+ */
+.shareVizTable {
+  border: 1px solid #E2E2E5;
+  margin-top:200px;
+  margin-left:auto;
+  margin-right:auto;
+  width:350px;
+}
+
+.shareVizTable form {
+  padding:0;
+}
+
+div.shareVizHeader {
+  width:350px;
+  height:35px;
+  background:transparent url(../images/shareVizHeaderBg.png)
+}
+
+div.embedVizURL,
+div.emailVizURL {
+  height:18px;
+  width:310px;
+  border:1px solid #cccccc;
+  color:#666;
+  line-height:18px;
+  font-size:11px;
+  padding-left:5px;
+  overflow:hidden;
+}
+
+pre {
+  padding:0;
+  margin:0;
+
+}
+
+div.displayOptions {
+  width:135px;
+  height:17px;
+  position:relative;
+  border: 1px solid #cccccc;
+}
+
+a#displayOptionsHeader.closed {
+  display:block;
+  width:130px;
+  height:17px;
+  font-size:12px;
+  color:#333;
+  text-align:left;
+  line-height:17px;
+  padding-left:5px;
+  background:transparent url(../images/shareVizOptionsHeaderClosedBg.png) 0 0 no-repeat;
+  cursor:pointer;
+}
+
+a#displayOptionsHeader.open {
+  display:block;
+  width:130px;
+  height:17px;
+  font-size:12px;
+  color:#333;
+  text-align:left;
+  line-height:17px;
+  padding-left:5px;
+  background:transparent url(../images/shareVizOptionsHeaderOpenBg.png) 0 0 no-repeat;
+  cursor:pointer;
+}
+
+div#optionsPopup {
+  position:absolute;
+  top:17px;
+  left:-1px;
+  padding:0;
+  width:135px;
+  height:140px;
+  border:1px solid #cccccc;
+  background-color:#FFF;
+  visibility:hidden;
+
+
+}
+
+.selectShareVizOptions {
+  margin:0;
+  padding:0;
+  text-align:left;
+  font-size:10px;
+}
+
+.authRememberMeHolder.saas {
+  position: relative;
+}
+
+.authRememberMe.saas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

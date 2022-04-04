@@ -1,0 +1,38 @@
+.favorite {
+    height: 22px;
+    width: 22px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.yes, .mobileyes {
+    background: transparent url("../images/star_filled_dark.png") no-repeat scroll center 3px;
+}
+.no, .mobileno {
+    background: transparent url("../images/star_faded.png") no-repeat scroll center 3px;
+}
+.updating {
+    background: transparent url("../images/busy.gif") no-repeat scroll center 6px;
+}
+
+.favorite a {
+    border: medium none;
+    height: 22px;
+    width: 22px;
+    line-height: 22px;
+    outline-color: invert;
+    outline-style: none;
+    outline-width: medium;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.no:hover {
+    background: transparent url("../images/star_filled_light.png") no-repeat scroll center 3px;
+}

@@ -1,0 +1,47 @@
+/* props to http://shadow-fox.net./examples/threecolumns.html */
+
+* { margin:0; padding:0; }
+BODY {
+	font-family:Arial, sans-serif;
+	font-size:14px; }
+a { 
+	text-decoration:none; }
+a:hover { text-decoration:underline; }
+#header { 
+	padding:.5em; }
+#left { float:left;
+	width:200px;
+	padding:.6em; }
+#right { float:right;
+	width:200px;
+	padding:.6em;}
+#center { margin-right:215px;
+	margin-left:250px;
+	padding:.5em; }
+#footer { clear:both;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+	padding:.5em; }
+
+#paginator { clear:both;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 20em;
+	padding:.5em; }
+	
+#left, #right, #center { padding-bottom: 32767px;
+	margin-bottom: -32767px; }
+#wrapper { overflow:hidden; }
+
+/* http://www.somacon.com/p141.php */
+boring {
+	border-width: 1px 1px 1px 1px;
+	padding: 1px 1px 1px 1px;
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+	background-color: white;
+	-moz-border-radius: 0px 0px 0px 0px;
+}

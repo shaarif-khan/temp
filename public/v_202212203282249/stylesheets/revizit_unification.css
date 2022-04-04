@@ -1,0 +1,2956 @@
+/* Thin, Light, Normal, etc mapping per https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight */
+@font-face {
+  font-family: 'Benton Sans';
+  src: local('Benton Sans Thin');
+  src: url('fonts/bentonsans-thin.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Benton Sans';
+  src: local('Benton Sans Light');
+  src: url('fonts/bentonsans-light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Benton Sans';
+  src: local('Benton Sans Book');
+  src: url('fonts/bentonsans-book.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Benton Sans';
+  src: local('Benton Sans Medium');
+  src: url('fonts/bentonsans-medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Benton Sans';
+  src: local('Benton Sans Book');
+  src: url('fonts/bentonsans-book-italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'public-icons';
+  src: url('fonts/public-icons.ttf') format('truetype');
+}
+
+
+.form-field {
+    position: relative;
+    padding-top: 6px;
+}
+
+.form-field__label {
+    font-size: 11px;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    top: -9px;
+    left: 0;
+}
+
+#modal-account-signup .form-field {
+    margin-bottom: 18px;
+}
+
+.form-field__label.is-active {
+    opacity: 1;
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
+}
+
+.form-field__label label {
+  position: absolute;
+  pointer-events: none;
+  top: 18px;
+  transition: 0.4s ease all;
+  -moz-transition: 0.4s ease all;
+  -webkit-transition: 0.4s ease all;
+}
+
+/* active state */
+input:focus ~ label,
+input:valid ~ label {
+  top: -10px;
+  display: show;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    *behavior: url('../behaviors/box-sizing/boxsizing.php');
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+.form-section:after:after,
+.user-settings .tab-nav:after:after,
+#modal-account-signup .form-actions:after:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* normalize.css v1.1.0 | MIT License | git.io/normalize */
+
+/* normalize.css v1.1.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+/* normalize.css v1.1.0 | Base | MIT License | git.io/normalize */
+
+html {
+    background-color: white;
+    font-size: 100%;
+    font-family: "Benton Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: "Benton Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:400;
+
+}
+
+body {
+    background-color: white;
+    margin: 0;
+}
+
+/* normalize.css v1.1.0 | Links | MIT License | git.io/normalize */
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* normalize.css v1.1.0 | Typography | MIT License | git.io/normalize */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+
+h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+}
+
+h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+}
+
+h5 {
+    font-size: 0.83em;
+    margin: 1.67em 0;
+}
+
+h6 {
+    font-size: 0.67em;
+    margin: 2.33em 0;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+blockquote {
+    margin: 1em 40px;
+}
+
+dfn {
+    font-style: italic;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+p,
+pre {
+    margin: 1em 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    _font-family: 'courier new', monospace;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+q {
+    quotes: none;
+}
+
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+dl,
+menu,
+ol,
+ul {
+    margin: 1em 0;
+}
+
+dd {
+    margin: 0 0 0 40px;
+}
+
+menu,
+ol,
+ul {
+    padding: 0 0 0 40px;
+}
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+/* normalize.css v1.1.0 | Embedded Content | MIT License | git.io/normalize */
+
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* normalize.css v1.1.0 | Figures | MIT License | git.io/normalize */
+
+figure {
+    margin: 0;
+}
+
+/* normalize.css v1.1.0 | Forms | MIT License | git.io/normalize */
+
+form {
+    margin: 0;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+    white-space: normal;
+    *margin-left: -7px;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+
+button,
+input {
+    line-height: normal;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    *overflow: visible;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+    *height: 13px;
+    *width: 13px;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+/* normalize.css v1.1.0 | Tables | MIT License | git.io/normalize */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ======
+ * Colors
+ * ====== */
+
+/*
+Colors
+
+Fundamental color scheme used for Tableau Public.
+
+Markup:
+<div class="color-preview {$modifiers}">&nbsp;</div>
+
+.color-link - &#35;6EADD8 The standard link
+.color-link-hover - &#35;ff5533 Standard link hover orange
+.color-link-nav - &#35;333333 The nav link grey
+
+Styleguide 1
+ */
+
+/**
+ * Links
+ */
+
+.color-link {
+    background: #3d5f7f;
+}
+
+.color-link-hover {
+    background: #3d5f7f;
+}
+
+.color-link-nav {
+    background: #333333;
+}
+
+/**
+ * Material Design colors for utility
+ */
+
+/**
+ * Base type sizing
+ */
+
+/**
+ * Font Family chain
+ */
+
+/**
+ * SASS vars
+ */
+
+/**
+ * Convenience functions
+ */
+
+/* =============================================================================
+ * Mixins
+ *
+ * Using mixins will result in duplicate CSS in separate rules.
+ * ========================================================================== */
+
+/**
+ * Placeholders
+ *
+ * Using placeholders results in CSS rule combining for selectors.
+ */
+
+h3,
+h4,
+h5,
+h6,
+.tile,
+.tile.tile--ui,
+.user-settings .tab-nav,
+.user-settings h3,
+#modal-account-signup .form-section__header,
+body {
+    font-family: "Benton Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+h1,
+h2 {
+    font-family: "Benton Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+form label.error,
+.form__feedback {
+    font-family: "Benton Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+
+input[type="checkbox"] {
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.form-section {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.tile .shadow {
+    border-radius: 2px;
+    -webkit-box-shadow: 1px 1px 0 #cccccc;
+    box-shadow: 1px 1px 0 #cccccc;
+}
+
+/* =============================================================================
+ * Perfect Vertical Align without display: inline-block / table
+ * ========================================================================== */
+
+.form__select:after,
+.form-type-select:after {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/* =============================================================================
+ * Micro-clearfix
+ * http://nicolasgallagher.com/micro-clearfix-hack/#comment-29398
+ * ========================================================================== */
+
+.form-section,
+.user-settings .tab-nav,
+.account-manage > .form-section,
+#modal-account-signup .form-actions {
+    *zoom: 1;
+}
+
+.form-section:before,
+.user-settings .tab-nav:before,
+#modal-account-signup .form-actions:before,
+.form-section:after,
+.user-settings .tab-nav:after,
+#modal-account-signup .form-actions:after {
+    content: "";
+    display: table;
+}
+
+.form-section:after,
+.user-settings .tab-nav:after,
+#modal-account-signup .form-actions:after {
+    clear: both;
+}
+
+.toast .toast__close:hover {
+    text-decoration: none;
+    background-image: none;
+}
+
+.toast .toast__close:hover {
+    background-image: none;
+}
+
+input[type="checkbox"]:checked:before {
+    display: inline-block;
+    font-family: "public-icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+/**
+ * Focus outlines for checkboxes, radio buttons.
+ */
+
+input[type="checkbox"] {
+    outline: 0;
+}
+
+input[type="checkbox"]:focus:before {
+    border: 1px solid #2c9de8;
+    box-shadow: 0 0 5px #2c9de8;
+}
+
+/*
+Typography
+
+Typography used in Tableau Public. Arial for base body type, Benton Sans for Headings
+and select emphasis.
+
+Styleguide 2
+*/
+
+/*
+Body Type
+
+Arial for regular body copy. 14px base font size.
+
+Markup:
+<p>But I know the rage that drives you. That impossible anger strangIing the grief until the memory of your loved one is just poison in your veins. And one day, you catch yourself wishing the person you loved had never existed so you'd be spared your pain.</p>
+<p>I'm here to ensure the League of Shadow fulfills its duty to restore balance to civilization. You yourself fought the decadence of Gotham for years with all your strength, all your resources, all your moral authority. And the only victory you achieved was a lie. Now, you understand? Gotham is beyond saving and must be allowed to die.</p>
+
+Styleguide 2.1
+*/
+
+/*
+Type Sizing Modifiers
+
+### sass/variables/_media.scss
+
+Utility classes for type sizing: biggest to smallest.
+@See variables/_typography.scss
+
+Markup:
+<p class="{$modifiers}">But I know the rage that drives you.</p>
+
+.text--xxl - 36px;
+.text--xl - 24px;
+.text--l - 18px;
+.text--s - 12px;
+.text--xs - 11px;
+.text--xxs - 10px;
+
+Styleguide 2.1.1
+*/
+
+.text--xxl {
+    font-size: 2.57143em;
+}
+
+.text--xl {
+    font-size: 1.71429em;
+}
+
+.text--l {
+    font-size: 1.28571em;
+}
+
+.text--s {
+    font-size: 0.85714em;
+}
+
+.text--xs {
+    font-size: 0.78571em;
+}
+
+.text--xxs {
+    font-size: 0.71429em;
+}
+
+/*
+Type Color Modifiers
+
+### sass/variables/_colors.scss
+
+Utility classes for type color
+
+Markup:
+<p class="{$modifiers}">But I know the rage that drives you.</p>
+
+.text--xxl - 36px;
+.text--xl - 24px;
+.text--l - 18px;
+.text--s - 12px;
+.text--xs - 11px;
+.text--xxs - 10px;
+
+Styleguide 2.1.1
+*/
+
+.text--copy {
+    color: #4d4d4d;
+}
+
+.text--copy-light {
+    color: #656565;
+}
+
+.text--copy-muted {
+    color: #888888;
+}
+
+/*
+Headings
+
+Benton Sans for Headings and select emphasis.
+
+Markup:
+<h1>h1. And as for the television's so-called plan, Batman has no jurisdiction.</h1>
+<h2>h2. And as for the television's so-called plan, Batman has no jurisdiction.</h2>
+<h3>h3. And as for the television's so-called plan, Batman has no jurisdiction.</h3>
+<h4>h4. And as for the television's so-called plan, Batman has no jurisdiction.</h4>
+<h5>h5. And as for the television's so-called plan, Batman has no jurisdiction.</h5>
+<h6>h6. And as for the television's so-called plan, Batman has no jurisdiction.</h6>
+
+Styleguide 2.2
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    color: #323232;
+}
+
+h1,
+h2 {
+    font-weight: 300;
+}
+
+.heading-strong {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.57143em;
+}
+
+h2 {
+    font-size: 1.71429em;
+}
+
+h3 {
+    font-size: 1.28571em;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0;
+}
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+    margin-top: 0;
+}
+
+/*
+Icons
+
+Iconography.
+
+Markup:
+<i class="icon-arrow-pipe-l"></i>
+<i class="icon-arrow-pipe-r"></i>
+<i class="icon-calendar"></i>
+<i class="icon-chevron-b"></i>
+<i class="icon-chevron-l"></i>
+<i class="icon-chevron-r"></i>
+<i class="icon-chevron-t"></i>
+<i class="icon-close"></i>
+<i class="icon-close-circle"></i>
+<i class="icon-dashboard"></i>
+<i class="icon-download"></i>
+<i class="icon-edit-pencil"></i>
+<i class="icon-export"></i>
+<i class="icon-geolocation"></i>
+<i class="icon-globe"></i>
+<i class="icon-lock"></i>
+<i class="icon-mobile-menu"></i>
+<i class="icon-present"></i>
+<i class="icon-quote-double-start"></i>
+<i class="icon-refresh"></i>
+<i class="icon-search"></i>
+<i class="icon-setting-gear"></i>
+<i class="icon-share"></i>
+<i class="icon-social-facebook"></i>
+<i class="icon-social-gplus"></i>
+<i class="icon-social-instagram"></i>
+<i class="icon-social-linkedin"></i>
+<i class="icon-social-linkedin-negative"></i>
+<i class="icon-social-rss"></i>
+<i class="icon-social-twitter"></i>
+<i class="icon-social-youtube"></i>
+<i class="icon-story-book"></i>
+<i class="icon-table-join"></i>
+<i class="icon-tableau-logo"></i>
+<i class="icon-tablet"></i>
+<i class="icon-trash"></i>
+<i class="icon-triangle-down"></i>
+<i class="icon-triangle-left"></i>
+<i class="icon-triangle-right"></i>
+<i class="icon-triangle-up"></i>
+<i class="icon-vizql"></i>
+
+Styleguide 2.3
+ */
+
+[data-icon]:before {
+    content: attr(data-icon);
+}
+
+[data-icon]:before,
+.icon-arrow-b:before,
+.icon-arrow-l:before,
+.icon-arrow-pipe-l:before,
+.icon-arrow-pipe-r:before,
+.icon-arrow-r:before,
+.icon-arrow-t:before,
+.icon-badge-featured-viz:before,
+.icon-badge-featured-viz-make:before,
+.icon-badge-votd:before,
+.icon-calendar:before,
+.icon-checkmark:before,
+.icon-chevron-b:before,
+.icon-chevron-l:before,
+.icon-chevron-r:before,
+.icon-chevron-t:before,
+.icon-close:before,
+.icon-close-circle:before,
+.icon-dashboard:before,
+.icon-download:before,
+.icon-edit-pencil:before,
+.icon-export:before,
+.icon-file-generic:before,
+.icon-geolocation:before,
+.icon-globe:before,
+.icon-lock:before,
+.icon-logo-apple:before,
+.icon-logo-windows:before,
+.icon-map:before,
+.icon-mobile-menu:before,
+.icon-play-circle-small:before,
+.icon-plus:before,
+.icon-present:before,
+.icon-quote-double-start:before,
+.icon-refresh:before,
+.icon-search:before,
+.icon-setting-gear:before,
+.icon-share:before,
+.icon-social-facebook:before,
+.icon-social-gplus:before,
+.icon-social-instagram:before,
+.icon-social-linkedin:before,
+.icon-social-linkedin-negative:before,
+.icon-social-rss:before,
+.icon-social-twitter:before,
+.icon-social-youtube:before,
+.icon-story-book:before,
+.icon-table-join:before,
+.icon-tableau-logo:before,
+.icon-tablet:before,
+.icon-trash:before,
+.icon-triangle-down:before,
+.icon-triangle-left:before,
+.icon-triangle-right:before,
+.icon-triangle-up:before,
+.icon-vizql:before {
+    display: inline-block;
+    font-family: "public-icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.icon-arrow-b:before {
+    content: "\f133";
+}
+
+.icon-arrow-l:before {
+    content: "\f12a";
+}
+
+.icon-arrow-pipe-l:before {
+    content: "\f118";
+}
+
+.icon-arrow-pipe-r:before {
+    content: "\f119";
+}
+
+.icon-arrow-r:before {
+    content: "\f12b";
+}
+
+.icon-arrow-t:before {
+    content: "\f134";
+}
+
+.icon-badge-featured-viz:before {
+    content: "\f129";
+}
+
+.icon-badge-featured-viz-make:before {
+    content: "\f12e";
+}
+
+.icon-badge-votd:before {
+    content: "\f12f";
+}
+
+.icon-calendar:before {
+    content: "\f100";
+}
+
+.icon-checkmark:before {
+    content: "\f132";
+}
+
+.icon-chevron-b:before {
+    content: "\f11c";
+}
+
+.icon-chevron-l:before {
+    content: "\f11d";
+}
+
+.icon-chevron-r:before {
+    content: "\f11e";
+}
+
+.icon-chevron-t:before {
+    content: "\f11f";
+}
+
+.icon-close:before {
+    content: "\f120";
+}
+
+.icon-close-circle:before {
+    content: "\f101";
+}
+
+.icon-dashboard:before {
+    content: "\f121";
+}
+
+.icon-download:before {
+    content: "\f122";
+}
+
+.icon-edit-pencil:before {
+    content: "\f11a";
+}
+
+.icon-export:before {
+    content: "\f123";
+}
+
+.icon-file-generic:before {
+    content: "\f131";
+}
+
+.icon-geolocation:before {
+    content: "\f124";
+}
+
+.icon-globe:before {
+    content: "\f125";
+}
+
+.icon-lock:before {
+    font-style: normal;
+    content: "\f136";
+}
+
+.icon-logo-apple:before {
+    content: "\f12c";
+}
+
+.icon-logo-windows:before {
+    content: "\f12d";
+}
+
+.icon-map:before {
+    content: "\f130";
+}
+
+.icon-mobile-menu:before {
+    content: "\f102";
+}
+
+.icon-play-circle-small:before {
+    content: "\f128";
+}
+
+.icon-plus:before {
+    content: "\f135";
+}
+
+.icon-present:before {
+    content: "\f11b";
+}
+
+.icon-quote-double-start:before {
+    content: "\f103";
+}
+
+.icon-refresh:before {
+    content: "\f104";
+}
+
+.icon-search:before {
+    content: "\f105";
+}
+
+.icon-setting-gear:before {
+    content: "\f106";
+}
+
+.icon-share:before {
+    content: "\f107";
+}
+
+.icon-social-facebook:before {
+    content: "\f108";
+}
+
+.icon-social-gplus:before {
+    content: "\f109";
+}
+
+.icon-social-instagram:before {
+    content: "\f10a";
+}
+
+.icon-social-linkedin:before {
+    content: "\f10b";
+}
+
+.icon-social-linkedin-negative:before {
+    content: "\f126";
+}
+
+.icon-social-rss:before {
+    content: "\f10c";
+}
+
+.icon-social-twitter:before {
+    content: "\f10d";
+}
+
+.icon-social-youtube:before {
+    content: "\f10e";
+}
+
+.icon-story-book:before {
+    content: "\f127";
+}
+
+.icon-table-join:before {
+    content: "\f10f";
+}
+
+.icon-tableau-logo:before {
+    content: "\f110";
+}
+
+.icon-tablet:before {
+    content: "\f111";
+}
+
+.icon-trash:before {
+    content: "\f112";
+}
+
+.icon-triangle-down:before {
+    content: "\f113";
+}
+
+.icon-triangle-left:before {
+    content: "\f114";
+}
+
+.icon-triangle-right:before {
+    content: "\f115";
+}
+
+.icon-triangle-up:before {
+    content: "\f116";
+}
+
+.icon-vizql:before {
+    content: "\f117";
+}
+
+a {
+    color: #4d4d4d;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: color 100ms ease-in;
+    -moz-transition: color 100ms ease-in;
+    -o-transition: color 100ms ease-in;
+    transition: color 100ms ease-in;
+}
+
+a:visited {
+    color: #4d4d4d;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #323232;
+}
+
+a [class^="icon-"] {
+    vertical-align: middle;
+}
+
+.l-content p a {
+    text-decoration: underline;
+}
+
+.l-content p a:hover {
+    color: #323232;
+}
+
+form input.error {
+    border-bottom: 1px solid #EB4454 !important;
+}
+
+form label.error {
+    color: #EB4454 !important;
+}
+
+input[type="tel"],
+input[type="url"],
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="password"],
+.input-text,
+.profile-input,
+textarea {
+    -webkit-transition: border-color 150ms ease-in;
+    -moz-transition: border-color 150ms ease-in;
+    -o-transition: border-color 150ms ease-in;
+    transition: border-color 150ms ease-in;
+}
+
+input[type="tel"]:hover,
+input[type="url"]:hover,
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover,
+input[type="search"]:hover,
+input[type="password"]:hover,
+.input-text:hover,
+.profile-input:hover,
+textarea:hover {
+    border-bottom: 1px solid #666666;
+}
+
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="password"]:focus,
+.input-text:focus,
+.profile-input:focus,
+textarea:focus {
+    border-bottom: 1px solid #2DCC97;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.form-type-checkbox {
+    margin-bottom: 6px;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    margin-right: 3px;
+}
+
+input[type="checkbox"]:before {
+    content: '';
+    display: inline-block;
+    border: 1px solid #ccc;
+    -webkit-appearance: initial;
+    background: #fff;
+    width: 14px;
+    height: 14px;
+    padding-left: 1px;
+    font-size: 10px;
+    vertical-align: top;
+}
+
+input[type="checkbox"]:checked:before {
+    content: "\f132";
+    padding-top: 1px;
+}
+
+input[type="checkbox"].error:before {
+    border: 1px solid #c83946;
+}
+
+.form__select,
+.form-type-select {
+    -webkit-transition: border-color 150ms ease-in;
+    -moz-transition: border-color 150ms ease-in;
+    -o-transition: border-color 150ms ease-in;
+    transition: border-color 150ms ease-in;
+    position: relative;
+    display: block;
+    border: 1px solid #b2b2b2;
+    border-radius: 1px;
+    background: white;
+    padding-top: 11.5px;
+    padding-bottom: 11.5px;
+}
+
+.form__select:hover,
+.form-type-select:hover {
+    border: 1px solid #656565;
+}
+
+.form__select:hover:before,
+.form-type-select:hover:before {
+    background: #b2b2b2;
+}
+
+.form__select:hover:after,
+.form-type-select:hover:after {
+    border-color: #323232 transparent transparent transparent;
+}
+
+.form__select:before,
+.form-type-select:before {
+    -webkit-transition: background 150ms ease-in;
+    -moz-transition: background 150ms ease-in;
+    -o-transition: background 150ms ease-in;
+    transition: background 150ms ease-in;
+    position: absolute;
+    top: 0;
+    right: 24px;
+    height: 100%;
+    width: 1px;
+    background: #dddddd;
+    content: '';
+}
+
+.form__select:after,
+.form-type-select:after {
+    -webkit-transition: border-color 150ms ease-in;
+    -moz-transition: border-color 150ms ease-in;
+    -o-transition: border-color 150ms ease-in;
+    transition: border-color 150ms ease-in;
+    position: absolute;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    right: 8px;
+    content: '';
+    border-style: solid;
+    border-width: 6px 4px 0 4px;
+    border-color: #656565 transparent transparent transparent;
+}
+
+.form__select select,
+.form-type-select select {
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    background: transparent;
+    font-size: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    width: 100%;
+    padding: 0 65px 0 6px;
+}
+
+.form__select select::-ms-expand,
+.form-type-select select::-ms-expand {
+    display: none;
+}
+
+label,
+.form-label {
+    font-family: "Benton Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: 300;
+    font-size: 0.85714em;
+    color: #656565;
+}
+
+label.error,
+.form-label.error {
+    font-family: "Benton Sans" "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: 500;
+
+}
+
+label.inline-error {
+    position: absolute;
+    width: 100%;
+}
+
+div.inline-error {
+    position:relative;
+}
+
+.modal-login .form-section label.larger-error {
+    font-size: 13px;
+}
+
+label a:hover,
+.form-label a:hover {
+    text-decoration: underline;
+}
+
+/**
+ * IE 9 and below specific alters
+ */
+
+.lte-ie9 .form__select:before,
+.lte-ie9 .form-type-select:before {
+    right: 30px;
+}
+
+.lte-ie9 .form__select select,
+.lte-ie9 .form-type-select select {
+    padding-right: 6px;
+}
+
+.views-exposed-widgets .form-type-select {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.views-exposed-widgets select {
+    font-size: 0.85714em;
+}
+
+/**
+ * Form section - block level
+ * <div> | <fieldset>
+ */
+
+.form-section {
+    display: block;
+    border: 0;
+    padding: 0;
+}
+
+.form-section:first-child .form-section__header {
+    margin-top: 0;
+}
+
+.form-section label,
+.form-section .form-label {
+    display: block;
+}
+
+.form-section .form-field {
+    display: block;
+}
+
+.form-section--inline > label,
+.form-section--inline .form-label {
+    text-align: left;
+}
+
+.form-actions label,
+.form-actions [class^="form-label"] {
+    font-weight: normal;
+    font-size: 0.85714em;
+    color: #666666;
+}
+
+.form-label--inline {
+    display: inline-block !important;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.form-section__header {
+    margin-top: 24px;
+    margin-bottom: 6px;
+}
+
+.is-editing .form-section {
+    margin-bottom: 12px;
+}
+
+.is-editing .input-error {
+    color: #ea4353;
+}
+
+.form-actions {
+    margin-top: 24px;
+    border: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.form-actions .tile {
+    margin-left: 6px;
+}
+
+.form-actions [disabled="disabled"] {
+    background: #888888 !important;
+    cursor: not-allowed;
+}
+
+form .instruction {
+    color: #656565;
+    font-size: 11px;
+    display: inline-block;
+    line-height: 1.3;
+    margin-top: 3px;
+}
+
+form .instruction a:hover {
+    text-decoration: underline;
+}
+
+form .tile:focus {
+    outline: 0;
+    box-shadow: 0 0 5px #2c9de8;
+}
+
+/**
+ * Feedback messages from network requests.
+ */
+
+.form__feedback {
+    padding: 12px 36px;
+    display: none;
+    background: #becbe4;
+    font-size: 0.85714em;
+}
+
+.form__feedback.show {
+    display: block;
+}
+
+label.error {
+    color: #c83946;
+    font-size: 0.85714em;
+}
+
+/**
+ * Input placeholder native element styling.
+ * Need to be separate styles for some reason
+ */
+
+::input-placeholder {
+    color: #000000 0.5;
+    font-size: 12px;
+}
+
+::-webkit-input-placeholder {
+    color: #000000 0.5;
+    font-size: 13px;
+}
+
+::-moz-placeholder {
+    color: #000000 0.5;
+    font-size: 12px;
+}
+
+:-ms-input-placeholder {
+    color: #000000 0.5;
+    font-size: 12px;
+}
+
+/**
+ * Tile style rollup
+ */
+
+/*
+Tiles
+
+Elements that represent an actionable UI function.
+
+Markup:
+<a class="action tile tile--xs {$modifiers}" href="#">A Smallest Text Tile Element</a><br><br>
+<a class="action tile {$modifiers}" href="#">A Tile Element</a><br><br>
+<a class="action tile tile--l {$modifiers}" href="#">A Big Text Tile Element</a><br><br>
+
+.inactive - Indicate a tile in a disabled state.
+.action - Indicate an actionable, tappable tile.
+.confirm - Indicate a tile intended to confirm a UI interaction. Use in forms.
+.attention - A tile that requests user feedback.
+.activity - A tile that is actionable, but with less emphasis.
+.outline - A tile with an outline
+
+Styleguide 5
+ */
+
+.tile {
+    -webkit-transition: all 60ms ease-in;
+    -moz-transition: all 60ms ease-in;
+    -o-transition: all 60ms ease-in;
+    transition: all 60ms ease-in;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 1px;
+    line-height: 1;
+    font-size: 1.14286em;
+    color: white;
+}
+
+.tile:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.tile:visited {
+    color: white;
+}
+
+.tile.element-hidden {
+    display: none;
+}
+
+.tile.inactive,
+.tile [disabled] {
+    background: #4d4d4d !important;
+    cursor: default;
+}
+
+.tile.inactive.outline,
+.tile [disabled].outline {
+    border: 1px solid #666666;
+}
+
+.tile.inactive:hover,
+.tile [disabled]:hover {
+    background: #b2b2b2;
+    color: white;
+}
+
+.tile.action {
+    color: white;
+    background: #ea8e4f;
+}
+
+.tile.action.outline {
+    border: 1px solid #dd6a35;
+}
+
+.tile.action:hover {
+    background: #dd6a35;
+    color: white;
+}
+
+.tile.action[disabled] {
+    background: #f8ddca;
+}
+
+.tile.confirm {
+    color: white;
+    background: #2ccb96;
+}
+
+.tile.confirm.outline {
+    border: 1px solid #2ea27c;
+}
+
+.tile.confirm:hover {
+    background: #2ea27c;
+    color: white;
+}
+
+.tile.confirm[disabled] {
+    background: #bfefdf;
+}
+
+.tile.attention,
+.tile.caution {
+    color: white;
+    background: #ea4353;
+}
+
+.tile.attention.outline,
+.tile.caution.outline {
+    border: 1px solid #c83946;
+}
+
+.tile.attention:hover,
+.tile.caution:hover {
+    background: #c83946;
+}
+
+.tile.attention[disabled],
+.tile.caution[disabled] {
+    background: #f8c6cb;
+}
+
+.tile.activity {
+    color: white;
+    background: #b2b2b2;
+}
+
+.tile.activity.outline {
+    border: 1px solid #656565;
+}
+
+.tile.activity:hover {
+    background: #656565;
+}
+
+.tile.clear {
+    color: #4d4d4d;
+    background: none;
+}
+
+.tile.clear.outline {
+    border: 2px solid white;
+}
+
+.tile.clear:hover {
+    border-color: #dddddd;
+    background: #f4f4f4;
+}
+
+.tile.clear.light {
+    color: #323232;
+    background: none;
+}
+
+.tile.clear.light.outline {
+    border: 1px solid #656565;
+}
+
+.tile.clear.light:hover {
+    background: #e5e5e5;
+}
+
+.tile.white {
+    background: white;
+    color: #656565;
+}
+
+.tile.white.outline {
+    border: 1px solid #b2b2b2;
+}
+
+.tile.white:hover {
+    background: #f4f4f4;
+    color: #323232;
+}
+
+.tile.facebook {
+    background: #3b579d;
+    font-weight: 300;
+}
+
+.tile.tile--xs {
+    font-size: 0.78571em;
+}
+
+.tile.tile--s {
+    font-size: 0.85714em;
+}
+
+.tile.tile--l {
+    font-size: 1.28571em;
+}
+
+.tile.tile--xl {
+    font-size: 1.71429em;
+}
+
+.tile.tile--xxl {
+    font-size: 2.57143em;
+}
+
+.tile.tile--ui {
+    color: #656565;
+    width: auto;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.tile.tile--ui [class^="icon"] {
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+.tile.tile--ui [class^="icon-download"] {
+    bottom: -2px;
+}
+
+.tile.tile--ui:hover {
+    color: #323232;
+}
+
+/*
+Icon Tiles
+
+Fixed size tiles that use an icon in place of text.
+
+Markup:
+<a class="action tile tile--icon {$modifiers}" href="#"><i class="icon-tableau-logo"></i></a>
+<a class="action tile tile--icon {$modifiers}" href="#"><i class="icon-share"></i></a>
+<a class="action tile tile--icon {$modifiers}" href="#"><i class="icon-setting-gear"></i></a>
+
+.action - Indicate an actionable, tappable tile.
+.confirm - Indicate a tile intended to confirm a UI interaction. Use in forms.
+.attention - A tile that requests user feedback.
+
+Styleguide 5.1
+*/
+
+.tile.tile--icon {
+    font-size: 1.42857em;
+    line-height: 28px;
+    width: 35px;
+    height: 34px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.tile.tile--icon.clear.outline {
+    border-color: #b2b2b2;
+}
+
+.tile.tile--icon [class^="icon-"] {
+    line-height: 1;
+}
+
+input.tile,
+button.tile {
+    border: 0;
+}
+
+/**
+ * Toasts
+
+ * Notifications for users.
+ */
+
+.toast {
+    position: relative;
+}
+
+.toast.action {
+    background: #2ea27c;
+}
+
+.toast .toast__close {
+    color: white;
+    position: absolute;
+    z-index: 10;
+    top: 12px;
+    right: 12px;
+    font-size: 1.71429em;
+    line-height: 1;
+}
+
+.toast-title {
+    font-weight: bold;
+}
+
+.toast-message {
+    font-size: 13px;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.toast-message a,
+.toast-message label {
+    color: #ffffff;
+}
+
+.toast-message a:hover {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.toast-close-button {
+    position: relative;
+    right: -0.3em;
+    top: -0.3em;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    -webkit-text-shadow: 0 1px 0 #ffffff;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.8;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    filter: alpha(opacity=80);
+}
+
+.toast-close-button:hover,
+.toast-close-button:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.4;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+    filter: alpha(opacity=40);
+}
+
+/*Additional properties for button version
+ iOS requires the button element instead of an anchor tag.
+ If you want the anchor version, it requires `href="#"`.*/
+
+button.toast-close-button {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.toast-top-center {
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-bottom-center {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-top-full-width {
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-bottom-full-width {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-top-left {
+    top: 12px;
+    left: 12px;
+}
+
+.toast-top-right {
+    top: 12px;
+    right: 12px;
+}
+
+.toast-bottom-right {
+    right: 12px;
+    bottom: 12px;
+}
+
+.toast-bottom-left {
+    bottom: 12px;
+    left: 12px;
+}
+
+#toast-container {
+    position: fixed;
+    top: 24px;
+    z-index: 999999;
+    text-align: center;
+}
+
+#toast-container > div {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto 12px;
+    padding: 6px 24px;
+    min-width: 400px;
+    max-width: 480px;
+    border-radius: 2px;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+}
+
+#toast-container > :hover {
+    cursor: pointer;
+}
+
+#toast-container.toast-top-center > div,
+#toast-container.toast-bottom-center > div {
+    margin: auto;
+}
+
+#toast-container.toast-top-full-width > div,
+#toast-container.toast-bottom-full-width > div {
+    width: 96%;
+    margin: auto;
+}
+
+#toast-container {
+    text-align: center;
+}
+
+#toast-container .toast {
+    margin-bottom: 6px !important;
+}
+
+.toast {
+    background-color: #f2f4f9;
+    color: #3d5f7f;
+    border: 1px solid #3d5f7f;
+}
+
+.toast a {
+    font-weight: 700;
+    color: #3d5f7f;
+    text-decoration: underline !important;
+}
+
+.toast-success {
+    background-color: #d4f4ea;
+    color: #2ea27c;
+    border: 1px solid #2ea27c;
+}
+
+.toast-success a {
+    color: #3d5f7f;
+}
+
+.toast-success a:hover {
+    color: #3d5f7f;
+}
+
+.toast-error {
+    background-color: #fad9dc;
+    color: #c83946;
+    border: 1px solid #c83946;
+}
+
+.toast-error a {
+    color: #c83946;
+}
+
+.toast-error a:hover {
+    color: #c83946;
+}
+
+.toast-info {
+    background-color: #d8dfe5;
+    color: #3d5f7f;
+    border: 1px solid #3d5f7f;
+}
+
+.toast-info a {
+    color: #3d5f7f;
+}
+
+.toast-info a:hover {
+    color: #3d5f7f;
+}
+
+.toast-warning {
+    background-color: #fae8db;
+    color: #dd6a35;
+    border: 1px solid #dd6a35;
+}
+
+.toast-warning a {
+    color: #dd6a35;
+}
+
+.toast-warning a:hover {
+    color: #dd6a35;
+}
+
+.toast-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: #000000;
+    opacity: 0.4;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+    filter: alpha(opacity=40);
+}
+
+/**
+ * Login
+ */
+
+.modal-server-login,
+.modal-user-settings {
+    margin-top: -12px;
+}
+
+.modal-inner {
+    padding: 1.71429em;
+    color: #656565;
+}
+
+.modal-inner label,
+.modal-inner .form-label {
+    color: #656565 !important;
+}
+
+.modal-inner input {
+    border: none;
+    border-bottom: 1px solid #CBCBCB;
+}
+
+.modal-inner input:focus {
+    outline: none;
+}
+
+.form-facebook {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.logo--facebook {
+    width: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin-right: 6px;
+}
+
+.login__divider {
+    font-weight: 300;
+    color: #656565;
+    font-size: 1em;
+    display: inline-block;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.modal-login {
+    outline: 0;
+    color: #656565;
+}
+
+.modal-login .modal-inner {
+    padding: 24px 36px 24px;
+}
+
+.modal-login .logo-login {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 24px;
+    margin-top: 48px;
+}
+
+.modal-login .modal-login__heading,
+.modal-login .modal-login__subheading {
+    text-align: center;
+    font-size: 2.57143em;
+}
+
+.modal-login .modal-login__subheading {
+    font-weight: 300;
+    color: #656565;
+    font-size: 1em;
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+
+.modal-login .input-text {
+    padding-bottom: 6px;
+    margin-bottom: 24px;
+}
+
+.modal-login .form-login-duration {
+    margin-top: -24px;
+    text-align: right;
+}
+
+.modal-login label[for="login-long-duration"] {
+    display: inline-block;
+    width: auto;
+}
+
+.modal-login #account-signup {
+    font-size: 13px;
+    color: #3d5f7f;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+.modal-login .form-actions {
+    text-align: center;
+}
+
+.modal-login .form-actions button[type="submit"] {
+    display: block;
+    margin: 0 auto 6px;
+    width: 100%;
+}
+
+.modal-login .form-actions .form-actions-footer {
+    margin-top: 6px;
+}
+
+.modal-login .form-actions .form-actions-footer > span {
+        float: left;
+        font-size: 0.78571em;
+        font-weight: 400;
+}
+
+.password-remind {
+    color: #3d5f7f;
+    display: inline-block;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.password-remind:hover {
+    text-decoration: underline;
+}
+
+.modal-login footer {
+    margin-top: 72px;
+    text-align: center;
+    font-size: 0.78571em;
+}
+
+.modal-login footer .login-social {
+    background: #aaaaaa;
+    border-radius: 4px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 33px;
+    font-size: 18px;
+    color: white;
+}
+
+.modal-login footer .login-social.twitter {
+    background: #00aced;
+}
+
+.modal-login footer .login-social.facebook {
+    background: #3b5998;
+}
+
+.modal-login footer .login-social.gplus {
+    background: #dd4b39;
+}
+
+.form-server-login .form-section {
+    width: 100%;
+}
+
+.form-server-login .form-actions {
+    text-align: center;
+}
+
+.form-server-login .form-label {
+    margin-bottom: 0.35714em;
+    text-transform: uppercase;
+    font-size: 0.85714em;
+}
+
+.form-server-login .label-break {
+    display: block;
+}
+
+.form-server-login .label-inline {
+    display: inline-block;
+}
+
+.form-server-login .input-text {
+    width: 100%;
+}
+
+.form-server-login label[for="login-long-duration"] {
+    padding: 0;
+    margin: 0;
+    vertical-align: inherit;
+}
+
+.form-server-login label.error {
+    display: block;
+    margin-top: -18px;
+    font-size: 11px;
+}
+
+.password-recover form {
+    margin-top: 48px;
+}
+
+.password-recover .logo {
+    width: 50%;
+}
+
+.password-recover label {
+    display: block;
+    line-height: 1.2;
+}
+
+.password-recover button {
+    float: right;
+}
+
+.password-recover .form-section {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.password-recover .form-section input[type="email"] {
+    width: 100%;
+}
+
+.password-recover label.error {
+    margin-top: 4px;
+    text-align: left;
+    font-size: 11px;
+}
+
+.password-recover .form-actions {
+    margin-top: 36px;
+    text-align: center;
+}
+
+.password-recover-set .form-section {
+    margin-bottom: 24px;
+}
+
+.password-recover-set .form-actions {
+    margin-bottom: 0;
+}
+
+.password-recover-set label {
+    width: 10em;
+}
+
+.password-recover-set label.error {
+    padding-top: 9px;
+    padding-left: 6px;
+    width: 22em;
+}
+
+.user-settings {
+    padding: 1.71429em;
+}
+
+.user-settings .tab-nav {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.user-settings .tab,
+.user-settings .login-sign-out {
+    text-decoration: none;
+    color: #888888;
+    padding: 6px 12px;
+    display: inline-block;
+}
+
+.user-settings .tab.active,
+.user-settings .login-sign-out.active {
+    color: #333333;
+}
+
+.user-settings .tab:first-child {
+    padding-left: 0;
+}
+
+.user-settings .login-sign-out {
+    float: right;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.user-settings .tab-content {
+    margin-top: 24px;
+    min-height: 340px;
+}
+
+.user-settings h3 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 1.14286em;
+    color: #323232;
+}
+
+.user-settings .form-section:first-child h3 {
+    margin-top: 0;
+}
+
+.user-settings .form-actions {
+    margin-top: 36px;
+    margin-bottom: 0;
+}
+
+#default-settings-form input[type="checkbox"] + label {
+    width: auto;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#default-settings-form .setting--limited {
+    display: none;
+}
+
+#default-settings-form .form-type-checkbox {
+    display: none;
+}
+
+#default-settings-form .form-type-checkbox.can-edit {
+    display: block;
+}
+
+#form--change-email {
+    position: relative;
+    display: block;
+}
+
+#form--change-email .form-section {
+    margin-bottom: 12px;
+}
+
+.form-settings--password .form-section {
+    margin-bottom: 12px;
+}
+
+.form-settings--password label.error {
+    width: 20em !important;
+    padding-top: 9px;
+    padding-left: 6px;
+}
+
+.account-manage > .form-section {
+    display: block;
+}
+
+.account-manage .account-type {
+    color: #656565;
+}
+
+.account-manage .account-type [class^="account-"] {
+    display: inline-block;
+    padding: 0 10px;
+    border-left: 1px solid #cccccc;
+}
+
+.account-manage .account-type [class^="account-"]:first-child {
+    padding-left: 0;
+    border: 0;
+}
+
+.account-manage .app-usage {
+    padding: 0;
+    border: 0;
+    width: 390px;
+}
+
+.account-manage .account-upgrade {
+    float: right;
+}
+
+.account-manage .warning-final {
+    display: none;
+    font-size: 0.85714em;
+    color: #323232;
+}
+
+.account-manage .delete-action {
+    text-align: right;
+}
+
+.account-manage .account-delete__message {
+    padding-right: 64px;
+}
+
+.account-manage .account-delete .description {
+    font-size: 0.85714em;
+    color: #656565;
+}
+
+.account-manage .account-delete .attention.tile {
+    float: right;
+}
+
+.account-manage .account-delete-confirm {
+    display: none;
+    text-align: left;
+}
+
+.account-manage .account-delete-confirm label {
+    width: 6em;
+}
+
+.account-manage .account-delete-confirm label.error {
+    width: auto;
+    margin-top: 4px;
+}
+
+.account-manage .account-delete-confirm .form-section {
+    margin-top: 12px;
+}
+
+.account-manage .account-delete-confirm .form-section:first-child {
+    margin-top: 0;
+}
+
+.account-manage .account-delete-confirm .form-actions {
+    margin-top: 12px;
+}
+
+#form--activation-resend .form-section {
+    text-align: center;
+}
+
+#form--activation-resend .form-actions {
+    margin-top: 36px;
+    text-align: center;
+}
+
+.modal-tbd #cboxLoadedContent {
+    padding: 12px;
+    overflow: initial !important;
+}
+
+.modal-tbd .signature {
+    width: 50%;
+    float: right;
+}
+
+#password-form .feedback.password-match.show {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+#password-form label {
+    padding-top: 8px;
+    width: 5em;
+}
+
+#modal-account-signup label[for="signup-legal"] {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#modal-account-signup a {
+    color: #3d5f7f;
+    font-weight: 500;
+}
+
+#modal-account-signup a:visited {
+    color: #4d4d4d;
+}
+
+
+#modal-account-signup .form-section--inline > label {
+    width: 6em;
+}
+
+#modal-account-signup .form-section__header {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 1.14286em;
+}
+
+#modal-account-signup .form-section__header:first-child {
+    margin-top: 0;
+}
+
+#modal-account-signup .tile.facebook {
+    margin-bottom: 6px;
+    padding: 6px 12px;
+}
+
+#modal-account-signup .logo--facebook {
+    width: 16px;
+}
+
+#modal-account-signup .input-text {
+    width: 100%;
+}
+
+#modal-account-signup .instruction {
+    max-width: 360px;
+}
+
+#modal-account-signup .form-section--inline label.error {
+    width: 13em !important;
+    padding-left: 6px;
+    padding-top: 9px;
+}
+
+#modal-account-signup .form-section--inline label.error[for="signup-legal"] {
+    font-size: 0.78571em;
+    padding-top: 2px;
+}
+
+#modal-account-signup #signup-recaptcha {
+    position: absolute;
+    top: -99999em;
+}
+
+#modal-account-signup .form--recaptcha {
+    margin-top: 0;
+}
+
+#modal-account-signup .form--recaptcha label.error {
+    width: auto;
+    display: none;
+}
+
+#modal-account-signup .form-actions {
+    padding-top: 24px;
+    margin-top: 24px;
+    margin-bottom: 0;
+}
+
+#modal-account-signup .form-actions .product-download {
+    text-align: left;
+}
+
+#modal-account-signup .form-actions .product-download label {
+    display: inline;
+}
+
+#modal-account-signup .form-actions .form-submit {
+    margin-top: 12px;
+    text-align: center;
+}
+
+#modal-account-signup .warning {
+    display: none;
+    color: #888888;
+    font-size: 0.85714em;
+}
+
+#modal-account-signup label.error {
+    margin-top: 2px;
+    margin-bottom: -12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+#modal-account-signup .email-warning {
+    margin-bottom: -18px !important;
+}
+
+/**
+ * Public storage usage indicator
+ */
+
+.app-usage {
+    font-size: 0.85714em;
+    color: #656565;
+    margin: 0;
+    padding: 10px;
+    text-transform: none;
+    cursor: default;
+}
+
+.app-usage .indicator {
+    display: block;
+    position: relative;
+    height: 8px;
+    margin-top: 5px;
+    margin-bottom: 4px;
+    background: #cccccc;
+}
+
+.app-usage .progress {
+    background: #3d5f7f;
+    position: absolute;
+    width: 10%;
+    height: 100%;
+}
+
+/**
+ * Change Profile URL
+ */
+
+#form--profile-url .profile-url-edit {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.profile-url--current:hover {
+    background: #e6e6e6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+    color: #4d4d4d;
+}
+
+#modal-server-login {
+    position: absolute;
+    height: 487px;
+    text-align: center;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#modal-server-login,
+#modal-password-recover {
+    width: 545px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#modal-server-login,
+#modal-password-recover {
+    width: 420px;
+}
+
+#modal-server-login .logo-login {
+    width: 50%;
+    margin-top: 48px;
+    margin-bottom: 24px;
+}
+
+#modal-server-login .login-additional {
+    margin-top: 60px;
+}
+
+#modal-password-recover {
+    height: 225px;
+    text-align: center;
+    margin-top: 36px;
+}
+
+#modal-password-recover p {
+    text-align: left;
+    font-size: 13px;
+}
+
+#modal-password-recover .logo {
+    width: 50%;
+}
+
+#modal-password-recover form {
+    margin-top: 16px;
+}
+
+#modal-password-recover .modal-inner {
+    padding-top: 12px;
+}
+
+#modal-password-recover .modal-inner h2 {
+    text-align: left;
+    font-size: 19px;
+}
+
+#modal-password-recover .form__feedback {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+#modal-account-signup {
+    width: 384px;
+    height: 487px;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+#modal-account-signup input {
+  padding-left: 0;
+}
+
+#modal-account-signup .modal-inner {
+    padding: 12px;
+    max-height: 100vh;
+}
+
+#modal-account-signup .modal-inner h2 {
+    margin-bottom: 18px;
+    font-size: 19px;
+}
+
+#modal-account-signup .form-section__header {
+    font-size: 11px;
+    font-weight: 300;
+    margin-top: 12px;
+    margin-bottom: 0;
+    color: rgb(101, 101, 101);
+}
+
+#modal-account-signup .form-section {
+    margin-bottom: 12px;
+}
+
+#modal-account-signup .form-actions {
+    margin-top: 6px;
+    padding-top: 6px;
+}
+
+#modal-account-signup .form-actions .form-submit {
+    text-align: inherit;
+    margin-top: 0;
+}
+
+#modal-account-signup .form-actions .form-submit .confirm.tile {
+    padding: 11px 1.64286em;
+}
+
+#modal-account-signup .form-section--inline label.error {
+    padding-top: 2px;
+    display: inline-block;
+    font-size: 11px;
+}
+
+#modal-account-signup label[for="signup-recaptcha"].error {
+    margin-top: -70px;
+    margin-right: 65px;
+    font-size: 9px;
+}
+
+#modal-account-signup input {
+    padding-bottom: 6px;
+}
+
+#modal-account-signup .password .instruction {
+    display: block;
+    clear: both;
+}
+
+#modal-account-signup button[type="submit"] {
+    float: none;
+}
+
+#modal-account-signup .form-section--inline label.error.warning {
+    display: none;
+}
+
+.modal-inner .logo {
+    display: block;
+    float: right;
+    width: 122px;
+}
+
+/**
+ * Form overrides
+ */
+
+@media (min-width: 48em) {
+.form__select,
+.form-type-select {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.form-section--inline {
+    display: table;
+    border: 0;
+    padding: 0;
+}
+
+.form-section--inline > label,
+.form-section--inline .form-label {
+    display: table-cell;
+    width: 8em;
+    vertical-align: top;
+    padding-top: 9px;
+}
+
+.form-section--inline .form-field {
+    width: auto;
+    display: table-cell;
+}
+
+.tile {
+    font-size: 1em;
+    padding: 11px 1.64286em;
+}
+
+.tile.tile--ui {
+    font-size: 0.78571em;
+}
+
+.modal-login .modal-inner {
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+#form--change-email {
+    width: 40.67797%;
+    float: left;
+    margin-right: 1.69492%;
+}
+
+#form--change-email:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 1px;
+    background: #e5e5e5;
+    top: 0;
+    right: -36px;
+}
+
+#form--change-email .form-actions {
+    margin-top: 53px;
+}
+
+.form-settings--password {
+    margin-left: 8.47458%;
+    width: 49.15254%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -1em;
+}
+
+.form-settings--password .form-section--inline label {
+    width: 10em;
+}
+
+.form-settings--password .password-new {
+    margin-top: 44px;
+}
+
+#modal-account-signup .form-actions .product-download {
+    width: 66.10169%;
+    float: left;
+    margin-right: 1.69492%;
+    padding-top: 6px;
+}
+
+#modal-account-signup .form-actions .form-submit {
+    float: right;
+    margin-right: 0;
+    *margin-left: -1em;
+    margin-top: 0;
+    text-align: right;
+}
+
+.wait {
+    cursor: wait !important;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.app-usage {
+    border-top: 1px solid #cccccc;
+}
+
+.app-usage .indicator {
+    background: #82a4c8;
+}
+
+}
+
+@media (min-width: 64em) {
+
+.modal-login footer {
+    margin-top: 36px;
+}
+
+}
+
+@media (min-width: 64.0625em) {
+
+  #modal-account-signup .modal-inner {
+      max-height: auto;
+  }
+
+}
+
+@media all and (min-width: 241px) and (max-width: 480px) {
+
+  #toast-container > div {
+      padding: 8px 8px 8px 50px;
+      width: 18em;
+  }
+
+  #toast-container .toast-close-button {
+      right: -0.2em;
+      top: -0.2em;
+  }
+
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+
+  #toast-container > div {
+      padding: 15px 15px 15px 50px;
+      width: 25em;
+  }
+
+}
+
+@media all and (max-width: 240px) {
+
+  #toast-container > div {
+      padding: 8px 8px 8px 50px;
+      width: 11em;
+  }
+
+  #toast-container .toast-close-button {
+      right: -0.2em;
+      top: -0.2em;
+  }
+
+}

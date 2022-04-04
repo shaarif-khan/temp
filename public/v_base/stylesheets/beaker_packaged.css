@@ -1,0 +1,432 @@
+/* this file must be loaded after other wgapp css to override those settings */
+
+/* Used by _beaker_sidebar.html.erb */
+.mainNav {
+  display: block;
+  height: 56px;
+  width: 168px;
+}
+.mainNav:hover,
+.mainNav.active {
+  background-position: 0 -56px;
+  text-decoration: none;
+}
+.mainNav span {
+  visibility: hidden;
+}
+.subNav {
+  display: block;
+  height: 37px;
+  width: 168px;
+}
+.subNav:hover,
+.subNav.active {
+  background-position: 0 -37px;
+  text-decoration: none;
+}
+.subNav span {
+  visibility: hidden;
+}
+.myWorkbooks {
+  background: transparent url(../images/nav/myWorkbooksNav.png) 0 0 no-repeat;
+}
+.settings {
+  background: transparent url(../images/nav/settingsNav.png) 0 0 no-repeat;
+}
+.myProfile {
+    background: transparent url(../images/nav/authorProfileNav.png) 0 0 no-repeat;
+}
+.howItWorks {
+  background: transparent url(../images/nav/howItWorksNav.png) 0 0 no-repeat;
+  cursor: pointer;
+}
+.gallery {
+  background: transparent url(../images/nav/galleryNav.png) 0 0 no-repeat;
+  cursor: pointer;
+}
+.community {
+  background: transparent url(../images/nav/communityNav.png) 0 0 no-repeat;
+  cursor: pointer;
+}
+.starterWorkbooks {
+  background: transparent url(../images/nav/trainingNav.png) 0 0 no-repeat;
+  cursor: pointer;
+}
+
+/* Used by LayoutHelper.render_sidebar_quota */
+#showUsage {
+  width: 158px;
+  height: 99px;
+  background: transparent url(../images/graphBg.png) 0 0 no-repeat;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+/* Used by Workbook.raw_data_access_link */
+.rawDataAccess {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: transparent url(../images/buttons/btn_privatedata.jpg) 0 0 no-repeat;
+}
+.rawDataAccess:hover {
+  background-position: 0 -17px;
+  text-decoration: none;
+}
+.rawDataAccess.denied {
+  background-position: 0 -34px;
+}
+.rawDataAccess.denied:hover {
+  background-position: 0 -51px;
+}
+.rawDataAccess.busy {
+  background: transparent url(../images/busy.gif) 3px 3px no-repeat;
+}
+.rawDataAccess span {
+  visibility: hidden;
+}
+
+/* Used by Workbook.tabs_link */
+.tabbedViewsAction {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: transparent url(../images/buttons/btn_tabbedviews.jpg) 0 0 no-repeat;
+}
+.tabbedViewsAction:hover {
+  background-position: 0 -17px;
+  text-decoration: none;
+}
+.tabbedViewsAction.denied {
+  background-position: 0 -34px;
+}
+.tabbedViewsAction.denied:hover {
+  background-position: 0 -51px;
+}
+.tabbedViewsAction.busy, .tabbedViewsAction.denied.busy {
+  background: transparent url(../images/busy.gif) 3px 3px no-repeat;
+}
+.tabbedViewsAction span {
+  visibility: hidden;
+}
+
+/* Used by Workbook.download_link */
+.downloadViz {
+  cursor: pointer;
+}
+.downloadVizButton {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: transparent url(../images/buttons/btn_download.png) 0 0 no-repeat;
+}
+.downloadViz:hover .downloadVizButton {
+  background-position: 0 -17px;
+  text-decoration: none;
+}
+.downloadViz:hover .downloadVizText {
+  text-decoration: underline;
+}
+.downloadVizText {
+  position: relative;
+  top: -4px;
+  margin-left: 2px;
+}
+
+/* Used by View.delete_link and Workbook.delete_link */
+.removeViz {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: transparent url(../images/buttons/btn_remove.jpg) 0 0 no-repeat;
+}
+.removeViz:hover {
+  background-position: 0 -17px;
+  text-decoration: none;
+}
+.removeViz span {
+  visibility:hidden;
+}
+
+/* Used by workbooks/download.html.erb */
+.freeDownload {
+  display: block;
+  margin-top: 30px;
+  color: #e8762c;
+  text-decoration: none;
+}
+.freeDownload:hover {
+  color: #c72035;
+}
+.freeDownload .image {
+  display: block;
+  float: left;
+  width: 52px;
+  height: 60px;
+  background: transparent url(../images/buttons/btn_freeDownload.png) 0 0 no-repeat;
+}
+.freeDownload:hover .image {
+  background-position: 0 -60px;
+}
+.freeDownload .firstLine {
+  display: block;
+  font: bold 14px Arial Black, Verdana, Arial, Helvetica, sans-serif;
+  margin-left: 60px;
+  padding-top: 12px;
+}
+.freeDownload .secondLine {
+  display: block;
+  font: 11px Arial, Helvetica, sans-serif;
+  margin-left: 60px;
+}
+
+.saveWorkbookSettings, 
+.cancelWorkbookSettings, 
+.saveProjectRights,
+.cancelProjectRights {
+  width: 53px;
+  text-align: center;
+  cursor: pointer;
+  height: 15px;
+  border-radius: 2px;
+  background: url(/images/buttons/btn_middle.png) repeat-x 0px -3px;
+  color: #fff;
+}
+
+.saveProjectRights,
+.cancelProjectRights {
+  display: inline-block;    
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.saveProjectRights {
+  margin-left: 20px;
+}
+
+.cancelProjectRights {
+  margin-left: 10px;
+}
+
+.saveWorkbookSettings, .cancelWorkbookSettings {
+   margin-top: -30px;
+   position: absolute;
+}
+
+.saveWorkbookSettings {
+  right: -80px;
+}
+
+.saveWorkbookSettings:hover, 
+.cancelWorkbookSettings:hover,
+.saveProjectRights:hover,
+.cancelProjectRights:hover {
+  background: url(/images/buttons/btn_middle.png) repeat-x 0px -28px;
+}
+
+.saveWorkbookSettings.disabled, 
+.cancelWorkbookSettings.disabled,
+.saveProjectRights.disabled,
+.cancelProjectRights.disabled {
+  background: #ccc;
+  color: #999;
+}
+
+.cancelWorkbookSettings {
+  right: -140px;
+}
+
+.left_align_label {
+  display: block;
+  float: left;
+  clear: left;
+  width: 110px;
+  margin-top: 4px;
+}
+
+.charcount {
+  color: #888;
+  position: relative;
+  float: right;
+  left: 11px;
+  bottom: 13px;
+  width: 30px;
+  height: 15px;
+  overflow: visible;
+  text-align: left;
+  display: block;
+}
+
+.over_charcount {
+  color: #ff3333;
+  font-weight: bold;
+}
+
+.shareDescription.empty {
+  color: #888;
+}
+
+.shareDescription {
+  resize: none;
+}
+
+.articlePermalink, .shareDescription {
+  width: 250px;
+  border: 1px solid #ccc;
+  padding: 3px 3px;
+  color: #444;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.permalinkError {
+  position: absolute;
+  right: -91px;
+  color: #ff3333;
+  display: inline;
+  padding-top: 3px;
+}
+
+.articlePermalink.error, .shareDescription.error {
+  border-color: #ff3333;
+}
+
+.thumbLabels textarea {
+  display: inline;
+  height: 45px;
+  overflow: hidden;
+}
+
+div.thumbnailText {
+  position: relative;
+  overflow: visible;
+}
+
+.thumbnailLabels {
+  position: relative;
+}
+
+.thumbInput {
+  margin: 10px 0;
+}
+
+.checkboxContainer {
+  padding-top: 4px;
+  border-top: 1px solid #fff;
+  width: 540px;
+}
+
+.viewsWorkbookSettings {
+  position: relative;
+  overflow: visible;
+  width: 400px;
+  margin: 30px 0 30px 280px;
+}
+
+#tooltip {
+  position: absolute;
+  width: 115px;
+  height: 40px;
+  background: #333;
+  color: #fff;
+  z-index: 1000;
+  padding:  10px;
+  font-size: 11px;
+}
+
+.helpIcon {
+  background: #777;
+  width: 15px;
+  height: 14px;
+  display: block;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 11px;
+  padding-bottom: 2px;
+  float: right;
+  position: relative;
+  top: 5px;
+  right: 5px;
+}
+
+.toolbarWorkbookSettings {
+  margin: 10px 0px 30px 58px;
+  width: 400px;
+  position: relative;
+}
+
+.toolbarWorkbookSettingsTitle {
+  margin-left: -15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.toolbarWorkbookSettingsContainer {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.footerSettingsTitle {
+  margin-left: -15px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+
+/* Accordion Settings */
+
+.accordionList .accordionSetting {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordionSettings {
+  margin-top: 5px;
+  margin-left: 30px;
+}
+
+.accordionSetting {
+  width: 100%;  
+ 
+}
+.accordionSetting:hover {
+  background: #eee; 
+}
+.accordionHeader {
+  line-height: 35px;
+  cursor: pointer;
+}
+
+.accordionTitle {
+  display: inline-block;
+  width: 200px;
+  color: #177AD5;
+}
+
+.accordionTitleDetail {
+  color: #888;
+}
+
+.accordionSectionSubTitle {
+  color: #888;
+  font-style: italic;
+  font-size: 10px;
+  position: relative;
+  top: -6px;
+}
+
+.accordionCheckbox {
+  margin: 10px 0px 10px 20px;
+}
+
+
+.userAccountManageTitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+

@@ -1,0 +1,74 @@
+.tab-datepicker {
+  display: inline-block;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  cursor: default;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+}
+
+.tab-datepicker-header {
+  position: relative;
+  text-align: center;
+}
+
+.tab-datepicker-header-text {
+  padding: 0px 3px;
+  line-height: 18px;
+}
+
+.tab-datepicker-header-button {
+  position: absolute;
+  width: 20px;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid transparent;
+  font-size: 15px;
+  line-height: 12px;
+  color: #797979;
+}
+.tab-datepicker-header-button:hover {
+  color: #e87702;
+}
+.tab-datepicker-prev-month-button {
+  left: 0;
+}
+.tab-datepicker-next-month-button {
+  right: 0;
+}
+
+.tab-datepicker-month-table {
+  table-layout: fixed;
+  border-collapse: separate;
+  border: 1px solid transparent;
+}
+
+.tab-datepicker-header-cell {
+  width: 24px;
+  height: 16px;
+  text-align: right;
+  padding-right: 3px;
+  background-color: white;
+}
+
+.tab-datepicker-day-cell {
+  height: 16px;
+  text-align: right;
+  cursor: pointer;
+  padding-right: 3px;
+  border: 1px solid transparent;
+}
+.tab-datepicker-day-cell:hover {
+  background-color: #ffb95e;
+}
+.tab-datepicker-day-cell-today {
+  font-weight: bold;
+  color: black;
+}
+.tab-datepicker-day-cell-selected {
+  background-color: #e87702;
+  color: white;
+}

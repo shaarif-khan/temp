@@ -1,0 +1,17 @@
+.tab-popup {
+  position: absolute;
+  z-index: 1000;
+}
+
+.tab-popup-glass {
+  position: fixed;
+  z-index: 999;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: white;
+  opacity: 0.01;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=01)";
+  filter: alpha(opacity=01);
+}

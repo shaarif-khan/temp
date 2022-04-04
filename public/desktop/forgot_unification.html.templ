@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"><!--<![endif]-->
+  <head>
+    <link rel="stylesheet" href="/<%= assets_version %>/stylesheets/revizit_unification.min.css">
+  </head>
+
+  <body class="in-app">
+    <section class="password-recover" id="modal-password-recover" data-test-id="recoverPasswordModal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+      <img class="logo" src="/<%= assets_version %>/images/public-logo-grey.png">
+
+      <div class="modal-inner">
+        <h2 data-translate="FORGOT_PASSWORD_MODAL_HEADER"></h2>
+        <p data-translate="FORGOT_PASSWORD_MODAL_DESCRIPTION"></p>
+
+        <form id="form--password-recover" name="password-recover" action="" method="post">
+          <div class="form-section form-password-recover">
+            <div class="form-field">
+              <label class="form-field__label" for="password-recover" data-translate="COMMON_EMAIL_FIELD_LABEL"></label>
+              <input type="email" name="password-recover" id="password-recover" data-translate-placeholder="COMMON_EMAIL_FIELD_LABEL" data-test-id="passwordRecoverModal-email-input">
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button id="submit" type="submit" data-translate="FORGOT_PASSWORD_MODAL_SEND_EMAIL_BUTTON_LABEL" class="confirm tile" data-test-id="passwordRecoverModal-submit-button"></button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="/<%= assets_version %>/javascripts/initial_packaged.js"></script>
+    <script src="/<%= assets_version %>/javascripts/localization.js"></script>
+    <script src="/<%= assets_version %>/javascripts/modals/public_modal_libs.js"></script>
+    <script src="/<%= assets_version %>/javascripts/modals/public_modal_common.js"></script>
+    <script src="/<%= assets_version %>/javascripts/revizit_unification.js"></script>
+  </body>
+</html>

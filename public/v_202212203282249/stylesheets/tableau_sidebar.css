@@ -1,0 +1,422 @@
+/* Reset any styles on anchors. */
+/* Some such styles are currently added by wgapp_new.css. */
+a.tab-anchor-reset {
+  color: black;
+  text-decoration: none;
+}
+
+/* Sidebar */
+.tab-sidebar {
+  display: inline-block;
+  width: 178px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 10px;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+}
+
+/* SectionsPanel */
+.tab-sidebar-sections-panel {
+  padding-top: 6px;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+a.tab-sidebar-section-button {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 3px;
+  margin-right: 3px;
+  width: 78px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  text-align: center;
+  color: #333333;
+  border: 1px solid #c9c9c9;
+  background-color: #e4e4e4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e4e4e4), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #e4e4e4, #f2f2f2);
+  background-image:    -moz-linear-gradient(top, #e4e4e4, #f2f2f2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4e4e4', endColorstr='#f2f2f2');
+}
+a.tab-sidebar-section-button:hover {
+  background-color: #f3f3f3;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f3f3f3));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f3f3f3);
+  background-image:    -moz-linear-gradient(top, #ffffff, #f3f3f3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f3f3f3');
+}
+a.tab-sidebar-section-button.tab-current {
+  background-color: #ffb95e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#feba60), to(#ffde95));
+  background-image: -webkit-linear-gradient(top, #feba60, #ffde95);
+  background-image:    -moz-linear-gradient(top, #feba60, #ffde95);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#feba60', endColorstr='#ffde95');
+}
+
+/* SubsectionsPanel */
+.tab-sidebar-subsections-panel {
+  padding-top: 6px;
+  padding-bottom: 3px;
+}
+a.tab-sidebar-subsection-button {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 3px;
+  padding-left: 13px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 13px;
+  color: #5a5a5a;
+  background-color: white;
+}
+a.tab-sidebar-subsection-button:hover {
+  background-color: #e4e4e4;
+}
+a.tab-sidebar-subsection-button:hover .tab-sidebar-subsection-button-bar {
+  background-color: #ffb95e;
+}
+a.tab-sidebar-subsection-button.tab-current {
+  font-weight: bold;
+}
+a.tab-sidebar-subsection-button.tab-current .tab-sidebar-subsection-button-bar {
+  background-color: #e87702;
+}
+.tab-sidebar-subsection-button-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+}
+.tab-sidebar-subsection-button-count {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-right: 5px;
+  color: #969696;
+  font-weight: normal;
+}
+
+/* FiltersPanel */
+.tab-sidebar-filters-panel-header {
+  position: relative;
+  cursor: default;
+  padding-top: 15px;
+  margin-bottom: 11px;
+  padding-left: 4px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666666;
+  border-top: 1px solid #999999;
+}
+.tab-sidebar-filters-panel-clear-all {
+  position: absolute;
+  top: 15px;
+  bottom: 0;
+  right: 1px;
+  height: 20px;
+  line-height: 20px;
+  color: #797979;
+  cursor: pointer;
+  text-align: right;
+}
+.tab-sidebar-filters-panel-clear-all:hover {
+  color: #e87702;
+}
+.tab-sidebar-filters-panel-clear-all-label {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 20px;
+}
+.tab-sidebar-filters-panel-clear-all-x {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+/* SearchFilterPanel */
+/* widths:
+  sidebar: 178
+    space: 9
+    search box: 169
+      border: 1
+      submit: 24
+      input: 119
+      clear: 24
+      border: 1
+*/
+.tab-sidebar-search-panel {
+  position: relative;
+  height: 26px;
+  margin-bottom: 13px;
+}
+.tab-sidebar-search-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9px;
+  right: 0;
+  border: 1px solid #c9c9c9;
+  background-color: white;
+}
+.tab-sidebar-search-input {
+  position: absolute;
+  top: 1px;
+  left: 25px;
+  width: 119px;
+  height: 22px;
+  line-height: 22px;
+  outline: 0;
+  font-size: 12px;
+  color: #5a5a5a;
+  border: none;
+  background-color: transparent;
+}
+.tab-sidebar-search-placeholder {
+  position: absolute;
+  top: 1px;
+  left: 25px;
+  width: 119px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  font-style: italic;
+  color: #999999;
+  background-color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+a.tab-sidebar-search-submit-button {
+  cursor: pointer;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 0;
+  left: 0;
+  background-image: url("../images/sidebar_search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+a.tab-sidebar-search-clear-button {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #797979;
+}
+a.tab-sidebar-search-clear-button:hover {
+  color: #e87702;
+}
+
+/* FilterPanel */
+.tab-sidebar-filter-panel {
+  cursor: default;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.tab-sidebar-filter-panel-label {
+  height: 13px;
+  padding-left: 4px;
+  font-size: 9px;
+  color: #a1a1a1;
+  text-transform: uppercase;
+}
+
+/* FilterButton */
+.tab-sidebar-filter-button {
+  position: relative;
+  cursor: pointer;
+  height: 24px;
+}
+.tab-sidebar-filter-button:hover {
+  background-color: #ececec;
+}
+.tab-sidebar-filter-button.tab-on {
+  font-weight: bold;
+}
+a.tab-sidebar-filter-button-label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 25px;
+  height: 24px;
+  line-height: 24px;
+  padding-left: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #5a5a5a;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+a.tab-sidebar-filter-button-clear {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-right: 1px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #797979;
+  text-align: center;
+}
+a.tab-sidebar-filter-button-clear:hover {
+  color: #e87702;
+}
+
+/* MenuFilterButton */
+.tab-sidebar-menu-panel {
+  background-color: #ececec;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #5a5a5a;
+  border: 1px solid #e0e0e0;
+}
+
+/* ListPanel */
+.tab-sidebar-list-panel {
+  position: relative;
+  overflow: hidden;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+}
+.tab-sidebar-list-panel-filter-panel {
+  padding: 2px 4px;
+  width: 172px;
+}
+.tab-sidebar-list-panel-filter-input-holder {
+}
+.tab-sidebar-list-panel-filter-input {
+  width: 100%;
+  outline: 0;
+  margin-left: -2px;
+  border: 1px solid #c9c9c9;
+  padding: 1px;
+}
+/* 156 = 6.5 * 24 = (ListPanel.optionThreshold + 0.5) * ListPanel.optionHeight */
+.tab-sidebar-list-panel-scroll-panel {
+  position: relative;
+  height: 156px;
+}
+.tab-sidebar-list-panel-scroll-panel-window {
+  position: relative;
+  height: 156px;
+  overflow: hidden;
+}
+.tab-sidebar-list-panel-scrollbar {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  width: 8px;
+}
+.tab-sidebar-list-panel-scrollbar-thumb {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: 8px;
+  background-color: #cccccc;
+  cursor: pointer;
+}
+.tab-sidebar-list-panel-list {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  min-height: 26px;
+}
+.tab-sidebar-list-panel-labels {
+  display: inline-block;
+  vertical-align: top;
+  width: 130px;
+}
+.tab-sidebar-list-panel-counts {
+  display: inline-block;
+  vertical-align: top;
+  width: 40px;
+}
+.tab-sidebar-list-panel-scrollbar-spacer {
+  display: inline-block;
+  vertical-align: top;
+  width: 10px;
+}
+.tab-sidebar-list-panel-rows {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: white;
+  opacity: 0.01;
+  filter: alpha(opacity=01);
+}
+.tab-sidebar-list-panel-label {
+  height: 24px;
+  line-height: 24px;
+  padding-left: 11px;
+  color: #5a5a5a;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.tab-sidebar-list-panel-label.tab-no-matches {
+  font-style: italic;
+  cursor: default;
+  overflow: visible; /* Allow the "No matching <item>s" label to extend into the "count" column */
+}
+.tab-sidebar-list-panel-label.tab-current {
+  font-weight: bold;
+}
+.tab-sidebar-list-panel-label.tab-hover {
+  color: #333333;
+  background-color: #ffb95e;
+}
+.tab-sidebar-list-panel-count {
+  height: 24px;
+  line-height: 24px;
+  padding-left: 2px;
+  padding-right: 5px;
+  color: #949494;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.tab-sidebar-list-panel-count.tab-hover {
+  color: #333333;
+  background-color: #ffb95e;
+}
+.tab-sidebar-list-panel-row {
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.tab-sidebar-list-panel-highlight {
+  text-decoration: underline;
+}

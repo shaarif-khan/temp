@@ -1,0 +1,112 @@
+/***********************************************************************************************************************
+ * Copyright (c) 2011 Tableau Software, Incorporated and its licensors. All rights reserved.
+ * Protected by U.S. Patent 7,089,266; Patents Pending.
+ *
+ * Portions of the code
+ * Copyright (c) 2002 The Board of Trustees of the Leland Stanford Junior University. All rights reserved.
+ **********************************************************************************************************************/
+
+/*
+ * NOTE-jrockwood-2011-11-02!!!!!!!!!!!!!!!!!!!!!!!!!!
+ * There are two copies of this file: public\stylesheets and public\v_base\stylesheets. You need to keep them in sync.
+ * BUGZID 43658 tracks removing the duplication.
+ * Also note that this style sheet is used in vqlweb in the VqlResources Script# project.
+ */
+
+/*
+ * Styled buttons are the orangish-reddish buttons that are image-based
+ */
+
+/*
+  NOTE-jrockwood-2011-10-03: The original Busse buttons were image-based,
+  where the text was part of the image. This isn't good for localization,
+  so I pulled out the parts of the button into three images: left, middle,
+  and right. The HTML structure looks like this:
+  <button class="tab-styledButton">
+    <span class="tab-styledButtonLeft"></span>
+    <span class="tab-styledButtonMiddle">Button Text</span>
+    <span class="tab-styledButtonRight"></span>
+  </button>
+*/
+
+.tab-styledButton {
+  font: bold 10pt Arial, Helvetica, Sans-Serif;
+  color: white;
+  padding: 0;
+}
+
+.tab-styledButton, .tab-styledButtonLeft, .tab-styledButtonRight, .tab-styledButtonMiddle {
+  height: 26px;
+  background: transparent 0 0 no-repeat;
+  border: 0;
+  cursor: pointer;
+}
+
+.tab-styledButtonLeft, .tab-styledButtonRight {
+  float: left;
+  width: 6px;
+}
+
+.tab-styledButtonLeft {
+  background-image: url(/images/buttons/btn_left.png);
+}
+
+.tab-styledButtonRight {
+  background-image: url(/images/buttons/btn_right.png);
+}
+
+.tab-styledButtonMiddle {
+  float: left;
+  height: 22px;
+  background-image: url(/images/buttons/btn_middle.png);
+  background-repeat: repeat-x;
+  padding: 4px 14px 0px 14px;
+  white-space: nowrap;
+}
+
+.tab-styledButton:hover .tab-styledButtonLeft,
+.tab-styledButton:hover .tab-styledButtonRight,
+.tab-styledButton:hover .tab-styledButtonMiddle {
+  background-position: 0 -26px;
+}
+
+.tab-styledButton[disabled] .tab-styledButtonLeft,
+.tab-styledButton[disabled] .tab-styledButtonRight,
+.tab-styledButton[disabled] .tab-styledButtonMiddle {
+  background-position: 0 -52px;
+  cursor: default;
+}
+
+/*
+  IE7 doesn't do well with the HTML structure for the button, so the following changes are made:
+  * Don't show the rounded corners
+  * IE7 won't set the width of the button to match the contents, so it's going to be wider than
+    on other browsers. Therefore, the button needs to have the middle background image as well.
+*/
+.ie7 .tab-styledButton,
+.dj_ie7 .tab-styledButton {
+  background-image: url(/images/buttons/btn_middle.png);
+  background-repeat: repeat-x;
+}
+
+.ie7 .tab-styledButton:hover,
+.dj_ie7 .tab-styledButton:hover {
+  background-position: 0 -26px;
+}
+
+.ie7 .tab-styledButton[disabled],
+.dj_ie7 .tab-styledButton[disabled] {
+  background-position: 0 -52px;
+  cursor: default;
+}
+
+.ie7 .tab-styledButtonLeft, .ie7 .tab-styledButtonRight,
+.dj_ie7 .tab-styledButtonLeft, .dj_ie7 .tab-styledButtonRight {
+  display: none;
+}
+
+.ie7 .tab-styledButtonMiddle,
+.dj_ie7 .tab-styledButtonMiddle {
+  float: none;
+  display: block;
+}

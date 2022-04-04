@@ -1,0 +1,5469 @@
+/*
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.8.0r4
+*/
+/**
+ * YUI Reset
+ * @module reset
+ * @namespace
+ * @requires
+ */
+html {
+        color: #000;
+        background: #FFF;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+        margin: 0;
+        padding: 0;
+}
+
+table {
+        border-collapse: collapse;
+        border-spacing: 0;
+}
+
+fieldset,
+img {
+        border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var,
+optgroup {
+        font-style: inherit;
+        font-weight: inherit;
+}
+
+del,
+ins {
+        text-decoration: none;
+}
+
+li {
+        list-style: none;
+}
+
+caption,
+th {
+        text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+        font-size: 100%;
+        font-weight: normal;
+}
+
+q:before,
+q:after {
+        content: '';
+}
+
+abbr,
+acronym {
+        border: 0;
+        font-variant: normal;
+}
+
+sup {
+        vertical-align: baseline;
+}
+
+sub {
+        vertical-align: baseline;
+}
+
+/*because legend doesn't inherit in IE */
+legend {
+        color: #000;
+}
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+        font-family: inherit;
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+}
+
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+input,
+button,
+textarea,
+select {
+        *font-size: 100%;
+}
+
+/* Remove x clear buttons for text inputs and reveals for passwords inputs in IE >= 10 */
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+}
+
+
+
+/**********************************************************************************************************
+//      LyteBox v3.20
+//
+//       Author: Markus F. Hay
+//  Website: http://www.dolem.com/lytebox
+//         Date: July 12, 2007
+//      License: Creative Commons Attribution 3.0 License (http://creativecommons.org/licenses/by/3.0/)
+//
+// The original work has been modified by Tableau Software, Inc.
+//
+//
+*************************/
+
+
+#lbOverlay { position: absolute; top: 0; left: 0; z-index: 99998; width: 100%; height: 500px; background:#222;}
+#lbOverlay.grey { background-color: #000000; }
+#lbOverlay.red { background-color: #330000; }
+#lbOverlay.green { background-color: #003300; }
+#lbOverlay.blue { background-color: #011D50; }
+#lbOverlay.gold { background-color: #666600; }
+
+#lbMain { position: absolute; left: 0; width: 100%; z-index: 99999; text-align: center; line-height: 0; }
+#lbMain a img { border: none; }
+
+#lbOuterContainer { position: relative; background-color: #fff; width: 200px; height: 2px; margin: 0 auto; }
+#lbOuterContainer.grey { border: 3px solid #888888; }
+#lbOuterContainer.red { border: 3px solid #DD0000; }
+#lbOuterContainer.green { border: 3px solid #00B000; }
+#lbOuterContainer.blue { border: 3px solid #5F89D8; }
+#lbOuterContainer.gold { border: 3px solid #B0B000; }
+
+#lbDetailsContainer {   font: 10px Verdana, Helvetica, sans-serif; background-color: #fff; width: 100%; line-height: 1.4em;     overflow: auto; margin: 0 auto; }
+#lbDetailsContainer.grey { border: 3px solid #888888; border-top: none; }
+#lbDetailsContainer.red { border: 3px solid #DD0000; border-top: none; }
+#lbDetailsContainer.green { border: 3px solid #00B000; border-top: none; }
+#lbDetailsContainer.blue { border: 3px solid #5F89D8; border-top: none; }
+#lbDetailsContainer.gold { border: 3px solid #B0B000; border-top: none; }
+
+#lbImageContainer, #lbIframeContainer { padding: 0px; }
+#lbLoading {
+    position: absolute; top: 45%; left: 0%; height: 32px; width: 100%; text-align: center; line-height: 0; background: url(../images/loading.gif) center no-repeat;
+}
+
+#lbHoverNav { position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 10; }
+#lbImageContainer>#lbHoverNav { left: 0; }
+#lbHoverNav a { outline: none; }
+
+#lbPrev { width: 49%; height: 100%; background: transparent url(../javascripts/lytebox/images/blank.gif) no-repeat; display: block; left: 0; float: left; }
+#lbPrev.grey:hover, #lbPrev.grey:visited:hover { background: url(../javascripts/lytebox/images/prev_grey.gif) left 15% no-repeat; }
+#lbPrev.red:hover, #lbPrev.red:visited:hover { background: url(../javascripts/lytebox/images/prev_red.gif) left 15% no-repeat; }
+#lbPrev.green:hover, #lbPrev.green:visited:hover { background: url(../javascripts/lytebox/images/prev_green.gif) left 15% no-repeat; }
+#lbPrev.blue:hover, #lbPrev.blue:visited:hover { background: url(../javascripts/lytebox/images/prev_blue.gif) left 15% no-repeat; }
+#lbPrev.gold:hover, #lbPrev.gold:visited:hover { background: url(../javascripts/lytebox/images/prev_gold.gif) left 15% no-repeat; }
+
+#lbNext { width: 49%; height: 100%; background: transparent url(../javascripts/lytebox/images/blank.gif) no-repeat; display: block; right: 0; float: right; }
+#lbNext.grey:hover, #lbNext.grey:visited:hover { background: url(../javascripts/lytebox/images/next_grey.gif) right 15% no-repeat; }
+#lbNext.red:hover, #lbNext.red:visited:hover { background: url(../javascripts/lytebox/images/next_red.gif) right 15% no-repeat; }
+#lbNext.green:hover, #lbNext.green:visited:hover { background: url(../javascripts/lytebox/images/next_green.gif) right 15% no-repeat; }
+#lbNext.blue:hover, #lbNext.blue:visited:hover { background: url(../javascripts/lytebox/images/next_blue.gif) right 15% no-repeat; }
+#lbNext.gold:hover, #lbNext.gold:visited:hover { background: url(../javascripts/lytebox/images/next_gold.gif) right 15% no-repeat; }
+
+#lbPrev2, #lbNext2 { text-decoration: none; font-weight: bold; }
+#lbPrev2.grey, #lbNext2.grey, #lbSpacer.grey { color: #333333; }
+#lbPrev2.red, #lbNext2.red, #lbSpacer.red { color: #620000; }
+#lbPrev2.green, #lbNext2.green, #lbSpacer.green { color: #003300; }
+#lbPrev2.blue, #lbNext2.blue, #lbSpacer.blue { color: #01379E; }
+#lbPrev2.gold, #lbNext2.gold, #lbSpacer.gold { color: #666600; }
+
+#lbPrev2_Off, #lbNext2_Off { font-weight: bold; }
+#lbPrev2_Off.grey, #lbNext2_Off.grey { color: #CCCCCC; }
+#lbPrev2_Off.red, #lbNext2_Off.red { color: #FFCCCC; }
+#lbPrev2_Off.green, #lbNext2_Off.green { color: #82FF82; }
+#lbPrev2_Off.blue, #lbNext2_Off.blue { color: #B7CAEE; }
+#lbPrev2_Off.gold, #lbNext2_Off.gold { color: #E1E100; }
+
+#lbDetailsData { padding: 4px 10px 4px 10px; margin: 4px 0px 4px 0px;}
+#lbDetailsData.grey { color: #333333; }
+#lbDetailsData.red { color: #620000; }
+#lbDetailsData.green { color: #003300; }
+#lbDetailsData.blue { color: #01379E; }
+#lbDetailsData.gold { color: #666600; }
+
+#lbDetails { width: 100%; /*dlion removed float: left;*/ text-align: left; }
+#lbBottomNav {  padding: 2px 0px 4px 0px;}
+#lbCaption { display: block; font-weight: bold; }
+#lbNumberDisplay { float: left; display: block; padding-bottom: 1.0em; }
+#lbNavDisplay { float: left; display: block; padding-bottom: 1.0em; }
+
+
+#lbPlay { width: 64px; height: 28px; float: right; margin-bottom: 1px; }
+#lbPlay.grey { background: url(../javascripts/lytebox/images/play_grey.png) no-repeat; }
+#lbPlay.red { background: url(../javascripts/lytebox/images/play_red.png) no-repeat; }
+#lbPlay.green { background: url(../javascripts/lytebox/images/play_green.png) no-repeat; }
+#lbPlay.blue { background: url(../javascripts/lytebox/images/play_blue.png) no-repeat; }
+#lbPlay.gold { background: url(../javascripts/lytebox/images/play_gold.png) no-repeat; }
+
+#lbPause { width: 64px; height: 28px; float: right; margin-bottom: 1px; }
+#lbPause.grey { background: url(../javascripts/lytebox/images/pause_grey.png) no-repeat; }
+#lbPause.red { background: url(../javascripts/lytebox/images/pause_red.png) no-repeat; }
+#lbPause.green { background: url(../javascripts/lytebox/images/pause_green.png) no-repeat; }
+#lbPause.blue { background: url(../javascripts/lytebox/images/pause_blue.png) no-repeat; }
+#lbPause.gold { background: url(../javascripts/lytebox/images/pause_gold.png) no-repeat; }
+
+#lbCancel {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #4290D1;
+    background-image: url(../images/bg-button.gif);
+    background-repeat: repeat-x;
+    height: 20px;
+    padding: 2px 5px 2px 5px;
+    margin-left: 10px;
+    border-top: 1px solid #327FC0;
+    border-right: 1px solid #125FA0;
+    border-bottom: 1px solid #226FB0;
+    border-left: 1px solid #428FD0;
+    position: relative;
+    top: -1;
+
+}
+#lbCancel.grey { }
+
+#lbOK {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #4290D1;
+    background-image: url(../images/bg-button.gif);
+    background-repeat: repeat-x;
+    height: 20px;
+    padding: 2px 5px 2px 5px;
+    margin-left: 10px;
+    border-top: 1px solid #327FC0;
+    border-right: 1px solid #125FA0;
+    border-bottom: 1px solid #226FB0;
+    border-left: 1px solid #428FD0;
+    position: relative;
+    top: -1;
+
+}
+#lbOK.grey { }
+
+#lbClose {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #4290D1;
+    background-image: url(../images/bg-button.gif);
+    background-repeat: repeat-x;
+    height: 20px;
+    padding: 2px 5px 2px 5px;
+    margin-left: 10px;
+    margin-top: 10.0em;
+    border-top: 1px solid #327FC0;
+    border-right: 1px solid #125FA0;
+    border-bottom: 1px solid #226FB0;
+    border-left: 1px solid #428FD0;
+    position: relative;
+    top: -1;
+}
+#lbClose.grey { }
+#lbTitle { margin-bottom:5px; }
+
+
+/* This fixes IE6 to support :hover on all elements */
+/* TODO: remove this once we warn users away from IE6 (bug 35608) */
+body.ie6 {
+  behavior: url("/stylesheets/csshover3.htc");
+}
+
+/* Used in many places */
+a,
+a:visited {
+  color: #5473a0;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  color: #e87702;
+  text-decoration: underline;
+}
+
+/* Used by mixins\flextable_support.rb */
+.darkLink a {
+  font-weight: bold;
+}
+
+/* Used by
+    mixins\flextable_support.rb
+    views\shared\_column_names_row.html.erb
+*/
+.disabledText a {
+  color: #b04000;
+  font-style: italic;
+}
+
+/* Used by
+    views\layouts\text_layout.html.erb
+    views\shared\_sidebar.html.erb
+*/
+a.mru_selected {
+  color: #FFFFFF !important;
+  background-color: #9fc9e5;
+}
+a.mru_unselected {
+  color: #2e85be !important;
+}
+/* Used by
+    views\shared\_mru_links.html.erb
+    views\shared\_sidebar.html.erb
+*/
+li.mru_selected {
+  background-color: #9fc9e5;
+  padding: 0px 5px 0px 5px;
+  margin-left: -5px;
+  font-weight: bold;
+}
+li.mru_unselected {
+  background-color: #ffffff;
+  padding: 0px 5px 0px 5px;
+  margin-left: -5px;
+}
+
+/* Used by views\shared\_mru_links.html.erb */
+a.more {
+  font-style: italic;
+  font-size: 8pt;
+}
+
+/* Used by
+    views\layouts\download_layout.html.erb
+    views\layouts\text_layout.html.erb
+    views\shared\failsafe.html.templ.erb
+*/
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #5a5a5a;
+  background-color: #FFFFFF;
+  text-align: left;
+  vertical-align: top;
+  margin: 0;
+}
+/* Used by
+    views\layouts\single_embedded_layout.html.erb
+    views\layouts\single_layout.html.erb
+*/
+.bodySingleView {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #5a5a5a;
+  background-color: #FFFFFF;
+  vertical-align: top;
+  margin: 0;
+}
+
+/* Used by views\layouts\single_layout.html.erb */
+.singleLayoutTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 51px;
+  z-index: 991;
+  background-color: white;
+}
+.singleLayoutTop.collapsed {
+  height: 9px;
+}
+.singleLayoutCenter {
+  margin-top: 51px;
+}
+.singleLayoutCenter.collapsed {
+  margin-top: 9px;
+}
+
+/* Used in many places */
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #5a5a5a;
+}
+
+/* Used by views\shared\_masthead.html.erb */
+.masthead {
+  text-align: right;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.mastheadLoginAndSearch {
+  display: inline-block;
+}
+
+/* Used by
+    views\layouts\welcome_layout.html.erb
+    views\shared\failsafe.html.templ.erb
+*/
+.content {
+  margin-left: 5px;
+  padding-right: 5px;
+}
+
+/* Used by views\users\new.html.erb */
+#existingUserDialog {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 300px;
+  width:400px;
+  height: 140px;
+  border: 2px solid #aaa;
+  background: #fff;
+  padding: 12px;
+  z-index: 100;
+}
+#existingUserDialog h3 {
+  font-size: 14px;
+  margin: 6px 0 6px 0;
+  font-weight: 500;
+}
+#existingUserDialog p {
+  margin: 3px 0 3px 0;
+}
+#existingUserDialog ul {
+  margin: 22px 16px 16px 16px;
+}
+
+/* B51282: in IE7, this causes the addUserTable to have a height of 0. */
+/* Note that we set the display to BLOCK and not TABLE-ROW because IE7 needs it that way. */
+.ie7 .addUserTable tr {
+    display: block;
+}
+.addUserTable tr#user-name-row,
+.addUserTable tr#submit-row,
+.addUserTable tr#message-row {
+  display: table-row;
+}
+
+/* Used in many places */
+/* overflow:visible removes extra padding that IE7 puts inside buttons,
+/* without affecting the layout on other browsers */
+.button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #4290D1 url(../images/bg-button.gif) repeat-x;
+  height: 20px;
+  padding: 2px 5px 2px 5px;
+  overflow: visible;
+  margin-left: 10px;
+  border-top: 1px solid #327FC0;
+  border-right: 1px solid #125FA0;
+  border-bottom: 1px solid #226FB0;
+  border-left: 1px solid #428FD0;
+  position: relative;
+  top: -1;
+  _top: -4;
+}
+.button[disabled] {
+  background: #808080 url(../images/bg-button-disabled.gif) repeat-x;
+  border-top: 1px solid #6f6f6f;
+  border-right: 1px solid #4f4f4f;
+  border-bottom: 1px solid #5f5f5f;
+  border-left: 1px solid #7f7f7f;
+}
+.button:active {
+  color: #dedede;
+}
+
+/* Used by
+    views\users\_self_service.html.erb
+    views\users\show.html.erb
+*/
+/* The only difference between this and .button  is that this has no
+   position relative.  In IE7 the position: relative was making buttons
+   All over the page disappear.  This button is used on several pages where
+   this was occurring.  Should probably be refactored to something like:
+   .ie7 .button { position: static; }
+   but not right now.
+*/
+.button2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #4290D1 url(../images/bg-button.gif) repeat-x;
+  height: 20px;
+  padding: 2px 5px 2px 5px;
+  overflow: visible;
+  margin-left: 10px;
+  border-top: 1px solid #327FC0;
+  border-right: 1px solid #125FA0;
+  border-bottom: 1px solid #226FB0;
+  border-left: 1px solid #428FD0;
+  top: -1;
+  _top: -4;
+}
+/* Same as .button[disabled] */
+.button2[disabled] {
+  background: #808080 url(../images/bg-button-disabled.gif) repeat-x;
+  border-top: 1px solid #6f6f6f;
+  border-right: 1px solid #4f4f4f;
+  border-bottom: 1px solid #5f5f5f;
+  border-left: 1px solid #7f7f7f;
+}
+
+/* Used by
+    views\prefs\_language.html.erb
+    views\prefs\_settings.html.erb
+    views\users\show.html.erb
+*/
+.browserButton {
+  padding: 2px 6px;
+}
+.ie7 .browserButton {
+  padding: 1px 3px;
+}
+
+/* Used in many places */
+.formfield {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  background-color: #FFFFFF;
+  height: 16px;
+  border: 1px solid #999999;
+  color: #333333;
+  padding: 2px;
+}
+
+/* Used by
+    views\comments\_make_new.html.erb
+    views\projects\_edit_form.html.erb
+*/
+textarea.commentTextArea {
+  padding:2px; border:1px solid #999;
+  color:#333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  background-color: #FFFFFF;
+}
+
+/* Used by
+    views\shared\_masthead.html.erb
+    views\shared\_thin_masthead.html.erb
+*/
+.loginText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #333333;
+  text-align: right;
+  vertical-align: top;
+  white-space: nowrap;
+  padding-top: 7px;
+  padding-right: 4px;
+}
+
+/* Used by views\shared\_thin_masthead.html.erb */
+.loginSearch,
+.loginSearchSmall {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  color: #333333;
+  text-align: right;
+  vertical-align: top;
+  white-space: nowrap;
+  padding: 0px 0px 2px 0px;
+}
+.loginSearch { width: 300px; }
+.loginSearchSmall { width: 150px; }
+
+/* Used by views\shared\_search.html.erb */
+.loginSearchBox {
+  margin-top: 3px;
+  height: 13px;
+  border: 1px solid #d3d3d3;
+}
+.loginSearchButton {
+  margin: 2px 0 0 4px;
+}
+.loginSearchSmall .loginSearchButton {
+  margin: 2px 4px 0 4px;
+}
+
+/* Used by views\shared\_toolbar_table.html.erb */
+.indexSearchBox {
+  padding:1px;
+  height: 13px;
+  border: 1px solid #d3d3d3;
+}
+
+/* Used by
+    views\layouts\auth_layout.html.erb
+    views\layouts\licensing_layout.html.erb
+*/
+.versionText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #999999;
+  text-align: right;
+  vertical-align: top;
+  white-space: nowrap;
+  padding-top: 12px;
+  padding-right: 20px;
+}
+
+/* Used by
+    helpers\shared_helper.rb
+    helpers\workbooks_helper.rb
+    views\layouts\auth_layout.html.erb
+    views\layouts\welcome_layout.html.erb
+    views\licensing\_licensing_masthead.html.erb
+    views\licensing\index.html.erb
+    views\registration\_form.html.erb
+    views\registration\_masthead.html.erb
+    views\shared\failsafe.html.templ.erb
+    views\tasks\index.html.erb
+*/
+/* Note that this is not the style for the page title on most pages.
+   That element has the style newPageTitle. */
+.pageTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #666666;
+  text-align: left;
+}
+
+/* Used by
+    views\searches\index.html.erb
+    views\tags\show.html.erb
+*/
+.sectionTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #f7f7f7;
+  color: #666666;
+  text-align: left;
+  padding: 2px;
+  margin-bottom: 8px;
+}
+
+/* Used by
+    views\layouts\text_layout.html.erb
+    views\schedules\new.html.erb
+    application.js
+*/
+.flashText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #666666;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Used by views\system_users\import.html.erb */
+/* This may not actually get used, since the single "belowTheFold"
+   element doesn't have a "flashText" descendant, at least statically. */
+.belowTheFold .flashText {
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 5px;
+  display: block;
+}
+
+/* Used by
+    views\admin\motd.html.erb
+    views\layouts\text_layout.html.erb
+*/
+.motd {
+  font-size: 12px;
+  padding: 5px;
+  margin-left: 187px;
+  margin-bottom: 3px;
+  border: 1px solid #B9B9B9;
+  width: 540px;
+  background-color: #E9F1F7;
+}
+.motd_hide {
+  font-size: 10px;
+  float: right;
+  border: 1px solid #B9B9B9;
+  padding: 0px 2px;
+  margin-left: 5px;
+}
+
+/* Used by
+    views\layouts\text_layout.html.erb (sideNavText)
+    views\shared\_favorites.html.erb
+    views\shared\_mru_links.html.erb
+    views\shared\_mru_sidebar.html.erb
+    views\shared\_sidebar.html.erb
+*/
+.sideNavText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #999999;
+  text-align: left;
+  padding: 0px 2px 6px 10px;
+  white-space: nowrap;
+  line-height: 1.2em;
+}
+.sideNavTextSub {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #999999;
+  text-align: left;
+  padding: 2px 0px 0px 10px;
+  white-space: nowrap;
+}
+
+/* Used by views\layouts\text_layout.html.erb */
+.adminDivider {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f437d;
+  font-weight: bold;
+  margin-bottom: 5px;
+  cursor: default;
+}
+.adminThisSite {
+  border-top: dotted 1px #cfcfcf;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+li.adminSubNav a {
+  margin-left: 10px;
+}
+
+/* Used by
+    helpers\layout_helper.rbb
+    views\layouts\text_layout.html.erb
+    views\shared\_favorites.html.erb
+    views\shared\_mru_links.html.erb
+    views\shared\_mru_sidebar.html.erb
+    views\shared\_sidebar.html.erb
+    spec\controllers\application_spec.rb
+*/
+.sideNavSection {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #1f437d;
+  font-weight: bold;
+  border-top: dotted 1px #cfcfcf;
+  text-align: left;
+  margin: 0px 2px 0px 9px;
+  padding: 7px 10px 4px 1px;
+  white-space: nowrap;
+  cursor: default;
+}
+/* Used by views\shared\failsafe.html.templ.erb */
+.sideNavSectionNoBar {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #999999;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 5px;
+  padding: 2px 15px 4px 10px;
+  white-space: nowrap;
+}
+
+/* Used by views\shared\_column_names_row.html.erb */
+.checkboxandstar {
+  width: 45px;
+  padding-left: 5px;
+}
+.checkbox {
+  width: 20px;
+  float: left;
+  padding-top:2px;
+}
+
+/* Used in many places (e.g. tables) */
+.rowtone {
+  background: #f5f5f5;
+}
+
+/* Used by views\system_users\import.html.erb */
+.invisible {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+/* Used by
+    helpers\application_helper.rb (column_header_class)
+    views\admin\status.html.erb
+    views\admin\views.html.erb
+    views\permissions\_addedit.html.erb
+    views\permissions\_capabilities_edit_row.html.erb
+    views\shared\_sortable_table_header.html.erb
+    views\sites\_settings.html.erb
+    views\sites\show.html.erb
+ */
+.columnhead,
+a.columnhead,
+a.columnhead:link,
+a.columnhead:hover,
+a.columnhead:visited,
+a.columnhead:active,
+.columnhead span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #363636;
+  text-align: left;
+  padding-left: 8px;
+  height: 20px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+/* Used by
+    views\permissions\_addedit.html.erb
+ */
+.columnhead.centered {
+  text-align: center;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+td.columnhead {
+  border: 1px solid #c1c1c1;
+  background-color: #ececec;
+  color: #363636;
+}
+td.columnhead.last {
+  border-right: none;
+}
+td.columnhead.active {
+  background-color: #ececec;
+  font-weight: normal;
+  color: #363636;
+}
+td.columnhead a,
+td.columnhead a:visited,
+td.columnhead a:hover {
+  color: #363636;
+}
+
+/* TODO: consolidate the following "row" styles.
+   They share many common declarations.
+*/
+
+/* Used by
+    views\admin\status.html.erb
+    views\admin\views.html.erb
+    views\permissions\_addedit.html.erb
+    views\permissions\_capabilities_edit_row.html.erb
+    views\shared\_column_names_row.html.erb
+    views\sites\_settings.html.erb
+    views\sites\show.html.erb
+    views\system_users\_sites_membership_table.html.erb
+ */
+.textRow {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333333;
+  text-align: left;
+  vertical-align: middle;
+  height: 20px;
+  padding: 0px 5px 0px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+td.textRow.disabled {
+  color: #aaa;
+}
+
+/* Used by
+    models\workbook.rb
+    views\shared\_column_names_row.html.erb
+    spec\controllers\searches_controller_spec.rb
+*/
+.textRowName {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #177AD5;
+  text-align: left;
+  vertical-align: middle;
+  height: 20px;
+  font-weight: bold;
+  padding: 0px 5px 0px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 450px;
+}
+td.textRowName a,
+td.textRowName a:visited {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f437d;
+}
+td.textRowName a:hover {
+  color: #e87702;
+}
+
+/* Used by views\shared\_column_names_row.html.erb */
+/* Identical to above except for no text-overflow: ellipsis */
+/* flextables make this obsolete */
+/* TODO: remove this once oldtables are removed */
+.textRowNoTruncation {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333333;
+  text-align: left;
+  vertical-align: middle;
+  height: 20px;
+  padding: 0px 5px 0px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Used by views\permissions\_single_permission.html.erb */
+.permissionRow {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333333;
+  text-align: left;
+  vertical-align: middle;
+  height: 20px;
+  padding: 0px 2px 0px 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.permissionRowName {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #177AD5;
+  text-align: left;
+  vertical-align: middle;
+  height: 20px;
+  font-weight: bold;
+  padding: 0px 2px 0px 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 450px;
+}
+
+/* Used by
+    views\schedules\new.html.erb
+    views\users\new.html.erb
+*/
+.checkboxRow {
+  text-align: left;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  padding: 0px 0px 0px 5px;
+}
+
+/* Used by
+    helpers\shared_helper.rb
+    views\shared\_filter_setter.html.erb
+    views\shared\_recent_list.html.erb
+    views\shared\_recent_list_filtered.html.erb
+    views\tags\index.html.erb
+    views\users\public_users_list.html.erb
+    spec\helpers\shared_helper_spec.rb
+*/
+.RowSection {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  background-color: #FFFFFF;
+  color: #CC5624;
+  text-align: left;
+  vertical-align: bottom;
+  height: 18px;
+  font-weight: bold;
+  padding: 8px 5px 0px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 2px solid #cfcfcf;
+  padding-bottom: 2px;
+}
+.RowSection a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #CC5624;
+  text-align: left;
+  vertical-align: bottom;
+  height: 18px;
+  font-weight: bold;
+  padding: 8px 5px 0px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Used by
+    helpers\shared_helper.rb
+    views\layouts\text_layout.html.erb
+    spec\helpers\shared_helper_spec.rb
+*/
+.RowSectionSub {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #999999;
+  padding: 0px 2px 0px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: normal;
+}
+
+/* Used by views\shared\_column_thumbnail.html.erb */
+.thumbnails {
+  border: 1px solid #e9e9e9;
+  border-top: transparent;
+  padding: 5px;
+  position: relative;
+}
+.thumbnail_header {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.thumbnail_header_text_wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.thumbnail_header_text {
+  height: 22px;
+  line-height: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #1f437d;
+}
+.thumbnail_header_text a
+.thumbnail_header_text a:visited {
+  color: #1f437d;
+}
+.thumbnail_header_text a:hover
+.thumbnail_header_text a:active {
+  color: #e87702;
+}
+.thumbnail_header_text_disabled {
+  font-style: italic;
+}
+.thumbnail_footer {
+  height: 22px;
+  line-height: 22px;
+  text-align: right;
+  padding-right: 15px;
+}
+.thumbnail_footer a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #1f437d;
+  cursor: pointer;
+}
+.thumbnail_footer a:hover {
+  color: #e87702;
+}
+.thumbnail_left {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+}
+.thumbnail {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+}
+
+/* Used by views\shared\_column_thumbnail.html.erb */
+.workbook_thumbnail {
+  padding: 7px 7px 3px 3px;
+  width: 196px;
+  height: 198px;
+  background-image: url("../images/wb_border.png");
+  background-repeat: no-repeat;
+}
+.thumbnail_image {
+  border: 0;
+  margin: 0;
+  align: left;
+  width: 192px;
+  height: 192px;
+}
+
+/* Used by
+    views\shared\_column_thumbnail.html.erb
+    views\workbooks\download.html.erb
+*/
+.view_thumbnail {
+  padding: 0px;
+  width: 192px;
+  height: 192px;
+  border: 1px solid #E2E2E5;
+}
+
+/* Used by
+    mixins\flextable_support.rb
+    views\shared\_column_names_row.html.erb
+    views\shared\_column_thumbnail.html.erb
+    views\shared\_empty_row.html.erb
+*/
+.disabledWarning {
+  font-style: italic;
+  color: red;
+}
+
+/* Used in many places */
+.Textinsidetable {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333333;
+  padding: 5px 8px 5px 8px;
+}
+
+/* Used by
+    views\prefs\_language.html.erb
+    views\prefs\_settings.html.erb
+    views\users\show.html.erb
+*/
+.paddingNormal {
+  padding: 5px 8px;
+}
+.paddingTight {
+  padding: 2px 8px;
+}
+.paddingNormalTop {
+  padding-top: 5px;
+}
+.paddingNormalBottom {
+  padding-bottom: 5px;
+}
+
+/* Used by
+    views\licensing\license.html.erb
+    views\views\getauthinfo.html.erb
+*/
+.Textoutsidetable {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333333;
+  padding: 10px 10px 10px 0px;
+}
+
+/* Used by application.js (attach_char_limit_behavior) */
+label.remainingChars { float:left; width:100% }
+
+/* Used by _column_thumbnail.html.erb */
+.thumbnail_box {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  margin: 20px 10px;
+  cursor: default;
+}
+.thumbnail_box_workbook {
+  max-width: 241px;
+}
+.thumbnail_box_view {
+  max-width: 229px;
+}
+.thumbnail_details {
+  position: absolute;
+  z-index: 100;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #6c6c6c;
+  outline: 0;
+}
+.thumbnail_details a,
+.thumbnail_details a:visited {
+  color: #1f447d;
+  font-weight: bold;
+}
+.thumbnail_details a:hover,
+.thumbnail_details a:active {
+  color: #e87702;
+}
+.thumbnail_details_body {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 300px;
+}
+.thumbnail_details_body_top {
+  background-color: #f2f2f2;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  padding: 10px;
+}
+.thumbnail_details_body_shadow {
+  position: absolute;
+  z-index: -1;
+  top: 2px;
+  left: 2px;
+  bottom: -2px;
+  right: -2px;
+  background-color: #c1c1c1;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.thumbnail_details_left_triangle {
+  position: absolute;
+  top: 25px;
+  left: 0;
+}
+.thumbnail_details_left_triangle_top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-right: 20px solid #f2f2f2;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  -moz-border-top-colors: rgba(255,255,255,0);
+  -moz-border-bottom-colors: rgba(255,255,255,0);
+}
+.thumbnail_details_left_triangle_shadow {
+  position: absolute;
+  z-index: -1;
+  top: 2px;
+  left: 2px;
+  width: 0;
+  height: 0;
+  border-right: 20px solid #c1c1c1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  -moz-border-top-colors: rgba(255,255,255,0);
+  -moz-border-bottom-colors: rgba(255,255,255,0);
+}
+.thumbnail_details_right_triangle {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+.thumbnail_details_right_triangle_top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #f2f2f2;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  -moz-border-top-colors: rgba(255,255,255,0);
+  -moz-border-bottom-colors: rgba(255,255,255,0);
+}
+.thumbnail_details_right_triangle_shadow {
+  position: absolute;
+  z-index: -1;
+  top: 2px;
+  left: 2px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid #c1c1c1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  -moz-border-top-colors: rgba(255,255,255,0);
+  -moz-border-bottom-colors: rgba(255,255,255,0);
+}
+.thumbnail_label {
+  text-align: right;
+  padding-right: 5px;
+  width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.thumbnail_detail {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Used by workbooks/download.html.erb */
+.thumbnailLine {
+  margin-bottom: 10px;
+  min-width: 600px;
+  position: relative;
+  white-space: nowrap;
+}
+.thumbnailSpan {
+  display: inline-block;
+  vertical-align: top;
+}
+.thumbnailText {
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #6c6c6c;
+}
+.thumbnailText a,
+.thumbnailText a:visited {
+  color: #1f447d;
+  font-weight: bold;
+}
+
+/* Used by
+    _column_thumbnail.html.erb
+    _beaker_workbook_settings.html.erb
+    workbooks/download.html.erb
+*/
+.thumbLabels {
+  padding-right: 5px;
+  line-height: 16px;
+}
+
+/* Used by workbooks/download.html.erb */
+.thumbnailOptions{
+  overflow: hidden;
+  margin-right: 20px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+/* Used in many places (unfortunately) */
+.buffer {
+  height: 10px;
+  width: 10px;
+}
+
+/* Used by
+    views\admin\views.html.erb
+    views\permissions\_capabilities_edit_row.html.erb
+    views\permissions\_permissions_table.html.erb
+    views\searches\index.html.erb
+    views\shared\_ajax_table.html.erb
+    views\tags\show.html.erb
+    spec\controllers\searches_controller_spec.rb
+*/
+.pagecontrolTable {
+  table-layout:fixed;
+  width: 100%;
+  border: 1px solid #e9e9e9;
+}
+
+/* Used by
+    views\admin\status.html.erb
+    views\auth\uninitialized.html.erb
+    views\auth\unlicensed.html.erb
+    views\auth\unregistered.html.erb
+    views\comments\_comment_section.html.erb
+    views\data_connections\_search_form.html.erb
+    views\data_connections\show.html.erb
+    views\datasources\show.html.erb
+    views\domains\_edit_form.html.erb
+    views\groups\edit.html.erb
+    views\groups\import.html.erb
+    views\groups\new.html.erb
+    views\projects\_edit_form.html.erb
+    views\registration\_form.html.erb
+    views\schedules\new.html.erb
+    views\shared\_filter_setter.html.erb
+    views\shared\_monitor.html.erb
+    views\shared\_more_groups.html.erb
+    views\shared\_rename_asset.html.erb
+    views\sites\_settings.html.erb
+    views\sites\show.html.erb
+    views\system_users\_user_details_popup.html.erb
+    views\system_users\edit.html.erb
+    views\system_users\import.html.erb
+    views\system_users\new.html.erb
+    views\tags\index.html.erb
+    views\tasks\_datasource_details.erb
+    views\tasks\_edit_form.html.erb
+    views\users\new.html.erb
+    views\users\public_users_list.html.erb
+    views\views\_new_tag.html.erb
+    views\views\getauthinfo.html.erb
+    views\views\show.html.erb
+*/
+.formTable {
+  border: 1px solid #E2E2E5;
+}
+
+/* Used by views\sites\_edit.html.erb */
+.editSiteTable {
+  width: 100%;
+}
+.editSiteTable td {
+  padding: 5px;
+  vertical-align: top;
+}
+.editSiteTable input.formfield {
+  width: 100%
+}
+.editSiteTable input.userQuota {
+  width: 3em;
+}
+.editSiteTable input.userQuotaOff {
+  border-color: #ccc;
+}
+.editSiteTable label {
+  line-height: 2.2em;
+}
+.editSiteTable .user_quota_options {
+  padding-left: 20px;
+}
+.editSiteTable .userQuotaOptionsOff {
+  color: #ccc;
+}
+
+/* Used by views\sites\_edit.html.erb */
+#editSiteDlg {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #5a5a5a;
+  cursor: default;
+}
+#editSiteDlg .edit_site_heading {
+  font-weight: bold;
+  color: #666;
+  padding-bottom: 4px;
+}
+#editSiteDlg .edit_site_controls {
+  width: 100%;
+}
+#editSiteDlg .edit_site_controls td {
+  height: 24px;
+  line-height: 24px;
+}
+#editSiteDlg .edit_site_row {
+  vertical-align: top;
+  padding-left: 10px;
+}
+#editSiteDlg .edit_site_label {
+  vertical-align: top;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 120px;
+}
+#editSiteDlg .edit_site_text_disabled {
+  color: #ccc;
+}
+#editSiteDlg .edit_site_input {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#editSiteDlg .edit_site_input input {
+  width: 100%;
+  margin-left: -2px;
+  cursor: text;
+}
+#editSiteDlg .edit_site_textarea {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#editSiteDlg .edit_site_textarea textarea {
+  width: 100%;
+  margin-left: -2px;
+  resize: none;
+  cursor: text;
+}
+#editSiteDlg .edit_site_multiline {
+  padding-bottom: 8px;
+}
+#editSiteDlg .edit_site_single_line {
+  white-space: nowrap;
+  height: 20px;
+  line-height: 20px;
+}
+#editSiteDlg .edit_site_single_line * {
+  vertical-align: middle;
+}
+#editSiteDlg .user_quota_options {
+  padding-left: 20px;
+}
+#editSiteDlg .edit_site_spacer {
+  margin-top: 10px;
+  border-top: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+#editSiteDlg .edit_site_inline_spacer {
+  padding-left: 12px;
+}
+#editSiteDlg .dlgWarnings {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 1px solid #f80;
+}
+#editSiteDlg .dlgWarnings.hidden {
+  display: none;
+}
+#editSiteDlg .dlgWarnings img {
+  float: left;
+}
+#editSiteDlg .dlgWarnings ul {
+  margin-left: 19px;
+}
+#editSiteDlg .dlgWarnings li {
+  padding: 3px 5px;
+}
+#editSiteDlg .edit_site_buttons {
+  text-align: right;
+}
+
+/* Used by
+    views\prefs\_language.html.erb
+    views\prefs\_settings.html.erb
+    views\users\show.html.erb
+*/
+.userSettingsTable {
+  border: 1px solid #E2E2E5;
+  margin: 10px 0px 0px 10px;
+  width: 811px;
+}
+
+/* Used by
+    views\admin\status.html.erb
+    views\sites\_settings.html.erb
+    views\sites\show.html.erb
+*/
+table.statusTable {
+  width: 100%;
+}
+.statusTable th {
+  border-right: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  border-top: 1px solid #c1c1c1;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #f2f2f2;
+  height: 20px;
+  line-height: 20px;
+  font-weight: normal;
+}
+.statusTable th.first {
+  border-left: 1px solid #c1c1c1;
+}
+.statusTable td {
+  height: 20px;
+  line-height: 20px;
+}
+
+/* Used by views\admin\status.html.erb */
+.workerStatusRow td {
+  padding-left: 8px;
+  padding-top: 3px;
+}
+.workerStatusName {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+}
+
+/* Used by views\shared\_paging_controls.html.erb */
+.pagecontrolForm {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  padding-bottom: 1px;
+  vertical-align: baseline;
+}
+.ie6 .pagecontrolForm,
+.ie7 .pagecontrolForm {
+  vertical-align: bottom;
+}
+
+/* Used by
+    views\searches\index.html.erb
+    views\tags\show.html.erb
+*/
+.function {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  background: #F3F3F3;
+  text-align: left;
+  padding-left: 10px;
+  height: 25px;
+  vertical-align: middle;
+}
+/* Used by views\searches\index.html.erb */
+.function2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  background: #FFFFFF;
+  text-align: left;
+  padding-left: 10px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+/* Used by (at least)
+    views\admin\status.html.erb
+    views\auth\error_invalidsite.html.erb:
+    views\data_connections\_search_form.html.erb
+    views\groups\_group_choices.html.erb
+    views\groups\_user_choices.html.erb
+    views\permissions\_grantee_names.html.erb
+    views\prefs\_language.html.erb
+    views\shared\_items_per_page.html.erb
+    views\views\getauthinfo.html.erb
+*/
+select {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333333;
+  text-align: left;
+}
+
+/* Used by
+    views\comments\_edit_inplace.html.erb
+    views\comments\_single_comment_inner.html.erb
+*/
+.comment {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 10px 10px 5px;
+}
+.comment_user {
+  font-size: 11px;
+}
+.comment_time {
+  font-size: 11px;
+  color: #aaa;
+}
+
+/* Used by views\shared\_empty.html.erb */
+div.empty {
+  font-size: 12px;
+  color: #333333;
+  white-space: nowrap;
+  padding: 20px 0px 0px 20px;
+  font-style: italic;
+}
+
+/* Used by
+    helpers\shared_helper.rb
+    helpers\workbooks_helper.rb
+*/
+.filter {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #999999;
+  text-align: left;
+  padding-left: 10px;
+}
+
+/* Used by
+    views\projects\view.html.erb
+    views\shared\_paging_footer.html.erb
+    views\shared\_views_table.html.erb
+    views\users\public_users_list.html.erb
+*/
+.toolbar {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #999999;
+  padding: 8px 5px 8px 5px;
+}
+
+/* Used by
+    helpers\shared_helper.rb
+    views\shared\_toolbar_table.html.erb
+*/
+.managebar {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #464646;
+  padding: 0px 0px 0px 5px;
+  height: 36px;
+}
+/*.managebar a,
+.managebar a:visited {
+
+}
+.managebar a:hover,
+.managebar a:active {
+  color: #464646;
+}*/
+
+/* Used by
+    helpers\shared_helper.rb
+    spec\helpers\shared_helper_spec.rb
+*/
+.licensing_stats {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #999999;
+  padding: 0px 8px 0px 8px;
+}
+
+/* Used by
+    views\permissions\_effective_permissions.html.erb
+    views\permissions\_permissions_table.html.erb
+    views\shared\_paging_footer.html.erb
+    views\shared\_toolbar_table.html.erb
+    views\users\public_users_list.html.erb
+*/
+.toolbartable {
+  width: 100%;
+  position: relative;
+  cursor: default;
+}
+
+/* Used by
+    views\permissions\_effective_permissions.html.erb
+    views\permissions\_permissions_table.html.erb
+    views\shared\_toolbar_table.html.erb
+ */
+.toolbarhead_bg {
+  background-color: #ffffff;
+}
+
+/* Used by views\shared\_toolbar_table.html.erb */
+.toolbarhead_label {
+  color: #666666;
+  font-weight: normal;
+}
+
+/* Used by views\shared\_flat_sort_mode_control.html.erb */
+.match_toolbarhead_label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #464646;
+  font-weight: normal;
+}
+
+/* Used by helpers\link_helper.rb */
+a.quickFilterLink {
+  color: #2e85be;
+}
+
+/* Used by views\shared\_toolbar_table.html.erb */
+#manage {
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Used by views\shared\_paging_footer.html.erb */
+#itemsonpage {
+  white-space: nowrap;
+}
+
+/* Used by
+    views\shared\_paging_footer.html.erb
+*/
+#pagecontrol {
+  white-space: nowrap;
+}
+
+/* Used by
+    views\shared\_paging_controls.html.erb
+    views\shared\_paging_footer.html.erb
+*/
+.pagingFooterSpan {
+  display: inline-block;
+  vertical-align: top;
+  height: 20px;
+  line-height: 20px;
+}
+
+/* Used by
+    views\projects\view.html.erb
+    views\shared\_views_table.html.erb
+*/
+#pagecontrol_nolabel {
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+#pagecontrol_nolabel.thumbs {
+  text-align: right;
+}
+
+/* Used by views\shared\_toolbar_table.html.erb */
+#actions {
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Used by views\views\getauthinfo.html.erb */
+.authInfoLabelColumn {
+  float: left;
+  width: 110px;
+  font-weight: bold;
+}
+
+/* Used by
+    helpers\shared_helper.rb
+    mixins\flextable_support.rb
+    application.js
+    shopping_cart.js
+    spec\helpers\shared_helper_spec.rb
+*/
+.checkbox_container_unselected,
+.checkbox_container_selected {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+/* Used by
+    helpers\shared_helper.rb
+    mixins\flextable_support.rb
+*/
+.checkbox_button {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  right: 3px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+.checkbox_container_unselected .checkbox_button {
+  background-image: url("../images/checkbox_off.png");
+}
+.checkbox_container_unselected .checkbox_button:hover {
+  background-image: url("../images/checkbox_off_hover.png");
+}
+.checkbox_container_unselected .checkbox_button:active {
+  background-image: url("../images/checkbox_off_click.png");
+}
+.checkbox_container_selected .checkbox_button {
+  background-image: url("../images/checkbox_on.png");
+}
+.checkbox_container_selected .checkbox_button:hover {
+  background-image: url("../images/checkbox_on_hover.png");
+}
+.checkbox_container_selected .checkbox_button:active {
+  background-image: url("../images/checkbox_on_click.png");
+}
+
+/* Used by views\system_users\_sites_membership_table.html.erb */
+.customCheckbox {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+.customCheckbox {
+  background-image: url("../images/checkbox_off.png");
+}
+.customCheckbox:hover {
+  background-image: url("../images/checkbox_off_hover.png");
+}
+.customCheckbox:active {
+  background-image: url("../images/checkbox_off_click.png");
+}
+.customCheckbox.checked {
+  background-image: url("../images/checkbox_on.png");
+}
+.customCheckbox.checked:hover {
+  background-image: url("../images/checkbox_on_hover.png");
+}
+.customCheckbox.checked:active {
+  background-image: url("../images/checkbox_on_active.png");
+}
+
+/* Used by
+    helpers\shared_helper.rb
+    mixins\flextable_support.rb
+    views\tasks\_edit_lytebox.html.erb
+    application.js
+    shopping_cart.js
+    spec\controllers\views_controller_spec.rb
+    spec\helpers\shared_helper_spec.rb
+    spec\mixins\flextable_support_spec.rb
+*/
+.multi_select_checkbox {
+  margin: 3px;
+  height: 13px;
+  width: 13px;
+  padding: 0;
+  cursor: pointer;
+  vertical-align: bottom;
+  *overflow: hidden;
+}
+
+/* Used by views\registration\_form.html.erb */
+.form_required {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-decoration: underline;
+}
+.form_required_missing {
+  color: #333300;
+  background-color: #FFFF00;
+  text-decoration: underline;
+}
+
+/* Used by views\views\_tags.html.erb */
+.adminControlEmpty {
+  color: #999999;
+}
+
+/* Used by views\shared\_multiselect_select.html.erb */
+.actionMenuItem,
+.actionMenuItemDisabled,
+.firstActionMenuItem,
+.firstActionMenuItemDisabled {
+  float: left;
+  padding: 0px 8px 0px 8px;
+  margin: 0px;
+  color: #464646;
+}
+.actionMenuItemDisabled, .firstActionMenuItemDisabled { color: #999999; }
+.firstActionMenuItemDisabled, .firstActionMenuItem { padding-left: 0 }
+
+/* Used by views\data_connections\show.html.erb */
+.bold {
+  font-weight: bold;
+}
+
+/* Used by views\shared\_thin_masthead.html.erb */
+.minwidth1 {
+  position: relative;
+  width: 100%;
+  min-width: 768px;
+  border-top: 5px ;
+  border-bottom: 5px;
+}
+.ie6 .minwidth1,
+.ie7 .minwidth1 {
+  width: 1000px;
+}
+
+/* Used by
+  views\layouts\single_embedded_layout.html.erb (possibly)
+  views\layouts\single_layout.html.erb
+*/
+.bodySingleView.ie6 .minwidth1,
+.bodySingleView.ie7 .minwidth1 {
+  width: 100%;
+}
+
+/* Used by views\shared\_favorites.html.erb */
+.faveitem {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #2e85be;
+  padding-right: 12px;
+}
+
+/* Used by views\shared\_thin_masthead.html.erb */
+.collapse {
+  position:absolute;
+  bottom: 0;
+  height: 8px;
+  text-align: center;
+  white-space: nowrap;
+  clear: both;
+  vertical-align: top;
+  left: 0px;
+  right: 0px;
+  z-index: 3;
+}
+
+/* Used by views\shared\_thin_masthead.html.erb */
+.flashContainer {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  margin: 35px auto 0 auto;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: bottom;
+  width: 100%;
+  min-width: 768px;
+}
+.flashContainer .flashText {
+  padding-bottom: 0;
+}
+
+/* Used by views\shared\_thin_masthead.html.erb */
+/* The three column layout for the single view header is described here: http://alistapart.com/articles/holygrail */
+.thinHeader {
+  background-image: url(../images/thin_header_bg.png);
+  vertical-align: top;
+  height: 52px;
+  padding: 10px 330px 0 65px;
+  text-align: left;
+  white-space: nowrap;
+  position: relative;
+}
+.thinHeaderThinner {
+  height: 51px;
+  position: relative;
+}
+.thinHeader .column {
+  position: relative;
+  float: left;
+}
+/* Also used by views\shared\_breadcrumbs.html.erb */
+.thinheader-body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #999999;
+  padding: 3px 0px 3px 0px;
+}
+
+/* Used by views\shared\_thin_masthead.html.erb */
+.viewOrWorkbookName {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #434E7F;
+  text-align: left;
+  padding-top: 0px;
+  padding-bottom: 2px;
+}
+
+/* Used by views\shared\_thin_masthead.html.erb */
+#center {
+  width: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+#left {
+  position: absolute;
+  width: 55px;          /* LC width */
+  left: 0px;
+  top: 0px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+#right {
+  z-index: 4;
+  width: 330px;          /* RC width */
+  margin-right: -330px;  /* RC width */
+}
+
+/* Used by
+    views\licensing\_licensing_masthead.html.erb
+    views\registration\_masthead.html.erb
+*/
+.licensingPage {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+}
+
+/* Used by
+    views\registration\_form.html.erb
+    views\sites\_edit.html.erb
+    views\system_users\_sites_membership_table.html.erb
+    spec\controllers\sites_controller_spec.rb
+*/
+.hidden {
+  display: none;
+}
+
+/* Used by
+    views\groups\_process_import.html.erb
+    views\groups\import.html.erb
+    views\permissions\index.html.erb
+    views\shared\_breadcrumbs.html.erb
+    views\shared\_paging_controls.html.erb
+    views\system_users\_import_results.html.erb
+    views\system_users\import.html.erb
+*/
+.pipe { color:#999999; }
+
+/* Used by
+    views\groups\import.html.erb
+    views\permissions\_assign_to_contained.html.erb
+    views\system_users\import.html.erb
+    views\users\_license_needed.html.erb
+*/
+.grayText { color: #999999; }
+
+/* Used by views\shared\_toolbar_table.html.erb */
+.actionsGlassPane {
+  background-color: #f0f0f0;
+  opacity: .6;
+  filter: alpha(opacity=60);
+  position: absolute;
+  z-index: 900;
+  display: none;
+}
+
+/* Used by views\layouts\welcome_layout.html.erb */
+.tabText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 10px 0px 0px;
+  float: left;
+}
+
+/* Used by views\schedules\new.html.erb */
+.hourlyEnabled .hourlyDef {
+  color: #333333;
+}
+.hourlyDef {
+  color: #aaaaaa;
+}
+.hourlyEnabled .hourlyDef select {
+  color: #333333;
+  background-color: #ffffff;
+}
+.hourlyDef select {
+  color: #aaaaaa;
+  background-color: #ffffff;
+}
+.dailyEnabled .dailyDef {
+  color: #333333;
+}
+.dailyDef {
+  color: #aaaaaa;
+}
+.dailyEnabled .dailyDef select {
+  color: #333333;
+  background-color: #ffffff;
+}
+.dailyDef select {
+  color: #aaaaaa;
+  background-color: #ffffff;
+}
+.weeklyEnabled .weeklyDef {
+  color: #333333;
+}
+.weeklyDef {
+  color: #aaaaaa;
+}
+.weeklyEnabled .weeklyDef select {
+  color: #333333;
+  background-color: #ffffff;
+}
+.weeklyDef select {
+  color: #aaaaaa;
+  background-color: #ffffff;
+}
+.monthlyEnabled .monthlyDef {
+  color: #333333;
+}
+.monthlyDef {
+  color: #aaaaaa;
+}
+.monthlyEnabled .monthlyDef select {
+  color: #333333;
+  background-color: #ffffff;
+}
+.monthlyDef select {
+  color: #aaaaaa;
+  background-color: #ffffff;
+}
+
+/* Used by views\admin\status.html.erb (possibly) */
+.allow_scheduling_enabled .allow_scheduling,
+.enable_guest_enabled .enable_guest {
+  color: #333333;
+}
+.allow_scheduling, .enable_guest {
+  color: #aaaaaa;
+}
+
+/* Used by
+    views\shared\_disabled_asset_warning.html.erb
+    views\views\show.html.erb
+*/
+.disabledAsset {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ff0000;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+/* Used by views\shared\_verify_email.html.erb */
+.nagText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #aa2222;
+  text-align: left;
+  margin-top: 12px;
+  line-height: 20px;
+}
+
+/* Used by views\layouts\text_layout.html.erb */
+.mastheadMotdAndFlash {
+  float: left;
+}
+
+/* Used by views\layouts\text_layout.html.erb */
+.upgradeButtonContainer {
+  float: right;
+}
+
+/* Used by views\shared\_sortable_table_header.html.erb */
+.static_column_header {
+  color: #363636;
+  white-space: nowrap;
+}
+
+/* Used by views\layouts\text_layout.html.erb */
+.flash_retrofit {
+  position: relative;
+  padding-left: 187px;
+}
+
+/* Used by
+    mixins\flextable_support.rb
+    views\shared\_all_sites_mode_control.html.erb
+    views\shared\_display_mode_control.html.erb
+    views\shared\_filter_mode_control.html.erb
+    views\shared\_page_selection_controls.html.erb
+    \views\shared\_sort_mode_control.html.erb
+*/
+.currentFilter {
+  display: block;
+  width: 100%;
+  height: 16px;
+  line-height: 17px;
+  padding-left: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #333333;
+  font-weight: normal;
+}
+
+/* Used by views\shared\_sort_mode_control.html.erb */
+.wide.nav {
+  width: 120px;
+  background: transparent url(../images/selectBg120.png) 0 0 no-repeat;
+}
+.clearWideNav {
+  width: 120px;
+  background: transparent url(../images/selectNone120.png) 0 0 no-repeat;
+}
+
+/* Used by
+    views\shared\_masthead.html.erb
+    views\shared\_title_only_masthead.html.erb
+*/
+.mastheadLogo {
+  margin-left: 9px;
+  margin-top: 20px;
+}
+
+/* Used by
+    views\admin\status.html.erb
+    views\prefs\_settings.html.erb
+*/
+.checkboxInsideForm {
+  margin-left: 5px;
+}
+
+/* Used by views\shared\_flat_sort_mode_control.html.erb */
+a.unselectedSortTitle,
+a.unselectedSortTitle:visited {
+  line-height: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #5473a0;
+  padding-right: 7px;
+}
+a.unselectedSortTitle:hover,
+a.unselectedSortTitle:active {
+  color: #e87702;
+}
+a.selectedSortTitle,
+a.selectedSortTitle:visited {
+  line-height: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #5473a0;
+  padding-right: 7px;
+}
+a.selectedSortTitle:hover,
+a.selectedSortTitle:active {
+  color: #e87702;
+}
+
+/* Used by views\shared\_paging_controls.html.erb */
+.footerLinkText {
+  font-size: 12px;
+}
+
+/* Used by
+    views\layouts\download_layout.html.erb
+    views\layouts\text_layout.html.erb
+*/
+.footerNav {
+  margin: 5px;
+  overflow: hidden;
+  padding-left: 0;
+}
+.footerNav li {
+  float: left;
+  padding: 0 12px;
+  list-style: none;
+  color: #999999;
+  font-size: 10px;
+}
+.footerNav li.first {
+  padding-left: 0;
+}
+
+/* Used by views\shared\_paging_controls.html.erb */
+.controlsNudge {
+  padding-left: 16px;
+}
+
+/* Used by views\shared\_favorites.html.erb */
+.sidebarFavorites {
+  list-style: none;
+  padding-left: 0px;
+  margin: 0;
+}
+
+/* Used by
+    views\projects\view.html.erb
+    views\shared\_views_table.html.erb
+*/
+.topPagingControls {
+  float: right;
+  height: 22px;
+  margin-top: -28px;
+  padding-right: 2px;
+  padding-bottom: 1px;
+}
+.ie6 .topPagingControls,
+.ie7 .topPagingControls {
+  position: relative;
+}
+/* Used by views\data_connections\index.html.erb */
+.topPagingControls.dc_form,
+.topPagingControls.dc_form {
+  padding-top: 32px;
+  padding-bottom: 0px;
+  margin-bottom: -2px;
+}
+
+/* Used in many places */
+.formHolder {
+  padding-top: 8px;
+  padding-left: 8px;
+}
+
+/* Used by views\shared\_sidebar.html.erb (probably unnecessary) */
+.sideNavList {
+  margin: 0px;
+  padding: 0px;
+}
+/* This may not actually get used, since sideNavList seems to only be applied to a ul */
+li.sideNavList {
+  line-height: 1.1em;
+  background-color: #ffffff;
+  list-style: none;
+  margin: 1px 0px 0px 0px;
+  padding: 0px 10px 0px 0px;
+  text-indent: 6px;
+  color: #2e85be;
+}
+
+/* Used by views\shared\_sortable_table_header.html.erb */
+.dynamic_column_header {
+  line-height: 1.1em;
+  white-space: normal;
+}
+
+/* Used by
+    views\admin\_schedules.html.erb
+    views\admin\status.html.erb
+*/
+.maintenanceTitle {
+  color: #666666;
+  padding-top: 25px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Used by views\shared\_mru_links.html.erb */
+.sidebarLink {
+  color: #2e85be;
+}
+
+/* Used by views\shared\_page_selection_controls.html.erb */
+.page_selector_checkbox {
+  float: left;
+  margin-top: 2px;
+  margin-left: 3px;
+}
+.ie6 .pageSelectorContainer,
+.ie7 .pageSelectorContainer {
+  width: 40px;
+}
+
+/* Used by
+    mixins\flextable_support.rb
+    views\shared\_page_selection_controls.html.erb
+*/
+.nav.page_selector_pulldown {
+  background: none;
+  border: 0px none;
+  color: black;
+  margin-left: 5px;
+  margin-top: 0px;
+  width: 15px;
+}
+.nav.page_selector_pulldown br {
+  display: none;
+}
+.ie6 .nav.page_selector_pulldown br {
+  display: inline;
+}
+.ie6 .nav.page_selector_pulldown,
+.ie7 .nav.page_selector_pulldown {
+  margin: 0px;
+}
+.ie6 .nav.page_selector_pulldown{
+  background: none;  /* for some reason ie6 isn't picking up the background: none from above*/
+  display: inline;   /* must be inline to show on the same line as the image */
+}
+.ie6 .nav.page_selector_pulldown li {
+  display: inline;   /* must be inline to show on the same line as the image */
+}
+.ie6 .nav.page_selector_pulldown li .currentFilter {
+  display: inline;   /* must be inline to show on the same line as the image */
+}
+/* because the container is inline, need to scoot the ul up two pixels
+ * in order to have it stay visible so the mouse can move into it */
+.ie6 .nav.page_selector_pulldown li ul {
+  margin-top: -3px;
+}
+
+/* Used by views\shared\_paging_controls.html.erb */
+.pagenull {
+  color: #CCCCCC;
+}
+
+/* Used by views\shared\_toolbar_table.html.erb */
+.sortByBar {
+  white-space: nowrap;
+  height: 20px;
+  border: 1px solid #c1c1c1;
+  background-color: #f2f2f2;
+}
+.flatSortRow {
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 5px;
+}
+.flatSortRow .page_selector_pulldown {
+  float: left;
+  margin-left: -3px;
+  margin-top: 0px;
+}
+/* ie treats float:left as forcing display block.  we need things to be inline in ie6 */
+.ie6 .flatSortRow .page_selector_pulldown {
+  float: none;
+}
+
+/* Used by views\shared\_flat_sort_mode_control.html.erb */
+.flatSortContainer {
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  padding-left: 10px;
+}
+
+/* Used by
+    mixins\flextable_support.rb
+    views\shared\_all_sites_mode_control.html.erb
+    views\shared\_display_mode_control.html.erb
+    views\shared\_filter_mode_control.html.erb
+    views\shared\_page_selection_controls.html.erb
+    views\shared\_sort_mode_control.html.erb
+ */
+.nav, .nav ul {
+  margin: 0px;
+  width: 100px;
+  height: 16px;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #CCC;
+  background: transparent url(../images/selectBg.png) 0 0 no-repeat;
+  margin-left: 5px;
+  margin-right: 10px;
+  z-index: 111;
+}
+.ie6 .nav {
+  border: 0px none;
+  margin-top: 10px;  /* ie aligns the block element with the top so shove it down*/
+}
+.nav a {
+  display: block;
+  height: 16px;
+  line-height: 17px;
+  padding-left: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #333333;
+  font-weight: normal;
+}
+.nav a:hover {
+  text-decoration:none;
+}
+.nav a.list {
+  background: transparent url(../images/listBg.png) 0 0 no-repeat;
+  padding-left: 25px;
+}
+.nav a.thumb {
+  background: transparent url(../images/thumbBg.png) 0 0 no-repeat;
+  padding-left: 25px;
+}
+.nav ul li {
+  float: left;
+  width: 100px;
+}
+.nav li ul {
+  position: absolute;
+  width: 100px;
+  left: -999em;
+  background: none;
+  border: none;
+}
+.ie6 .nav li ul {
+  background: white;
+}
+.nav li:hover ul {
+  left: auto;
+  text-decoration: none;
+  margin-left: -1px;
+}
+.nav li:hover ul li.first{
+  border-top: 1px solid #CCC;
+}
+.nav li:hover ul li {
+  background-color: #ffffff;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+}
+.nav li:hover ul li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Used by
+    views\shared\_shopping_cart_contents.html.erb
+    shopping_cart.js
+*/
+/* Shopping cart styles and filter styles */
+#cartNoItems, #cartMoreItems {
+  color: #999;
+}
+.cartButtonDisabled {
+  background: transparent center center url("../images/light_greyx.png") no-repeat;
+  cursor: auto;
+}
+.cartButtonEnabled {
+  background: transparent center center url('../images/greyx.png') no-repeat;
+  cursor: pointer;
+}
+.cartItem .deleteBtn,
+#cartClearAllBtn .deleteBtn {
+  margin-right: 5px;
+}
+.cartPointer {
+  cursor: pointer;
+}
+/* Also used by views\shared\_toolbar_table.html.erb */
+.deleteBtn {
+  width: 16px;
+  height: 24px;
+  display: inline-block;
+}
+
+/* Used by views\shared\_user_autosuggest.html.erb */
+.cancelBtn {
+  background: transparent 2px 0px url('../images/delete-small.gif') no-repeat;
+  width: 16px;
+  height: 14px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Used by views\shared\_multiselect_select.html.erb (possibly) */
+.expandBtn {
+  background: transparent center center url('../images/expand_down.gif') no-repeat;
+  width: 18px;
+  height: 16px;
+  display: inline-block;
+}
+
+/* Used by views\shared\_toolbar_table.html.erb */
+#shoppingCartContainer {
+  z-index: 901;
+  position: relative;
+  height: 36px;
+}
+
+/* Used by views\shared\_shopping_cart_container.html.erb */
+#cartTopNav {
+  position: relative;
+  padding: 0;
+}
+#shoppingCartHolder {
+  height: 36px;
+  line-height: 36px;
+  overflow: hidden;
+}
+#shoppingCartHolder span {
+  margin-left: 0;
+}
+#shoppingCartHolder span.cartExpandBtn {
+  background: transparent 0 0 url('../images/expand_down.gif') no-repeat;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+}
+#shoppingCartHolder ul {
+  text-align: left;
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  line-height: 24px;
+  background: #fff;
+  border: 1px solid #aaa;
+  z-index: 901;
+}
+#shoppingCartHolder li div {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 3px;
+}
+#shoppingCartHolder li {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.shoppingCartTitle {
+  height: 36px;
+  line-height: 36px;
+  white-space: nowrap;
+}
+#cartHighlight {
+  cursor: pointer;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Used by views\users\_groups_and_users.html.erb */
+.caretToggle {
+  float: left;
+  color: #5a5a5a;
+  padding: 3px;
+  cursor: pointer;
+}
+
+/* Used by views\permissions\_addedit.html.erb */
+.downwardCaret {
+  -webkit-transform: rotate(90deg);  /* Chrome, Safari */
+  -moz-transform: rotate(90deg);  /* FF 3.5+ */
+  -o-transform: rotate(90deg);  /* Opera 10.5+ */
+  -ms-transform: rotate(90deg);  /* IE 9+ */
+  transform: rotate(90deg);   /* W3C future standard */
+}
+
+/* Used by views\permissions\_addedit.html.erb */
+.groupMembers li {
+  color: #aaa;
+  line-height: 10px !important;
+}
+
+/* Used by views\permissions\_addedit.html.erb */
+#permissionsSearch button#aeClearButton {
+  background: transparent url("../images/x_red.gif") center center no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  width: 15px;
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+}
+#permissionsSearch button#aeSearchButton {
+  background: transparent url("../images/search-ltr.png") center center no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 16px;
+  width: 15px;
+  margin: 0;
+  padding: 0 5px 0 5px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+#permissionsSearch {
+  border: 1px solid #AAAAAA;
+  margin-top: 0;
+  position: relative;
+  height: 16px;
+  overflow: hidden;
+}
+#permissionsSearch #searchHint {
+  color: #ccc;
+  cursor: text;
+  position: absolute;
+  padding: 0 0 0 0.25em;
+  left: 0pt;
+  top: 0pt;
+}
+#permissionsSearch input#searchInput {
+  border-width: 0;
+  float: left;
+  font-size: 1em;
+  line-height: 1em;
+  margin: 0;
+  padding: 0 0 2px 3px;
+  margin-top: 1px;
+  width: 16em;
+}
+#permissionsSearch label {
+  font-size: 1em;
+  top: 0.25em;
+}
+.selectedLi {
+  background: #CC5624;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+/* Used by
+    views\shared\_multiselect_select.html.erb
+    views\system_users\_sites_membership_table.html.erb
+
+  Also mentioned by jquery.autocomplete.css
+*/
+/* Revamped multiselect action styles */
+li.actionListItem {
+  overflow: auto;
+  padding: 3px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+ul.actionNav {
+  float: left;
+  width: 100%;
+}
+span.actionNavTitle {
+  color: #5473a0;
+  text-align:right;
+}
+span.actionNavTitle:hover {
+  color: #e87702;
+}
+span.actionNavContainer {
+  cursor: pointer;
+}
+/* Used by views\shared\_multiselect_select.html.erb */
+ul.actionSubnav {
+  color: #333;
+  text-align: left;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: -6px;
+  background: #fff;
+  border: 1px solid #aaa;
+  padding: 3px;
+  z-index:901;
+  overflow: visible;
+}
+ul.actionSubnav.above {
+  bottom: 14px;
+  top: auto;
+}
+
+/* Used in many places */
+strong {
+  font-weight: bold;
+}
+
+/* Used in several places */
+em {
+  font-style: italic;
+}
+
+ins {
+  text-decoration: underline;
+}
+
+del {
+  text-decoration: line-through
+}
+
+/* Used by views\shared\_toolbar_table.html.erb */
+#filterPopup {
+  position: absolute;
+  border: 1px solid #7F9DB9;
+  padding: 10px;
+  top: -30px;
+  left: 15px;
+  background-color: #fff;
+  width: 210px;
+  display: none;
+}
+#filterPopupContainer #tipsIcon {
+  cursor: pointer;
+  vertical-align: bottom;
+  margin-left: 5px;
+}
+#filterPopup #tipsIcon {
+  cursor: pointer;
+  vertical-align: bottom;
+  margin-left: 5px;
+}
+img#filterPopupHandle {
+  position: absolute;
+  left: -14px;
+  width: 14px;
+  height: 27px;
+}
+
+/* Used in many places */
+/* This is a bad idea (setting layout properties without regard to context) */
+input[type=radio], input[type=checkbox] { vertical-align:middle; }
+
+/* Used by views\permissions\_addedit.html.erb */
+input.no-outline:focus { outline: none; }
+
+/* Used? */
+a.disabled,
+a.disabled:visited {
+    color: #AAA;
+}
+a.disabled:hover {
+  color: #AAA;
+  text-decoration: none;
+}
+
+/* Used by
+    views\admin\_schedules.html.erb
+    views\admin\status.html.erb
+*/
+.linkList li {
+  padding-top: 5px;
+}
+
+/* Used by
+    views\admin\status.html.erb
+    views\tasks\_edit_form.html.erb
+*/
+.noteGrey {
+  color: #999;
+  font-size: 11px;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Used by
+    views\shared\500.html.erb
+    views\shared\failsafe_500.html.erb
+    views\views\error.html.erb
+*/
+blockquote {
+  background-color: #EEE;
+  padding: 10pt;
+}
+
+/* Used by
+    helpers\workbooks_helper.rb
+    views\shared\_column_thumbnail.html.erb
+*/
+.trunc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Used by views\auth\error_invalidsite.html.erb */
+.noSites p,
+#siteSelectionForm  select,
+#siteSelectionForm  p {
+  font-size: 12px;
+}
+#siteSelectionForm  select {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E2E5;
+  outline: none;
+}
+#siteSelectionForm button {
+  margin-top: 10px;
+  float: right;
+}
+.noSites p {
+  margin: 20px 15px;
+}
+
+/* User site selection */
+/* Used by views\system_users\_sites_membership_table.html.erb */
+.siteMembershipLabel {
+  max-width: 500px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.triStateCheck {
+  width: 13px;
+  height: 13px;
+}
+.triStateCheck.tsc-yes {
+  background: url("../images/checkbox_on.png") no-repeat;
+}
+.triStateCheck.tsc-yes:hover {
+  background: url("../images/checkbox_on_hover.png") no-repeat;
+}
+.triStateCheck.tsc-yes:active {
+  background: url("../images/checkbox_on_click.png") no-repeat;
+}
+.triStateCheck.tsc-no {
+  background: url("../images/checkbox_off.png") no-repeat;
+}
+.triStateCheck.tsc-no:hover {
+  background: url("../images/checkbox_off_hover.png") no-repeat;
+}
+.triStateCheck.tsc-no:active {
+  background: url("../images/checkbox_off_click.png") no-repeat;
+}
+.triStateCheck.tsc-mixed {
+  background: url("../images/checkbox_filled.png") no-repeat;
+}
+/* The negative left and right margins are to avoid a double border in the Add User UI.
+   We remove the margins when this table is used in the Site Membership dialog, where they are unnecessary. */
+#siteMembershipTable {
+  margin-left: -1px;
+  margin-right: -1px;
+  border: 1px solid #DADADA;
+}
+#siteMembershipDlg #siteMembershipTable {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#siteMembershipTable .headerRow {
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #DADADA;
+}
+/* IE7 seems to hide floating elements behind the background color.
+   To work around this, we give the floating elements themselves the background color. */
+.ie7 #siteMembershipTable .headerRow {
+  background-color: transparent;
+}
+.ie7 #siteMembershipTable .headerRow div {
+  background-color: #F3F3F3;
+}
+#siteMembershipTable .batchRow {
+  border-bottom: 1px solid #F3F3F3;
+}
+#siteMembershipTable .textRow {
+  line-height: 20px;
+}
+#siteMembershipTable .firstCol {
+  clear: both;
+}
+#siteMembershipTable .leftCol {
+  float: left;
+  border-right: 1px dotted #DDDDDD;
+}
+#siteMembershipTable .rightCol {
+  float: right;
+  border-left: 1px dotted #DDDDDD;
+}
+#siteMembershipTable .colSelect {
+  width: 20px;
+}
+#siteMembershipTable .colSelect input,
+#siteMembershipTable .colSelect div {
+  margin-top: 4px;
+  line-height: 13px;
+  height: 13px;
+}
+#siteMembershipTable .colSite {
+  overflow: hidden;
+}
+#siteMembershipTable .colLicense {
+  width: 95px;
+  overflow: visible;
+}
+#siteMembershipTable .colAdmin,
+#siteMembershipTable .colPublish,
+#siteMembershipTable .colViewData,
+#siteMembershipTable .colType {
+  width: 70px;
+  overflow: visible;
+}
+/* This element is an invisible spacer that takes up exactly the width of a scrollbar.
+   It is used to keep the first two rows in line with the rest of the rows. */
+#siteMembershipTable .extra {
+  overflow-y: scroll;
+  visibility: hidden;
+  height: 20px;
+  border-left: none;
+}
+#siteMembershipTable .siteRow.rowBand0 {
+  background-color: whiteSmoke;
+}
+
+#siteMembershipTable .scrollable {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 250px;
+  max-height: 250px;
+  width: 100%;
+}
+#siteMembershipTable .siteRow.dirty ul.mixed .actionNavTitle {
+  color: red;
+}
+#siteMembershipTable .siteRow.dirty .siteTitle,
+#siteMembershipTable .siteRow.dirty .actionNavTitle {
+  font-weight: bold;
+}
+#siteMembershipTable .siteRow.notMember.dirty .siteTitle {
+  text-decoration: line-through;
+}
+#siteMembershipTable .siteTitle {
+  vertical-align: middle;
+  display: block;
+  overflow: hidden;
+}
+#siteMembershipTable img {
+  vertical-align: middle;
+}
+#siteMembershipTable .siteRow.notMember .actionNav {
+  visibility: hidden;
+}
+#siteMembershipTable .siteRow.mixed .actionNavTitle {
+  color: #999;
+}
+#summaryText {
+  font-style: italic;
+}
+
+/* Used by
+    views\system_users\_site_membership.html.erb
+    views\system_users\_sites_membership_table.html.erb
+*/
+#membershipValidationMsg {
+  color: #f00;
+  float: left;
+  margin: 8px;
+  max-width: 400px;
+}
+.sitesWarn {
+  margin: 10px 0;
+}
+.sitesWarn  img {
+  margin-right: 5px;
+}
+
+/* Used by views\system_users\_site_membership.html.erb */
+#siteMembershipBtns {
+  float: right;
+  margin: 10px 0 10px 10px;
+}
+
+/* Used by views\layouts\text_layout.html.erb */
+.textLayoutContainer {
+  position: relative;
+  padding-left: 188px;
+  min-width: 412px;
+}
+.textLayoutTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 71px;
+  z-index: 1;
+}
+.textLayoutTopSpacer {
+  height: 71px;
+}
+.textLayoutLeft {
+  position: absolute;
+  top: 71px;
+  left: 0;
+  width: 188px;
+}
+.textLayoutBottom {
+  margin-top: 20px;
+  border-top: 1px solid #999;
+  white-space: nowrap;
+}
+
+.notificationsHide {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: #fff;
+  padding: 1px 3px 0 3px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16pt;
+  line-height: 36px;
+}
+
+.notificationsHide:hover {
+  font-weight: bold;
+}
+
+/* Used by views\layouts\notificatons_layout.html.erb */
+
+.notificationsLayoutBottom {
+  margin-top: 20px;
+  border-top: 1px solid #dcdcdc;
+  white-space: nowrap;
+  position: relative;
+  height: 50px;
+}
+
+.notificationsLayoutBottom .footerNav {
+  position: absolute;
+  right: 40px;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.notificationsLayoutBottom .footerNav li {
+  padding: 0;
+  list-style: none;
+  color: #999999;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Used by views\notificatons\post_login.html.erb */
+
+.notificationsMasthead {
+  height: 70px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dcdcdc;
+}
+.notificationsMasthead img {
+  position: absolute;
+  top: 15px;
+  left: 40px;
+}
+.notificationsFrame {
+    display: block;
+    margin: 0 auto;
+}
+.notificationsContinue {
+  position: absolute;
+  margin: 0 auto;
+  top: 25px;
+  right: 40px;
+}
+a.notificationsContinueBtn {
+  background-color: #E57817;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+/* Used by views\shared\_views_table.html.erb */
+/* work around IE7 stacking context bug */
+.ie7 .viewsTableTop {
+  position: relative;
+  z-index: 1;
+}
+
+/* Used by mixins\flextable_support.rb */
+.inlineBlockAlignTop {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Used by views\shared\_display_mode_control.html.erb */
+.displayModeButton {
+  display: inline-block;
+  vertical-align: top;
+  width: 19px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.displayModeButtonThumbnailsOn {
+  background-image: url("../images/displayModeButtonThumbnailsOn.png");
+}
+.displayModeButtonThumbnailsOff {
+  background-image: url("../images/displayModeButtonThumbnailsOff.png");
+}
+.displayModeButtonThumbnailsOff:hover {
+  background-image: url("../images/displayModeButtonThumbnailsHover.png");
+}
+.displayModeButtonListOn {
+  background-image: url("../images/displayModeButtonListOn.png");
+}
+.displayModeButtonListOff {
+  background-image: url("../images/displayModeButtonListOff.png");
+}
+.displayModeButtonListOff:hover {
+  background-image: url("../images/displayModeButtonListHover.png");
+}
+
+/* Used by tableau_masthead.js */
+.tab-img-spinner {
+  background-image: url("../images/loading.gif");
+  width: 24px;
+  height: 24px;
+}
+.tab-img-collapse {
+  background-image: url("../images/collapse.gif");
+}
+.tab-img-collapse:hover {
+  background-image: url("../images/collapse-mouseover.gif");
+}
+.tab-img-expand {
+  background-image: url("../images/expand.gif");
+}
+.tab-img-expand:hover {
+  background-image: url("../images/expand-mouseover.gif");
+}
+.tab-masthead-collapse-bar, .tab-masthead-collapse-trigger {
+  height: 8px;
+}
+.tab-masthead-collapse-trigger {
+  margin-right: auto;
+  margin-left: auto;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+
+.favorite_menu_enabled {
+  background-image: url("../images/star_filled_dark.png");
+}
+.favorite_menu_disabled {
+  background-image: url("../images/star_empty.png");
+}
+
+.tab-img-search {
+  background-image: url("../images/sidebar_search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+}
+
+.tab-img-workbook {
+  background-image: url("../images/workbook.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+.tab-img-view {
+  background-image: url("../images/view.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+
+/* Used by views\data_connections\_edit_form.html.erb */
+.tabEditConnInputHolder {
+  position: relative;
+  display: inline-block;
+  margin-left: 150px;
+}
+.tabEditConnInputClear {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  line-height: 11px;
+  font-size: 11px;
+  margin-top: -6px;
+  color: #797979;
+  cursor: pointer;
+  background-color: #F7F7F7;
+}
+.tabEditConnInputClear:hover {
+  color: #e87702;
+}
+.tabEditConnModified .tabEditConnInputClear {
+  display: block;
+}
+#tabEditConnDialog {
+  position: fixed;
+  display: none;
+  width: 450px;
+  margin: auto auto;
+  top: 50%;
+  left: 50%;
+  margin-left: -225px;
+  margin-top: -150px;
+  background: #eee;
+  border: 1px solid #ccc;
+  z-index: 10001;
+}
+.tabEditConnOverlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  background-color: #000;
+  z-index: 10000;
+}
+.tabEditConnInput {
+  width: 220px;
+}
+.tabEditConnInput.tabDisabled {
+  color: #aaa;
+  border-color: #aaa;
+  font-style: italic;
+}
+.tabEditButtons {
+  text-align: right;
+  margin-top: 10px;
+}
+.tabEditConnTitle {
+  color: #797979;
+  padding: 10px 10px 0 10px;
+  font-weight: bold;
+}
+.tabEditConnTableRow {
+  padding: 5px 0;
+  position: relative;
+}
+.tabEditConnLabelHolder {
+  position: absolute;
+  width: 150px;
+  top: 50%;
+  margin-top: -8px;
+}
+.tabEditConnLabelHolder label {
+  height: 16px;
+}
+.tabEditConnLabelHolder label, .tabEditConnEmebedHolder label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #8a8a8a;
+}
+.tabEditConnBody, .tabEditConnBodyOAuth {
+  margin: 10px;
+  padding: 15px;
+  background-color: #fff;
+}
+.tabEditConnEmebedHolder {
+  margin-left: 150px;
+}
+.tabEditConnEmebedHolder input {
+  margin-right: 10px;
+}
+.tabEditConnTest {
+  margin: 10px;
+}
+.tabEditConnTestLink {
+  cursor: pointer;
+  font-weight: bold;
+}
+.tabEditConnTestLink.tabDisabled {
+  visibility: hidden;
+}
+.tabEditConnMessages {
+  overflow: hidden;
+  margin: 0 10px;
+}
+#tabEditConnBusy {
+  display: none;
+  margin-right: 5px;
+}
+.tabEditConnButton, .authOAuthLoginBtn, .tabDataSyncButton {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #FFFFFF;
+  background: #E57817;
+  height: 26px;
+  line-height: 20px;
+  padding: 3px 7px;
+  overflow: visible;
+  margin-left: 10px;
+  position: relative;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.tabEditConnButton:hover, .authOAuthLoginBtn:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.tabEditConnButton:active, .authOAuthLoginBtn:active {
+  color: #dedede;
+  text-decoration: none;
+}
+.tabEditConnButton.tabDisabled, .authOAuthLoginBtn.tabDisabled {
+  color: #FFFFFF;
+  background: #999;
+  cursor: default;
+}
+.Textinsidetable .authOAuthLoginBtn {
+  margin-left: 0;
+}
+.tabEditConnForm {
+  margin: 10px 10px 0 10px;
+}
+.tabEditConnMonitorForm {
+  background-color: #fff;
+  margin: 15px;
+  padding: 10px 20px;
+}
+
+/* Used by javascripts\tableau_notifications.js */
+
+.tabGettingStartedDialog {
+  position: absolute;
+  width: 800px;
+  padding: 10px;
+  margin: auto auto;
+  top: 75px;
+  left: 50%;
+  margin-left: -400px;
+  background: #111;
+  z-index: 10001;
+  -webkit-box-shadow: 4px 4px 4px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 4px 4px 4px rgba(50, 50, 50, 0.75);
+  box-shadow: 4px 4px 4px rgba(50, 50, 50, 0.75);
+  /* For IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#323232')";
+  /* For IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#323232');
+}
+
+.tabGettingStartedDialog .tab-notifications {
+  margin: 10px;
+}
+
+.tabGettingStartedOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  background-color: #000;
+  z-index: 10000;
+}
+
+.tabGettingStartedClose {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: #E8762C;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.tabGettingStartedClose:hover {
+}
+
+.tabGettingStartedSuppress input {
+  margin-right: 5px;
+}
+
+.tabGettingStartedSuppress {
+  text-align: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  color: #999;
+}
+
+/* Used by datasources\index.html.erb */
+.tabDataSourceHelpLink {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+/* Used by javascripts\tableau_alerts.js */
+
+.tab-alerts-menu-popup {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  height: 1px;
+  background-color: #ececec;
+}
+
+.tab-alerts-menu-container {
+padding: 11px;
+background-color: #ececec;
+border: 1px solid #e0e0e0;
+}
+
+.tab-alerts-icon {
+  width: 16px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 3px;
+}
+
+
+.tab-alerts-icon.tab-alerts-notifier-actionable {
+  background-image: url("../images/alerts_actionable.png");
+}
+
+.tab-alerts-icon.tab-alerts-datasource-actionable {
+  background-image: url("../images/alerts_actionable_small.png");
+
+  width: 14px;
+  height: 13px;
+  margin-top: 4px;
+  margin-right: 2px;
+}
+
+.tab-alerts-icon.tab-alerts-notifier-information {
+  background-image: url("../images/alerts_information.png");
+}
+
+/* Hide the header (and the spinner it contains) by default */
+.tab-alerts-menu-container-header {
+  display: none;
+}
+
+/* The spinner in the menu container header */
+#tab-alerts-menu-container-header-spinner {
+  background-image: url("../images/busy.gif");
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin-bottom: 4px;
+  position: relative;
+  left: 50%;
+}
+
+.tab-alerts-item {
+  position: relative;
+  margin-right: 1px;
+  padding: 8px;
+  border: 1px solid #CCC;
+  background-color: #FFFFF4;
+  font-size: 11px;
+}
+
+.tab-alerts-item-header {
+  height: 28px;
+  margin-bottom: 5px;
+}
+
+.tab-alerts-item-header-text {
+}
+
+/* Chrome behaves as we'd like but Firefox and IE vertically align
+*  inline-blocks with overflow hidden relative to a regular inline span */
+.tab-alerts-item-header-static-text {
+  display: inline-block;
+  overflow: hidden;
+  line-height: 12px;
+  height: 12px;
+}
+
+.tab-alerts-item-truncated-text {
+  display : inline-block;
+  overflow : hidden;
+  white-space : nowrap;
+  text-overflow : ellipsis;
+  font-weight : bold;
+  line-height: 12px;
+  height: 12px;
+}
+
+.tab-alerts-footer {
+  position: relative;
+  margin-top: 5px;
+}
+
+.tab-alerts-item-action {
+  color: #5473a0;
+  cursor: pointer;
+}
+
+.tab-alerts-item-action:hover, .tab-alerts-item-action:active {
+  color: #e87702;
+  text-decoration: underline;
+}
+
+.tab-alerts-item-action.tab-disabled {
+  visibility: hidden;
+}
+
+.tab-alerts-item-action-last {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tab-alerts-item-detail {
+  position: relative;
+  padding: 1px;
+}
+
+.tab-alerts-item-detail-label {
+  position: absolute;
+}
+
+.tab-alerts-item-detail-value {
+  margin-left: 95px;
+}
+
+.tab-alerts-item-detail-datasource {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tab-alerts-item-detail-datasource
+.tab-alerts-item-detail-value {
+  font-weight: bold;
+}
+
+.tab-alerts-ds-msg {
+}
+
+.tab-alerts-ds-msg:hover {
+  text-decoration: underline;
+}
+
+.datasourceAlertPlaceholder {
+  visibility: hidden;
+  width: 130px;
+  display: block;
+}
+
+/* Used by views\layouts\_online_footer.html.erb */
+
+.saasFooter {
+  border-top: 1px solid #dcdcdc;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #979797;
+  padding-top: 10px;
+}
+
+.saasFooterLinks {
+  float: left;
+  margin-left: 30px;
+}
+.saasFooterLinks a {
+  margin-right: 15px;
+  color: #979797;
+}
+
+.saasFooterCopyright {
+  text-align: right;
+  margin-right: 30px;
+}
+
+/* Used by views\admin\_log_download.html.erb */
+
+#log_download th {
+  background-color:#f8f8f8;
+  border:1px solid gray;
+}
+
+#log_download .browserButton {
+  margin-top:7px;
+  height:auto;
+}
+
+#log_download td {
+  background-color:white;
+  border:1px solid gray;
+  padding: 3px 8px;
+}
+
+#log_download .error {
+  color: red;
+}
+
+div#log_download {
+  background-color:#ececec;
+  border:1px solid #e0e0e0;
+  padding:7px 10px 4px;
+  margin:4px 0px 0px 17px;
+  width:700px;
+}
+
+/* Used by views\views\getoauthinfo.html.erb */
+.authOAuthHolder {
+  margin: 50px auto;
+  text-align: center;  
+}
+
+.authOAuthLabel, .authOAuthSelectLabel, .authOAuthAccountAdvisory {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;  
+}
+
+.authOAuthLabel {
+  margin-bottom: 20px;
+}
+
+.authOAuthAccountAdvisory {
+  text-align: left;
+  margin: 20px auto;
+  width: 720px;
+  padding: 6px 18px;
+  border: 1px solid #C0C0C0;
+}
+
+.authOAuthAccountAdvisory p{
+  color: #909090;
+  margin: 12px 0;
+}
+
+.authOAuthAccountAdvisoryHighlight {
+  font-weight: bold;
+}
+
+.authOAuthSelectLabel {
+  margin-right: 5px;
+}
+
+.authOAuthSelectKeys {
+  color: #5473a0;
+  border: 1px solid #cecece;
+  vertical-align: middle;
+}
+
+.authOAuthLoginBtn {
+  margin: 0;
+}
+
+/* Used by javascripts\tableau_keychains.js */
+
+.tabKeychainsDescription {
+  padding: 8px;
+}
+.tabKeychains {
+  margin: 12px 0 2px 0;
+}
+.tabKeychainType {
+  position: relative;
+}
+.tabKeychainTypeName {
+  font-weight: bold;
+  background-color: #E9F0F8;
+  color: #5473a0;
+  padding: 5px 5px 5px 8px;
+}
+.tabKeychainAdd {
+  position: absolute;
+  left: 200px;
+
+  font-weight: normal;
+}
+.tabKeychainKeys {
+  margin-left: 8px;
+  line-height: 20px;
+}
+.tabKeychainKey {
+  position: relative;
+  padding: 8px 0 8px 20px;
+}
+.tabKeychainKeySecondary {
+  border-top: 1px solid #f2f2f2;
+}
+.tabKeychainKeyButtons {
+  margin-left: 10px;
+}
+.tabKeychainKeyDeleted .tabKeychainKeyName {
+  text-decoration: line-through;
+}
+.tabKeychainKeyName {
+  display: inline-block;
+  width: 270px;
+  max-width: 270px;
+  overflow: hidden;
+  vertical-align: top;
+}
+.tabKeychainButton {
+  color: #5473a0;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  max-width: 65px;
+  overflow: hidden;
+  vertical-align: top;
+}
+.tabKeychainButton:hover {
+  color: #e87702;
+  text-decoration: underline;
+}
+.tabKeychainButton:active {
+  color: #aaa;
+  text-decoration: underline;
+}
+.tabKeychainButton.tabDisabled {
+  color: #dedede;
+  cursor: default;
+}
+.tabKeychainTestSuccess, .tabKeychainTestFailure {
+  display: inline-block;
+  width: 335px;
+  vertical-align: top;
+}
+.tabKeychainTestFailure, .tabKeychainError {
+  color: #c00;
+}
+
+.tabKeychainError {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Used by javascripts\tableau_connections.js */
+.tabEditConnOAuthChoice {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.tabEditConnOAuthChoice label {
+  padding: 0 5px;
+  vertical-align: middle;
+}
+.tabEditConnOAuthKeyChoice select {
+  color: #5473a0;
+  border: 1px solid #cecece;
+  margin: 6px 0 0 17px;
+  max-width: 373px;
+  /* css hack, property is only applied to ie6/7 which ignore max-width on a select*/
+  *width: 373px;
+  vertical-align: middle;
+}
+.tabEditConnOAuthAddKeyLink {
+  cursor: pointer;
+}
+.tabEditConnOAuthAuthTitle {
+  font-weight:  bold;
+}
+.tabEditConnOAuthTest {
+  padding: 20px 0 0 10px;
+}
+.tabEditConnOAuthDescription {
+  padding-top: 10px;
+}
+.tabEditConnOAuthMessageHolder {
+  padding-top: 5px;
+}
+.tabEditConnOAuthBusy {
+  background-image: url(../images/busy.gif);
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.tabConnectionTestError {
+  color: rgb(238, 0, 0);
+}
+.tabUserSelectNone {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.tabSamlAdminOuter {
+  width: 830px;
+  padding: 10px 5px;
+  margin-top: 5px;
+}
+
+
+.tabSamlAdminSection {
+  margin: 15px 0px 0px 10px;
+  width: 800px;
+}
+
+.tabSamlAdminSection .external {
+  background-color: #EBF3F7;
+}
+
+.tabSamlAdminSection .externalCaption, .tabSamlAdminSection .stepNumber {
+  font-weight: bold;
+}
+
+.tabSamlAdminSection .content {
+    padding: 10px 20px;
+}
+
+.tabSamlUrlHolder {
+  padding: 1px 2px;
+  width: 580px;
+  background-color: #eee;
+}
+
+.tabSamlLabel {
+  display: inline-block;
+  text-align: left;
+  width: 120px;
+  vertical-align: middle;
+}
+
+.tabSamlRightAlignRow {
+  width: 750px;
+  text-align: right;
+  margin: 5px 0;
+}
+
+.tabSamlOptionsList {
+  margin-left: 10px;
+}
+
+.tabSamlOptionsList li {
+  list-style: disc;
+}
+
+#testSamlConnection {
+  margin-top: 5px;
+}
+
+.tabSamlStepsTable {
+  border-collapse: separate;
+  border-spacing: 5px;
+  width: 100%;
+  vertical-align: middle;
+  border: 0;
+  font-size: 10px;
+  line-height: 11px;
+  font-weight: bold;
+}
+
+.tabSamlStepsTable tr {
+  height: 40px;
+}
+
+.tabSamlStepCell {
+  padding: 5px;
+  width: 12.5%;
+}
+
+.tabSamlStep .stepNumber {
+  padding-right: 5px;
+  font-size: 12px;
+}
+
+/* Used by javascripts\tableau_datasync.js */
+.tabDataSyncHolder {
+  display: inline-block;
+  /*max-width: 1000px;*/
+}
+
+.tabDataSyncRefreshPicker {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 10px;
+  min-width: 950px;
+}
+
+.tabDataSyncPickerItem {
+  display: inline-block;
+  width: 300px;
+  margin: 8px;
+  vertical-align: top;
+}
+
+.tabDataSyncPickerItemRow {
+  display: inline-block;
+  border: 1px solid #FFF;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 8px;
+}
+
+.tabDataSyncPickerItemRowPrimary {
+  border: 1px solid #E2E2E5;
+  min-height: 75px;
+}
+
+.tabDataSyncPickerItemRowSecondary {
+  background-color: #E4E2E2;
+  border: 1px solid #E4E2E2;
+}
+
+.tabDataSyncPickerItemRowDisabled {
+  color: #ACAAAA;
+}
+
+.tabDataSyncPickerItemSelected {
+  background-color: #BDBEC2;
+}
+
+.tabDataSyncPickerItemDisabled {
+  background-color: #E5EBFC;
+}
+
+.tabDataSyncPickerRowBlock {
+  vertical-align: top;
+  display: inline-block;
+  padding: 8px 8px 0 8px;
+}
+
+.tabDataSyncPickerRowBlockNoWrap {
+  width: 176px;
+}
+
+.tabDataSyncRowBlockRight {
+  float: right;
+}
+
+.tabDataSyncRowBlockItem {
+  margin: 2px;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.tabDataSyncPickerIcon {
+  width: 75px;
+  height: 75px;
+}
+
+.tabDataSyncPickerIconManual {
+  background-image: url("../images/datasync_manual.png");
+}
+
+.tabDataSyncPickerIconServer {
+  background-image: url("../images/datasync_server.png");
+}
+
+.tabDataSyncPickerIconRemote {
+  background-image: url("../images/datasync_remote.png");
+}
+
+.tabDataSyncSchedules {
+  display: inline-block;
+  width: 100%;
+}
+
+table.tabDataSyncSchedulesListTable {
+  border: 1px solid #E2E2E5;
+  margin-bottom: 10px;
+  table-layout: fixed;
+  text-align: left;
+  width: 500px;
+}
+
+table.tabDataSyncSchedulesListTable th {
+  background-color: #f5f5f5;
+  padding: 5px;
+  padding-left: 8px;
+}
+
+table.tabDataSyncSchedulesListTable th,
+table.tabDataSyncSchedulesListTable td {
+  padding: 5px;
+  padding-left: 8px;
+}
+
+.tabDataSyncSchedulesListActionColumn {
+  width: 15%;
+}
+
+.tabDataSyncRemotePickerButton {
+  margin: 0;
+}
+
+.tabDataSyncRemoteAgentLabel {
+  display: inline-block;
+  margin: 2px 0px;
+}
+
+.tabDataSyncRemoteAgentLabelEmphasis {
+  font-weight: bold;
+}
+
+.tabDataSyncRemoteAgentSelector {
+  margin: 0;
+  min-width: 120px;
+}
+
+.tabDataSyncDialogOverlay {
+  position: fixed;
+  display: none;
+  top: 0
+;  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0, .4);
+  color: rgba(0,0,0, .4);
+  z-index: 10000;
+}
+
+.tabDataSyncDialog {
+  position: fixed;
+  margin: auto auto;
+  top: 50%;
+  left: 50%;
+  margin-left: -225px;
+  margin-top: -150px;
+  background: #eee;
+  border: 1px solid #ccc;
+  z-index: 10001;
+  padding: 30px 40px;
+}
+
+.tabDataSyncDialog span {
+  color: #5a5a5a;
+}
+
+.tabDataSyncDialog input {
+  color: #5a5a5a;
+  margin-left: 10px;
+}
+
+
+/***********************************************************************************************************************
+ * Copyright (c) 2011 Tableau Software, Incorporated and its licensors. All rights reserved.
+ * Protected by U.S. Patent 7,089,266; Patents Pending.
+ *
+ * Portions of the code
+ * Copyright (c) 2002 The Board of Trustees of the Leland Stanford Junior University. All rights reserved.
+ **********************************************************************************************************************/
+
+/*
+ * NOTE-jrockwood-2011-11-02!!!!!!!!!!!!!!!!!!!!!!!!!!
+ * There are two copies of this file: public\stylesheets and public\v_base\stylesheets. You need to keep them in sync.
+ * BUGZID 43658 tracks removing the duplication.
+ * Also note that this style sheet is used in vqlweb in the VqlResources Script# project.
+ */
+
+/*
+ * Styled buttons are the orangish-reddish buttons that are image-based
+ */
+
+/*
+  NOTE-jrockwood-2011-10-03: The original Busse buttons were image-based,
+  where the text was part of the image. This isn't good for localization,
+  so I pulled out the parts of the button into three images: left, middle,
+  and right. The HTML structure looks like this:
+  <button class="tab-styledButton">
+    <span class="tab-styledButtonLeft"></span>
+    <span class="tab-styledButtonMiddle">Button Text</span>
+    <span class="tab-styledButtonRight"></span>
+  </button>
+*/
+
+.tab-styledButton {
+  font: bold 10pt Arial, Helvetica, Sans-Serif;
+  color: white;
+  padding: 0;
+}
+
+.tab-styledButton, .tab-styledButtonLeft, .tab-styledButtonRight, .tab-styledButtonMiddle {
+  height: 26px;
+  background: transparent 0 0 no-repeat;
+  border: 0;
+  cursor: pointer;
+}
+
+.tab-styledButtonLeft, .tab-styledButtonRight {
+  float: left;
+  width: 6px;
+}
+
+.tab-styledButtonLeft {
+  background-image: url(/images/buttons/btn_left.png);
+}
+
+.tab-styledButtonRight {
+  background-image: url(/images/buttons/btn_right.png);
+}
+
+.tab-styledButtonMiddle {
+  float: left;
+  height: 22px;
+  background-image: url(/images/buttons/btn_middle.png);
+  background-repeat: repeat-x;
+  padding: 4px 14px 0px 14px;
+  white-space: nowrap;
+}
+
+.tab-styledButton:hover .tab-styledButtonLeft,
+.tab-styledButton:hover .tab-styledButtonRight,
+.tab-styledButton:hover .tab-styledButtonMiddle {
+  background-position: 0 -26px;
+}
+
+.tab-styledButton[disabled] .tab-styledButtonLeft,
+.tab-styledButton[disabled] .tab-styledButtonRight,
+.tab-styledButton[disabled] .tab-styledButtonMiddle {
+  background-position: 0 -52px;
+  cursor: default;
+}
+
+/*
+  IE7 doesn't do well with the HTML structure for the button, so the following changes are made:
+  * Don't show the rounded corners
+  * IE7 won't set the width of the button to match the contents, so it's going to be wider than
+    on other browsers. Therefore, the button needs to have the middle background image as well.
+*/
+.ie7 .tab-styledButton,
+.dj_ie7 .tab-styledButton {
+  display: inline-block;    
+  vertical-align: middle;
+  background-image: url(/images/buttons/btn_middle.png);
+  background-repeat: repeat-x;
+}
+
+.ie7 .tab-styledButton:hover,
+.dj_ie7 .tab-styledButton:hover {
+  background-position: 0 -26px;
+}
+
+.ie7 .tab-styledButton[disabled],
+.dj_ie7 .tab-styledButton[disabled] {
+  background-position: 0 -52px;
+  cursor: default;
+}
+
+.ie7 .tab-styledButtonLeft, .ie7 .tab-styledButtonRight,
+.dj_ie7 .tab-styledButtonLeft, .dj_ie7 .tab-styledButtonRight {
+  display: none;
+}
+
+.ie7 .tab-styledButtonMiddle,
+.dj_ie7 .tab-styledButtonMiddle {
+  float: none;
+  display: block;
+}
+
+
+/* Non-index pages */
+.columnEffectiveCapability { width: 220px; padding-left: 5px; }
+.columnEffectiveAllow, .columnEffectiveDeny { width: 65px; padding-left: 5px; }
+.columnEffectiveReason { padding-left: 5px; }
+
+/* checkboxes and stars */
+.columnCheckbox { width: 24px; }
+.columnStarAndCheckbox { width: 48px; }
+.public .columnStarAndCheckbox { width: 0px; }
+.public.admin .columnStarAndCheckbox { width: 48px; }
+
+/* Adjust for public */
+body.public div#ajax_content_workbooks .columnName { width: 200px; }
+body.public.admin div#ajax_content_workbooks .columnName { width: 240px; }
+div#ajax_content_workbooks .columnActions { width: 90px; }
+.public div#ajax_content_workbooks .columnActions { width: 115px; }
+
+/* Index Pages */
+/* Users */
+.columnUsersFriendlyName { }
+.columnUsersLoginAt { width: 135px; }
+.columnUsersLicensingRoleTranslatedName { width: 110px; }
+.columnUsersAdministrator { width: 90px; }
+.columnUsersPublisher { width: 95px; }
+.columnUsersRawDataSuppressor { width: 70px; }
+.columnTotalUsers { width: 60px; }
+.columnUsersName { width: 120px; }
+.columnUsersEmail { width: 120px; }
+.columnUsersActiveForDisplay { width: 65px }
+.columnUsersDigitalAccount { width: 60px }
+
+.public.admin .columnUsersFriendlyName { width: 150px; }
+.public.admin .columnUsersLoginAt { width: 135px; }
+.public.admin .columnUsersName { width: 100px; }
+.public.admin .columnUsersEmail { width: 100px; }
+
+/* User Details */
+.columnNoneSiteName { }
+.columnNoneLoginAt { width: 135px; }
+.columnNoneGetAdminTristate { width: 80px; }
+.columnNoneGetPublisherTristate { width: 95px; }
+.columnNoneWorkbooksCount { width: 105px; }
+.columnNoneDatasourcesCount { width: 115px; }
+
+/* System Users */
+.columnSystemUsersFriendlyName { }
+.columnSystemUsersLoginAt { width: 135px; }
+.columnSystemUsersLicensingRoleTranslatedName { width: 110px; }
+.columnSystemUsersSiteCount { width: 85px; }
+.columnSystemUsersMaxAdminLevel { width: 90px; }
+.columnSystemUsersName { width: 120px; }
+.columnSystemUsersDomainName { width: 90px; }
+
+/* Groups */
+.columnGroupsName { width: 400px; }
+.columnGroupsMembership { width: 120px; }
+.columnGroupsOwnerName { }
+
+/* Projects */
+.columnProjectsName { width: 300px; }
+.columnProjectsOwnerFriendlyName { width: 180px; }
+.columnProjectsCreatedAt { width: 110px; }
+.columnProjectsWorkbookCount { width: 85px; }
+.columnProjectsWorkbooksSize { width: 135px; }
+
+/* Connections */
+.columnDataConnectionsOwnerType { width: 40px; }
+.columnDataConnectionsOwnerName { width: 200px; }
+.columnDataConnectionsTdbclass { width: 175px; }
+.columnDataConnectionsCaption { width: 200px; }
+
+/* Licensing */
+.columnLicensesSerial { }
+.columnLicensesViewer { width:70px; }
+.columnLicensesInteractor { width:100px; }
+.columnLicensesMaintenance { width:120px; }
+.columnLicensesExpiration { width:90px; }
+.columnLicensesValid { width:90px; }
+.columnLicensesGuest { width:110px; }
+
+/* Views */
+.columnViewsName { }
+.columnViewsWorkbookName { width: 150px; }
+.columnViewsIndex { width: 80px; }
+.columnViewsOwnerFriendlyName { width: 100px; }
+.columnViewsUpdatedAt { width: 100px; }
+.columnViewsWorkbookProjectName { width: 100px; }
+.columnViewsViewCount { width: 60px; }
+.columnViewsActiveForDisplay { width: 100px; }
+.columnViewsDeleteLink { width: 100px; }
+
+/* Workbooks */
+.columnWorkbooksName { }
+.public .columnWorkbooksName { }
+.public.admin .columnWorkbooksName { }
+.columnWorkbooksViewCount { width: 85px; }
+.columnWorkbooksSize { width:75px; }
+.public.admin .columnWorkbooksSize { width: 50px; }
+.public.admin .columnWorkbooksState { width: 65px; }
+.columnWorkbooksOwnerFriendlyName { width:125px; }
+.public.admin .columnWorkbooksOwnerFriendlyName { width: 100px; }
+.columnWorkbooksUpdatedAt { width:130px; }
+.columnWorkbooksProjectName { width:100px; }
+.public .columnWorkbooksIndexActionLinks { width:200px; }
+.public.admin .columnWorkbooksIndexActionLinks { width:200px; }
+.columnWorkbooksDisplayTabs { width: 85px; }
+
+/* Schedules */
+.columnSchedulesName { }
+.columnSchedulesScheduleType { width: 150px; }
+.columnSchedulesTaskCount { width: 95px; }
+.columnSchedulesScheduleSerialStr { width: 95px; }
+.columnSchedulesRunNextAt { width: 150px; }
+
+/* Tasks */
+.columnTasksWName { width: 150px; }
+.columnTasksObjType { width: 40px; }
+.columnTasksSName { width: 150px; }
+.columnTasksPriority { width: 60px; }
+.columnTasksRunNextAt { width: 140px; }
+.columnTasksLastUpdate { width: 140px; }
+
+/* Data Sources */
+.columnDatasourcesName { width: 200px; }
+.columnDatasourcesDataConnectionTdbclass { width: 150px; }
+.columnDatasourcesOwnerFriendlyName { width: 150px; }
+.columnDatasourcesUpdatedAt { width: 140px; }
+.columnDatasourcesProjectName { }
+
+/* Sites */
+.columnSitesNumUsers { width: 95px; }
+.columnSitesNumAdmins { width: 125px; }
+
+
+.autocomplete {
+  position:absolute;
+  background-color:white;
+  border:1px solid #ccc;
+  margin:0px;
+  padding:0px;
+  font-size: 11px;
+  text-align:left;
+  z-index: 1000;
+}
+
+.autocomplete_fixed {
+  height: 200px;
+}
+
+.autocomplete_15em { /*width: 15em;*/ }
+
+.autocomplete ul {
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+  color: #333;
+}
+.autocomplete ul li.selected {
+  background-color: #177AD5;
+        font-weight: normal;
+}
+.autocomplete ul li.disabled {
+  color: #ccc;
+}
+.autocomplete ul li {
+  list-style-type:none;
+  display:block;
+  margin:0;
+  padding:5px;
+  cursor:pointer;
+}
+
+.combo /* look&feel of scriptaculous select box*/
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  width : 10em;
+  display : block;
+  text-align:left;
+  background: url('../images/bg_select.png') right;
+  background-color: white;
+  //height:18px;
+  cursor: pointer;
+  border:1px solid #ccc;
+  color:#333;
+}
+
+.linkcombo /* A combo that looks like a link */
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  display : inline;
+  text-align:left;
+  cursor: pointer;
+  border: 0px none;
+  background-color: transparent;
+  color:#177AD5;
+  padding: 0px;
+}
+
+
+.favorite {
+    height: 22px;
+    width: 22px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.yes, .mobileyes {
+    background: transparent url("../images/star_filled_dark.png") no-repeat scroll center 3px;
+}
+.no, .mobileno {
+    background: transparent url("../images/star_faded.png") no-repeat scroll center 3px;
+}
+.updating {
+    background: transparent url("../images/busy.gif") no-repeat scroll center 6px;
+}
+
+.favorite a {
+    border: medium none;
+    height: 22px;
+    width: 22px;
+    line-height: 22px;
+    outline-color: invert;
+    outline-style: none;
+    outline-width: medium;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.no:hover {
+    background: transparent url("../images/star_filled_light.png") no-repeat scroll center 3px;
+}
+
+
+.ac_results {
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+        padding: 0px;
+        border: 1px solid #aaa;
+        background-color: white;
+        overflow: hidden;
+        z-index: 99999;
+}
+
+.ac_results ul {
+        width: 100%;
+        list-style-position: outside;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+}
+
+.ac_results li {
+        /* margin: 0px; */
+        padding: 2px 5px;
+  padding-left:24px;
+        cursor: pointer;
+        display: block;
+        /*
+        if width will be 100% horizontal scrollbar will apear
+        when scroll mode will be used
+        */
+        /*width: 100%;*/
+        /*
+        it is very important, if line-height not setted or setted
+        in relative units scroll will be broken in firefox
+        */
+        line-height: 16px;
+        overflow: hidden;
+}
+
+.ac_loading {
+        background: white url('indicator.gif') right center no-repeat;
+}
+
+.ac_odd {
+        /* background-color: #eee; */
+}
+
+.ac_over {
+        background-color: #316AC5;
+        color: white
+}
+
+/* Icons for group and user li's */
+.ac_results .g {
+  background-image:url('../images/group.png');
+  background-position:2px 2px;
+  background-repeat:no-repeat;
+}
+.ac_results .u {
+  background-image:url('../images/user.png');
+  background-position:2px 2px;
+  background-repeat:no-repeat;
+}
+
+.ac_results .warning {
+  background-image:url('../images/exclamation.png');
+  background-position:2px 2px;
+  background-repeat:no-repeat;
+  cursor: auto;
+}
+
+.ac_results .warning.ac_over { background-color: white; color: inherit; }
+
+.ac_input {
+  width: 198px;
+}
+
+div.ac_results_placeholder {
+  padding:0 5px 5px 0;
+  text-align:left;
+  height:270px;
+}
+
+.ac_results li.actionListItem {
+  overflow:visible; 
+  font-size:11px; font-family: Verdana,Arial,Helvetica,sans-serif; 
+  text-decoration: none;
+  padding:3px;
+  cursor:pointer;
+}
+.ac_results li.actionListItem.disabled {
+  cursor: auto;
+  color: #ccc;
+}
+
+
+.flextable-table {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: default;
+}
+.flextable-header {
+  height: 22px;
+  white-space: nowrap;
+}
+.flextable-header-columns {
+  display: inline-block;
+  border-left: 1px solid #c1c1c1;
+  border-right: 1px solid #c1c1c1;
+}
+.flextable-header-column {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  white-space: nowrap;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  background-color: #e4e4e4;
+  color: #797979;
+  cursor: default;
+}
+.flextable-header-column.flextable-active {
+  background-color: #f2f2f2;
+  color: #363636;
+}
+/* work around an IE 7 stacking context bug */
+.ie7 .flextable-header-column {
+  z-index: 2;
+  filter: none;
+}
+.ie7 .flextable-header-column.flextable-active {
+  z-index: 1;
+  filter: none;
+}
+.flextable-content {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.flextable-rows-background {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+.flextable-row-background {
+  height: 22px;
+}
+.flextable-row-background.even {
+  background-color: white;
+}
+.flextable-row-background.odd {
+  background-color: #f7f7f7;
+}
+.flextable-row-background.flextable-selected {
+  background-color: #f3f3f3;
+}
+.flextable-content-columns {
+  position: relative;
+  display: inline-block;
+  background-color: #fefefe;
+  border-left: 1px solid #e9e9e9;
+  border-right: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
+}
+.flextable-content-column {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+.flextable-content-column-cells {
+}
+.flextable-cell {
+  height: 22px;
+}
+.flextable-header-text {
+  display: block;
+  font-size: 11px;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 20px;
+  line-height: 20px;
+}
+.flextable-header-column a {
+  color: #797979;
+}
+.flextable-header-column.flextable-active a {
+  color: #363636;
+}
+.flextable-cell-text {
+  font-size: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 22px;
+  line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.flextable-cell-text a,
+.flextable-cell-text a:visited {
+  color: #5a5a5a;
+}
+.flextable-cell-text a:hover,
+.flextable-cell-text a:active {
+  color: #e87702;
+}
+.flextable-cell-text .darkLink a,
+.flextable-cell-text .darkLink a:visited {
+  color: #5473a0;
+}
+.flextable-cell-text .darkLink a:hover,
+.flextable-cell-text .darkLink a:active {
+  color: #e87702;
+}
+.flextable-text-overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+.flextable-text-align-right {
+  text-align: right;
+  padding-right: 8px;
+}
+.flextable-header-left-border {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 1px;
+  border-left: 1px solid #c1c1c1;
+}
+.flextable-column-divider {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  width: 8px;
+  cursor: col-resize;
+}
+.flextable-header-column-spacer {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  width: 8px;
+}
+
+.flextable-user-select-none {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/* .tab-addusers */
+.tab-addusers{
+  background: #eee;
+  width: 550px;
+  padding:0px 0 10px 0;
+  color:#111;
+  overflow: hidden;
+}
+.tab-addusers div{
+  float: left;
+}
+
+/* row */
+.tab-addusers div.row{
+  margin: 0 10px 0 10px;
+  width: 520px;
+  background-color: #fff;
+  padding: 8px 0px 5px 10px;
+}
+.tab-addusers div.title-row{
+  margin-bottom: 0px;
+  background-color: #eee;
+  height: 25px;
+}
+.tab-addusers div.row#admin-options-row{
+  width: 100px;
+  display: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* column */
+.tab-addusers div.column{
+  position: relative;
+  width: 90px;
+  height: 75px;
+  margin: 0 6px 0 0;
+}
+.tab-addusers div.column label{
+  margin: 0 0 0 6px;
+  display: block;
+  padding: 0 0 10px 0;
+}
+.tab-addusers div.column input{
+  margin: 0 6px  0 6px;
+  float:left;
+}
+.tab-addusers div.column.label{
+  text-align: right;
+}
+.tab-addusers div.column.user-rights-values{
+  width :200px;
+}
+
+/*textarea*/
+.tab-addusers textarea{
+  float: left;
+  width: 380px;
+  height: 60px;
+  margin: -3px 6px 0 0;
+  color: #111;
+  resize: none;
+}
+
+/* message divs */
+.tab-addusers span#single-line-message{
+  color:#111;
+  font-weight: bold;
+  margin-left: 10px;
+  padding: 5px 5px 5px 15px;
+  display: block;
+  width: 80%;
+  float:right;
+  background-color: #ffa; 
+  display: none;
+}
+.tab-addusers #multiline-message{
+  background-color: #ffa;
+}
+.tab-addusers span#addusers-title{
+  padding: 5px 5px 5px 0px;
+  float: left;
+}
+.tab-addusers label.names-input-message{
+  color: #808080;
+  font-size: 11px;
+  width: 170px;
+}
+.tab-addusers .error{
+  color:#c00;
+  float: none;
+}
+.tab-addusers .success{
+  margin-right: 5px;
+}
+.tab-addusers .spinner-show{
+  display: inline-block;
+}
+
+/* control area : "Add" and "Cancel" buttons */
+.tab-addusers div.control{
+  padding-bottom:10px;
+}
+.tab-addusers div.control div{
+  position: absolute;
+  bottom: 0;
+}
+.tab-addusers div.control div input{
+  float: left;
+  margin: 2px;
+}
+.tab-addusers div.control input.add-user-control{
+  float: right;
+  margin: 0 10px 0 10px;
+  background-color: #f90;
+  color: #fff;
+  padding: 3px 9px 3px 9px;
+  border-width: 0;
+}
+.tab-addusers div.control input.disabled{
+  background-color: #999;
+}
+
+/* pop up glass */
+.tab-adduser-popup-glass{
+  background-color:#000;
+  opacity: .5;
+  position: absolute;
+  z-index: 999;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+
+/* pop up */
+.tab-adduser-popup{
+  z-index: 1000;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  margin-left: -350px;
+}
+
+
+.tab-datepicker {
+  display: inline-block;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  cursor: default;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+}
+
+.tab-datepicker-header {
+  position: relative;
+  text-align: center;
+}
+
+.tab-datepicker-header-text {
+  padding: 0px 3px;
+  line-height: 18px;
+}
+
+.tab-datepicker-header-button {
+  position: absolute;
+  width: 20px;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid transparent;
+  font-size: 15px;
+  line-height: 12px;
+  color: #797979;
+}
+.tab-datepicker-header-button:hover {
+  color: #e87702;
+}
+.tab-datepicker-prev-month-button {
+  left: 0;
+}
+.tab-datepicker-next-month-button {
+  right: 0;
+}
+
+.tab-datepicker-month-table {
+  table-layout: fixed;
+  border-collapse: separate;
+  border: 1px solid transparent;
+}
+
+.tab-datepicker-header-cell {
+  width: 24px;
+  height: 16px;
+  text-align: right;
+  padding-right: 3px;
+  background-color: white;
+}
+
+.tab-datepicker-day-cell {
+  height: 16px;
+  text-align: right;
+  cursor: pointer;
+  padding-right: 3px;
+  border: 1px solid transparent;
+}
+.tab-datepicker-day-cell:hover {
+  background-color: #ffb95e;
+}
+.tab-datepicker-day-cell-today {
+  font-weight: bold;
+  color: black;
+}
+.tab-datepicker-day-cell-selected {
+  background-color: #e87702;
+  color: white;
+}
+
+
+.tab-popup {
+  position: absolute;
+  z-index: 1000;
+}
+
+.tab-popup-glass {
+  position: fixed;
+  z-index: 999;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: white;
+  opacity: 0.01;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=01)";
+  filter: alpha(opacity=01);
+}
+
+
+/* Reset any styles on anchors. */
+/* Some such styles are currently added by wgapp_new.css. */
+a.tab-anchor-reset {
+  color: black;
+  text-decoration: none;
+}
+
+/* Sidebar */
+.tab-sidebar {
+  display: inline-block;
+  width: 178px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 10px;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+}
+
+/* SectionsPanel */
+.tab-sidebar-sections-panel {
+  padding-top: 6px;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+a.tab-sidebar-section-button {
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 3px;
+  margin-right: 3px;
+  width: 78px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  text-align: center;
+  color: #333333;
+  border: 1px solid #c9c9c9;
+  background-color: #e4e4e4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e4e4e4), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #e4e4e4, #f2f2f2);
+  background-image:    -moz-linear-gradient(top, #e4e4e4, #f2f2f2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4e4e4', endColorstr='#f2f2f2');
+}
+a.tab-sidebar-section-button:hover {
+  background-color: #f3f3f3;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f3f3f3));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f3f3f3);
+  background-image:    -moz-linear-gradient(top, #ffffff, #f3f3f3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f3f3f3');
+}
+a.tab-sidebar-section-button.tab-current {
+  background-color: #ffb95e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#feba60), to(#ffde95));
+  background-image: -webkit-linear-gradient(top, #feba60, #ffde95);
+  background-image:    -moz-linear-gradient(top, #feba60, #ffde95);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#feba60', endColorstr='#ffde95');
+}
+
+/* SubsectionsPanel */
+.tab-sidebar-subsections-panel {
+  padding-top: 6px;
+  padding-bottom: 3px;
+}
+a.tab-sidebar-subsection-button {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 3px;
+  padding-left: 13px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 13px;
+  color: #5a5a5a;
+  background-color: white;
+}
+a.tab-sidebar-subsection-button:hover {
+  background-color: #e4e4e4;
+}
+a.tab-sidebar-subsection-button:hover .tab-sidebar-subsection-button-bar {
+  background-color: #ffb95e;
+}
+a.tab-sidebar-subsection-button.tab-current {
+  font-weight: bold;
+}
+a.tab-sidebar-subsection-button.tab-current .tab-sidebar-subsection-button-bar {
+  background-color: #e87702;
+}
+.tab-sidebar-subsection-button-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+}
+.tab-sidebar-subsection-button-count {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-right: 5px;
+  color: #969696;
+  font-weight: normal;
+}
+
+/* FiltersPanel */
+.tab-sidebar-filters-panel-header {
+  position: relative;
+  cursor: default;
+  padding-top: 15px;
+  margin-bottom: 11px;
+  padding-left: 4px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666666;
+  border-top: 1px solid #999999;
+}
+.tab-sidebar-filters-panel-clear-all {
+  position: absolute;
+  top: 15px;
+  bottom: 0;
+  right: 1px;
+  height: 20px;
+  line-height: 20px;
+  color: #797979;
+  cursor: pointer;
+  text-align: right;
+}
+.tab-sidebar-filters-panel-clear-all:hover {
+  color: #e87702;
+}
+.tab-sidebar-filters-panel-clear-all-label {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 20px;
+}
+.tab-sidebar-filters-panel-clear-all-x {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+/* SearchFilterPanel */
+/* widths:
+  sidebar: 178
+    space: 9
+    search box: 169
+      border: 1
+      submit: 24
+      input: 119
+      clear: 24
+      border: 1
+*/
+.tab-sidebar-search-panel {
+  position: relative;
+  height: 26px;
+  margin-bottom: 13px;
+}
+.tab-sidebar-search-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9px;
+  right: 0;
+  border: 1px solid #c9c9c9;
+  background-color: white;
+}
+.tab-sidebar-search-input {
+  position: absolute;
+  top: 1px;
+  left: 25px;
+  width: 119px;
+  height: 22px;
+  line-height: 22px;
+  outline: 0;
+  font-size: 12px;
+  color: #5a5a5a;
+  border: none;
+  background-color: transparent;
+}
+.tab-sidebar-search-placeholder {
+  position: absolute;
+  top: 1px;
+  left: 25px;
+  width: 119px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  font-style: italic;
+  color: #999999;
+  background-color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+a.tab-sidebar-search-submit-button {
+  cursor: pointer;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 0;
+  left: 0;
+  background-image: url("../images/sidebar_search.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+a.tab-sidebar-search-clear-button {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #797979;
+}
+a.tab-sidebar-search-clear-button:hover {
+  color: #e87702;
+}
+
+/* FilterPanel */
+.tab-sidebar-filter-panel {
+  cursor: default;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.tab-sidebar-filter-panel-label {
+  height: 13px;
+  padding-left: 4px;
+  font-size: 9px;
+  color: #a1a1a1;
+  text-transform: uppercase;
+}
+
+/* FilterButton */
+.tab-sidebar-filter-button {
+  position: relative;
+  cursor: pointer;
+  height: 24px;
+}
+.tab-sidebar-filter-button:hover {
+  background-color: #ececec;
+}
+.tab-sidebar-filter-button.tab-on {
+  font-weight: bold;
+}
+a.tab-sidebar-filter-button-label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 25px;
+  height: 24px;
+  line-height: 24px;
+  padding-left: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #5a5a5a;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+a.tab-sidebar-filter-button-clear {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-right: 1px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #797979;
+  text-align: center;
+}
+a.tab-sidebar-filter-button-clear:hover {
+  color: #e87702;
+}
+
+/* MenuFilterButton */
+.tab-sidebar-menu-panel {
+  background-color: #ececec;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #5a5a5a;
+  border: 1px solid #e0e0e0;
+}
+
+/* ListPanel */
+.tab-sidebar-list-panel {
+  position: relative;
+  overflow: hidden;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+}
+.tab-sidebar-list-panel-filter-panel {
+  padding: 2px 4px;
+  width: 172px;
+}
+.tab-sidebar-list-panel-filter-input-holder {
+}
+.tab-sidebar-list-panel-filter-input {
+  width: 100%;
+  outline: 0;
+  margin-left: -2px;
+  border: 1px solid #c9c9c9;
+  padding: 1px;
+}
+/* 156 = 6.5 * 24 = (ListPanel.optionThreshold + 0.5) * ListPanel.optionHeight */
+.tab-sidebar-list-panel-scroll-panel {
+  position: relative;
+  height: 156px;
+}
+.tab-sidebar-list-panel-scroll-panel-window {
+  position: relative;
+  height: 156px;
+  overflow: hidden;
+}
+.tab-sidebar-list-panel-scrollbar {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  width: 8px;
+}
+.tab-sidebar-list-panel-scrollbar-thumb {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: 8px;
+  background-color: #cccccc;
+  cursor: pointer;
+}
+.tab-sidebar-list-panel-list {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  min-height: 26px;
+}
+.tab-sidebar-list-panel-labels {
+  display: inline-block;
+  vertical-align: top;
+  width: 130px;
+}
+.tab-sidebar-list-panel-counts {
+  display: inline-block;
+  vertical-align: top;
+  width: 40px;
+}
+.tab-sidebar-list-panel-scrollbar-spacer {
+  display: inline-block;
+  vertical-align: top;
+  width: 10px;
+}
+.tab-sidebar-list-panel-rows {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: white;
+  opacity: 0.01;
+  filter: alpha(opacity=01);
+}
+.tab-sidebar-list-panel-label {
+  height: 24px;
+  line-height: 24px;
+  padding-left: 11px;
+  color: #5a5a5a;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.tab-sidebar-list-panel-label.tab-no-matches {
+  font-style: italic;
+  cursor: default;
+  overflow: visible; /* Allow the "No matching <item>s" label to extend into the "count" column */
+}
+.tab-sidebar-list-panel-label.tab-current {
+  font-weight: bold;
+}
+.tab-sidebar-list-panel-label.tab-hover {
+  color: #333333;
+  background-color: #ffb95e;
+}
+.tab-sidebar-list-panel-count {
+  height: 24px;
+  line-height: 24px;
+  padding-left: 2px;
+  padding-right: 5px;
+  color: #949494;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.tab-sidebar-list-panel-count.tab-hover {
+  color: #333333;
+  background-color: #ffb95e;
+}
+.tab-sidebar-list-panel-row {
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer;
+}
+.tab-sidebar-list-panel-highlight {
+  text-decoration: underline;
+}
+
+

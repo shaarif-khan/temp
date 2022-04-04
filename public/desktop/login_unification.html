@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"><!--<![endif]-->
+  <head>
+    <link rel="stylesheet" href="/v_202212203282249/stylesheets/revizit_unification.min.css">
+    <title data-translate="LOGIN_MODAL_TITLE"></title>
+  </head>
+
+  <body class="in-app">
+    <section class="form-server-login modal-login" id="modal-server-login" data-test-id="signinModal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+      <img class="logo-login" src="/v_202212203282249/images/public-logo-grey.png">
+
+      <div class="modal-inner">
+        <div>
+          <form id="loginForm" name="login" action="" method="post" onsubmit="return submitUserPassForm();">
+
+            <div class="form-section form-email">
+              <div class="form-field">
+                <label class="form-field__label" for="username" data-translate="COMMON_EMAIL_FIELD_LABEL"></label>
+                <input name="username" id="username" type="text" class="input-text" data-translate-placeholder="COMMON_EMAIL_FIELD_LABEL"
+                       data-test-id="signinModal-email-input" onkeypress="return submitOnEnter(event, this);">
+              </div>
+            </div>
+
+            <div class="form-section form-password">
+              <div class="form-field">
+                <label class="form-field__label" for="password" data-translate="COMMON_PASSWORD_FIELD_LABEL"></label>
+                <input name="password" id="password" type="password" class="input-text" data-translate-placeholder="COMMON_PASSWORD_FIELD_LABEL"
+                       data-test-id="signinModal-password-input" onkeypress="return submitOnEnter(event, this);">
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button id="submit" type="submit" data-translate="LOGIN_MODAL_LOGIN_BUTTON_LABEL" class="action tile tile--l" data-test-id="signinModal-submit-button"></button>
+              <div class="form-actions-footer">
+                <span>
+                  <i class="icon-lock"></i>&nbsp;&nbsp;&nbsp;
+                  <span data-translate="LOGIN_MODAL_SECURITY_DESCRIPTION"></span>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <footer class="login-additional">
+          <a class="password-remind instruction" href="#"
+             onclick="window.location.replace('/desktop/forgot_unification.html' + window.location.search)"
+             data-translate="COMMON_FORGOT_PASSWORD_LINK_DESCRIPTION" data-test-id="signinModal-forgotPassword-link"></a><br>
+
+          <span data-translate="LOGIN_MODAL_CREATE_ACCOUNT_PROMPT"></span><br>
+          <strong>
+            <a id="account-signup" href="#"
+              onclick="window.location.replace('/desktop/signup_unification.html' + window.location.search)"
+              data-translate="LOGIN_MODAL_CREATE_ACCOUNT_LINK_DESCRIPTION" data-test-id="signinModal-signup-link"></a>
+          </strong>
+        </footer>
+      </div>
+    </section>
+
+    <script src="/v_202212203282249/javascripts/initial_packaged.js"></script>
+    <script src="/v_202212203282249/javascripts/localization.js"></script>
+    <script src="/v_202212203282249/javascripts/modals/public_modal_libs.js"></script>
+    <script src="/v_202212203282249/javascripts/modals/public_modal_common.js"></script>
+    <script src="/v_202212203282249/javascripts/revizit_unification.js"></script>
+
+    <script type="text/javascript">
+
+      function setFocus(field) {
+        var elem = document.getElementById(field);
+        if (elem) { elem.focus(); }
+      }
+
+      function setValue(field, value) {
+        document.getElementById(field).value = value;
+      }
+
+      function submitOnEnter(e, field) {
+        var keynum
+        var keychar
+        var numcheck
+        if (window.event) { // IE
+          keynum = e.keyCode
+        } else if(e.which) { // Netscape/Firefox/Opera
+          keynum = e.which
+        }
+
+        if (13 == keynum) {
+          submitUserPassForm();
+          return false;
+        } else {
+          // return true to accept the event
+          return true;
+        }
+      }
+
+      setupUrlParameters();
+    </script>
+  </body>
+</html>

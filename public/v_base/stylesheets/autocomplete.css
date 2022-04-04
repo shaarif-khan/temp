@@ -1,0 +1,65 @@
+.autocomplete {
+  position:absolute;
+  background-color:white;
+  border:1px solid #ccc;
+  margin:0px;
+  padding:0px;
+  font-size: 11px;
+  text-align:left;
+  z-index: 1000;
+}
+
+.autocomplete_fixed {
+  height: 200px;
+}
+
+.autocomplete_15em { /*width: 15em;*/ }
+
+.autocomplete ul {
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+  color: #333;
+}
+.autocomplete ul li.selected {
+  background-color: #177AD5;
+        font-weight: normal;
+}
+.autocomplete ul li.disabled {
+  color: #ccc;
+}
+.autocomplete ul li {
+  list-style-type:none;
+  display:block;
+  margin:0;
+  padding:5px;
+  cursor:pointer;
+}
+
+.combo /* look&feel of scriptaculous select box*/
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  width : 10em;
+  display : block;
+  text-align:left;
+  background: url('../images/bg_select.png') right;
+  background-color: white;
+  //height:18px;
+  cursor: pointer;
+  border:1px solid #ccc;
+  color:#333;
+}
+
+.linkcombo /* A combo that looks like a link */
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  display : inline;
+  text-align:left;
+  cursor: pointer;
+  border: 0px none;
+  background-color: transparent;
+  color:#177AD5;
+  padding: 0px;
+}

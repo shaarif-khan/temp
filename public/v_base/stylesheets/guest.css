@@ -1,0 +1,29 @@
+div { margin: 0; }
+img { border: 0; }
+
+.guest .content { max-width: 800px; }
+
+.guest_banner { font-size: 24px; }
+
+.col3_left { width: 33%; float: left; }
+.col3_center { width: 33%; }
+.col3_right { width: 33%; float: right; }
+
+.col2_left { width: 50%; }
+.col2_right { width: 50%; float: right; }
+
+.table_layout { width:100%; }
+.table_layout td { vertical-align: top; height: 100%; }
+
+.inset_box { margin: 10px; border: solid 1px black; padding: 5px; height: 100%;}
+.inset_box h1 { margin: 0; }
+
+.centered { text-align: center; }
+.thumbnail { width:192px; height:192px; }
+
+.required_label { color: blue; }
+.form_label { width: 160px; float: left; }
+.form_problem { width: 160px; float: right; }
+.form_input, .form_description { margin-left: 180px; margin-bottom: 5px; }
+.form_description { color: grey; }
+.form_vspace { clear: both; height: 20px; }

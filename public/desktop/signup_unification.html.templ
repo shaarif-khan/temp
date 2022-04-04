@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"><!--<![endif]-->
+  <head>
+    <link rel="stylesheet" href="/<%= assets_version %>/stylesheets/revizit_unification.min.css">
+    <title data-translate="SIGNUP_MODAL_TITLE"></title>
+  </head>
+
+  <body class="in-app">
+    <section class="account-signup modal-signup" id="modal-account-signup" data-test-id="signupModal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+      <div class="modal-inner">
+        <div class="modal-content">
+          <form id="form--account-signup" method="post">
+            <h2 data-translate="SIGNUP_MODAL_HEADER"></h2>
+            <!-- Real Name -->
+            <div class="form-section">
+              <div class="form-field form-signup-realname">
+                <label class="form-field__label" for="signup-realname" data-translate="SIGNUP_MODAL_REAL_NAME_FIELD_LABEL"></label>
+                <input name="signup-realname" id="signup-realname" type="text" class="input-text"
+                       data-translate-placeholder="SIGNUP_MODAL_REAL_NAME_FIELD_LABEL" data-test-id="signupModal-realName-input">
+                <div class="form-field__description description">
+                  <label class="instruction" data-translate="SIGNUP_MODAL_REAL_NAME_FIELD_INSTRUCTION"></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-section">
+              <div class="form-field form-signup-email">
+                <label class="form-field__label" for="signup-email" data-translate="COMMON_EMAIL_FIELD_LABEL"></label>
+                <input name="signup-email" id="signup-email" type="email" class="input-text"
+                       data-translate-placeholder="COMMON_EMAIL_FIELD_LABEL" data-test-id="signupModal-email-input">
+                <div class="form-field__description description">
+                  <span class="instruction" data-translate-html="SIGNUP_MODAL_EMAIL_FIELD_INSTRUCTION_REV_1"></span>
+                </div>
+                <label class="email-warning warning error" data-translate="SIGNUP_MODAL_EMAIL_FIELD_ERROR"></label>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-section">
+              <div class="form-field form-signup-password">
+                <label class="form-field__label" for="signup-password" data-translate="COMMON_PASSWORD_FIELD_LABEL"></label>
+                <input name="signup-password" id="signup-password" type="password" class="input-text"
+                       data-translate-placeholder="COMMON_PASSWORD_FIELD_LABEL" data-test-id="signupModal-password-input"><br>
+                <div class="form-field__description description">
+                  <label class="instruction" data-translate="COMMON_PASSWORD_FIELD_INSTRUCTION"></label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-section">
+              <div class="form-field form-signup-password-confirm">
+                <label class="form-field__label" for="signup-password-confirm" data-translate="COMMON_CONFIRM_FIELD_LABEL"></label>
+                <input name="signup-password-confirm" id="signup-password-confirm" type="password" class="input-text"
+                       data-translate-placeholder="COMMON_CONFIRM_FIELD_LABEL" data-test-id="signupModal-confirmPassword-input">
+                <div class="form-field__description description"></div>
+              </div>
+            </div>
+
+            <!-- Legal -->
+            <div class="form-section">
+              <h3 class="form-section__header" data-translate="SIGNUP_MODAL_LEGAL_FIELD_LABEL"></h3>
+              <div class="form-field">
+                <input name="signup-legal" id="signup-legal" type="checkbox" data-test-id="signupModal-acceptTOS-input">&nbsp;
+                 <label id="tos" for="signup-legal" data-translate-html="SIGNUP_MODAL_LEGAL_FIELD_DESCRIPTION">
+                </label>
+                <div class="form-field__description description"></div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <div class="form-submit">
+                <button id="submit" type="submit" data-translate="SIGNUP_MODAL_CREATE_PROFILE_BUTTON_LABEL"
+                       class="confirm tile" disabled='disabled' data-test-id="signupModal-submit-button"></button>
+                <div class="form-field__description description"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="/<%= assets_version %>/javascripts/initial_packaged.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="/<%= assets_version %>/javascripts/localization.js"></script>
+    <script src="/<%= assets_version %>/javascripts/password_validation.js"></script>
+    <script src="/<%= assets_version %>/javascripts/modals/public_modal_libs.js"></script>
+    <script src="/<%= assets_version %>/javascripts/modals/public_modal_common.js"></script>
+    <script src="/<%= assets_version %>/javascripts/revizit_unification.js"></script>
+    <script type="text/javascript">
+    	setupUrlParameters();
+    </script>
+  </body>
+</html>

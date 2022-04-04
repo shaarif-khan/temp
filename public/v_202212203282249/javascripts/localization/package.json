@@ -1,0 +1,21 @@
+{
+  "name": "tableau-public-desktop-modal-localization-helper",
+  "version": "1.0.0",
+  "description": "`npm install` to install the tools. `npm compile` to generate executable javascript with the translated strings. `npm extract` to take full string files from github and extract only the stings needed for these modals.",
+  "main": "compile.js",
+  "scripts": {
+    "extract": "node extract_strings.js",
+    "compile": "node compile.js && node package.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cldr-data": "^29.0.1",
+    "globalize": "^1.1.1",
+    "globalize-config-compiler": "^0.1.2",
+    "globby": "^5.0.0",
+    "mkdirp": "^0.5.1",
+    "strip-bom": "^3.0.0"
+  }
+}

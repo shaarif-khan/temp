@@ -1,0 +1,145 @@
+/* .tab-addusers */
+.tab-addusers{
+  background: #eee;
+  width: 550px;
+  padding:0px 0 10px 0;
+  color:#111;
+  overflow: hidden;
+}
+.tab-addusers div{
+  float: left;
+}
+
+/* row */
+.tab-addusers div.row{
+  margin: 0 10px 0 10px;
+  width: 520px;
+  background-color: #fff;
+  padding: 8px 0px 5px 10px;
+}
+.tab-addusers div.title-row{
+  margin-bottom: 0px;
+  background-color: #eee;
+  height: 25px;
+}
+.tab-addusers div.row#admin-options-row{
+  width: 100px;
+  display: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* column */
+.tab-addusers div.column{
+  position: relative;
+  width: 90px;
+  height: 75px;
+  margin: 0 6px 0 0;
+}
+.tab-addusers div.column label{
+  margin: 0 0 0 6px;
+  display: block;
+  padding: 0 0 10px 0;
+}
+.tab-addusers div.column input{
+  margin: 0 6px  0 6px;
+  float:left;
+}
+.tab-addusers div.column.label{
+  text-align: right;
+}
+.tab-addusers div.column.user-rights-values{
+  width :200px;
+}
+
+/*textarea*/
+.tab-addusers textarea{
+  float: left;
+  width: 380px;
+  height: 60px;
+  margin: -3px 6px 0 0;
+  color: #111;
+  resize: none;
+}
+
+/* message divs */
+.tab-addusers span#single-line-message{
+  color:#111;
+  font-weight: bold;
+  margin-left: 10px;
+  padding: 5px 5px 5px 15px;
+  display: block;
+  width: 80%;
+  float:right;
+  background-color: #ffa; 
+  display: none;
+}
+.tab-addusers #multiline-message{
+  background-color: #ffa;
+}
+.tab-addusers span#addusers-title{
+  padding: 5px 5px 5px 0px;
+  float: left;
+}
+.tab-addusers label.names-input-message{
+  color: #808080;
+  font-size: 11px;
+  width: 170px;
+}
+.tab-addusers .error{
+  color:#c00;
+  float: none;
+}
+.tab-addusers .success{
+  margin-right: 5px;
+}
+.tab-addusers .spinner-show{
+  display: inline-block;
+}
+
+/* control area : "Add" and "Cancel" buttons */
+.tab-addusers div.control{
+  padding-bottom:10px;
+}
+.tab-addusers div.control div{
+  position: absolute;
+  bottom: 0;
+}
+.tab-addusers div.control div input{
+  float: left;
+  margin: 2px;
+}
+.tab-addusers div.control input.add-user-control{
+  float: right;
+  margin: 0 10px 0 10px;
+  background-color: #f90;
+  color: #fff;
+  padding: 3px 9px 3px 9px;
+  border-width: 0;
+}
+.tab-addusers div.control input.disabled{
+  background-color: #999;
+}
+
+/* pop up glass */
+.tab-adduser-popup-glass{
+  background-color:#000;
+  opacity: .5;
+  position: absolute;
+  z-index: 999;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+
+/* pop up */
+.tab-adduser-popup{
+  z-index: 1000;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  margin-left: -350px;
+}

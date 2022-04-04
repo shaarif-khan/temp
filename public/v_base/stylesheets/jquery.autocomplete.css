@@ -1,0 +1,91 @@
+.ac_results {
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+        padding: 0px;
+        border: 1px solid #aaa;
+        background-color: white;
+        overflow: hidden;
+        z-index: 99999;
+}
+
+.ac_results ul {
+        width: 100%;
+        list-style-position: outside;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+}
+
+.ac_results li {
+        /* margin: 0px; */
+        padding: 2px 5px;
+  padding-left:24px;
+        cursor: pointer;
+        display: block;
+        /*
+        if width will be 100% horizontal scrollbar will apear
+        when scroll mode will be used
+        */
+        /*width: 100%;*/
+        /*
+        it is very important, if line-height not setted or setted
+        in relative units scroll will be broken in firefox
+        */
+        line-height: 16px;
+        overflow: hidden;
+}
+
+.ac_loading {
+        background: white url('indicator.gif') right center no-repeat;
+}
+
+.ac_odd {
+        /* background-color: #eee; */
+}
+
+.ac_over {
+        background-color: #316AC5;
+        color: white
+}
+
+/* Icons for group and user li's */
+.ac_results .g {
+  background-image:url('../images/group.png');
+  background-position:2px 2px;
+  background-repeat:no-repeat;
+}
+.ac_results .u {
+  background-image:url('../images/user.png');
+  background-position:2px 2px;
+  background-repeat:no-repeat;
+}
+
+.ac_results .warning {
+  background-image:url('../images/exclamation.png');
+  background-position:2px 2px;
+  background-repeat:no-repeat;
+  cursor: auto;
+}
+
+.ac_results .warning.ac_over { background-color: white; color: inherit; }
+
+.ac_input {
+  width: 198px;
+}
+
+div.ac_results_placeholder {
+  padding:0 5px 5px 0;
+  text-align:left;
+  height:270px;
+}
+
+.ac_results li.actionListItem {
+  overflow:visible; 
+  font-size:11px; font-family: Verdana,Arial,Helvetica,sans-serif; 
+  text-decoration: none;
+  padding:3px;
+  cursor:pointer;
+}
+.ac_results li.actionListItem.disabled {
+  cursor: auto;
+  color: #ccc;
+}

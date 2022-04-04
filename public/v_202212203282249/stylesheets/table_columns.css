@@ -1,0 +1,132 @@
+/* Non-index pages */
+.columnEffectiveCapability { width: 220px; padding-left: 5px; }
+.columnEffectiveAllow, .columnEffectiveDeny { width: 65px; padding-left: 5px; }
+.columnEffectiveReason { padding-left: 5px; }
+
+/* checkboxes and stars */
+.columnCheckbox { width: 24px; }
+.columnStarAndCheckbox { width: 48px; }
+.public .columnStarAndCheckbox { width: 0px; }
+.public.admin .columnStarAndCheckbox { width: 48px; }
+
+/* Adjust for public */
+body.public div#ajax_content_workbooks .columnName { width: 200px; }
+body.public.admin div#ajax_content_workbooks .columnName { width: 240px; }
+div#ajax_content_workbooks .columnActions { width: 90px; }
+.public div#ajax_content_workbooks .columnActions { width: 115px; }
+
+/* Index Pages */
+/* Users */
+.columnUsersFriendlyName { }
+.columnUsersLoginAt { width: 135px; }
+.columnUsersLicensingRoleTranslatedName { width: 110px; }
+.columnUsersAdministrator { width: 90px; }
+.columnUsersPublisher { width: 95px; }
+.columnUsersRawDataSuppressor { width: 70px; }
+.columnTotalUsers { width: 60px; }
+.columnUsersName { width: 120px; }
+.columnUsersEmail { width: 120px; }
+.columnUsersActiveForDisplay { width: 65px }
+.columnUsersDigitalAccount { width: 60px }
+
+.public.admin .columnUsersFriendlyName { width: 150px; }
+.public.admin .columnUsersLoginAt { width: 135px; }
+.public.admin .columnUsersName { width: 100px; }
+.public.admin .columnUsersEmail { width: 100px; }
+
+/* User Details */
+.columnNoneSiteName { }
+.columnNoneLoginAt { width: 135px; }
+.columnNoneGetAdminTristate { width: 80px; }
+.columnNoneGetPublisherTristate { width: 95px; }
+.columnNoneWorkbooksCount { width: 105px; }
+.columnNoneDatasourcesCount { width: 115px; }
+
+/* System Users */
+.columnSystemUsersFriendlyName { }
+.columnSystemUsersLoginAt { width: 135px; }
+.columnSystemUsersLicensingRoleTranslatedName { width: 110px; }
+.columnSystemUsersSiteCount { width: 85px; }
+.columnSystemUsersMaxAdminLevel { width: 90px; }
+.columnSystemUsersName { width: 120px; }
+.columnSystemUsersDomainName { width: 90px; }
+
+/* Groups */
+.columnGroupsName { width: 400px; }
+.columnGroupsMembership { width: 120px; }
+.columnGroupsOwnerName { }
+
+/* Projects */
+.columnProjectsName { width: 300px; }
+.columnProjectsOwnerFriendlyName { width: 180px; }
+.columnProjectsCreatedAt { width: 110px; }
+.columnProjectsWorkbookCount { width: 85px; }
+.columnProjectsWorkbooksSize { width: 135px; }
+
+/* Connections */
+.columnDataConnectionsOwnerType { width: 40px; }
+.columnDataConnectionsOwnerName { width: 200px; }
+.columnDataConnectionsTdbclass { width: 175px; }
+.columnDataConnectionsCaption { width: 200px; }
+
+/* Licensing */
+.columnLicensesSerial { }
+.columnLicensesViewer { width:70px; }
+.columnLicensesInteractor { width:100px; }
+.columnLicensesMaintenance { width:120px; }
+.columnLicensesExpiration { width:90px; }
+.columnLicensesValid { width:90px; }
+.columnLicensesGuest { width:110px; }
+
+/* Views */
+.columnViewsName { }
+.columnViewsWorkbookName { width: 150px; }
+.columnViewsIndex { width: 80px; }
+.columnViewsOwnerFriendlyName { width: 100px; }
+.columnViewsUpdatedAt { width: 100px; }
+.columnViewsWorkbookProjectName { width: 100px; }
+.columnViewsViewCount { width: 60px; }
+.columnViewsActiveForDisplay { width: 100px; }
+.columnViewsDeleteLink { width: 100px; }
+
+/* Workbooks */
+.columnWorkbooksName { }
+.public .columnWorkbooksName { }
+.public.admin .columnWorkbooksName { }
+.columnWorkbooksViewCount { width: 85px; }
+.columnWorkbooksSize { width:75px; }
+.public.admin .columnWorkbooksSize { width: 50px; }
+.public.admin .columnWorkbooksState { width: 65px; }
+.columnWorkbooksOwnerFriendlyName { width:125px; }
+.public.admin .columnWorkbooksOwnerFriendlyName { width: 100px; }
+.columnWorkbooksUpdatedAt { width:130px; }
+.columnWorkbooksProjectName { width:100px; }
+.public .columnWorkbooksIndexActionLinks { width:200px; }
+.public.admin .columnWorkbooksIndexActionLinks { width:200px; }
+.columnWorkbooksDisplayTabs { width: 85px; }
+
+/* Schedules */
+.columnSchedulesName { }
+.columnSchedulesScheduleType { width: 150px; }
+.columnSchedulesTaskCount { width: 95px; }
+.columnSchedulesScheduleSerialStr { width: 95px; }
+.columnSchedulesRunNextAt { width: 150px; }
+
+/* Tasks */
+.columnTasksWName { width: 150px; }
+.columnTasksObjType { width: 40px; }
+.columnTasksSName { width: 150px; }
+.columnTasksPriority { width: 60px; }
+.columnTasksRunNextAt { width: 140px; }
+.columnTasksLastUpdate { width: 140px; }
+
+/* Data Sources */
+.columnDatasourcesName { width: 200px; }
+.columnDatasourcesDataConnectionTdbclass { width: 150px; }
+.columnDatasourcesOwnerFriendlyName { width: 150px; }
+.columnDatasourcesUpdatedAt { width: 140px; }
+.columnDatasourcesProjectName { }
+
+/* Sites */
+.columnSitesNumUsers { width: 95px; }
+.columnSitesNumAdmins { width: 125px; }

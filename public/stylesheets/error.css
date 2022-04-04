@@ -1,0 +1,46 @@
+/* Styles for static Apache error pages 
+ * 5xx.html
+ * 5xx 
+ */
+
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #333;
+  background-color: #fff;
+  text-align: left;
+  vertical-align: top;
+  margin: 0;
+}
+
+a { color: #177AD5; }
+a:active, a:link, a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.pageTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: left;
+}
+
+.sideNav {
+  width: 165px;
+  min-width: 168px;
+  overflow: hidden;
+}
+
+.sideNavSectionNoBar {
+  font-size: 10px;
+  color: #999px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 5px;
+  padding: 2px 15px 4px 10px;
+  white-space: nowrap;
+}
+
+.buffer {
+  clear: both;
+  height: 10px;
+  width: 10px;
+}

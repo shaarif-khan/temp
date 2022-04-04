@@ -1,0 +1,61 @@
+html, body {
+        margin:0;
+        padding:0;
+        height:100%;
+}
+#container {
+        min-height:100%;
+        position:relative;
+}
+
+.autoSizeImage
+{
+    width: 100%;
+    border:solid 1px #eeeeee;
+    margin-bottom:6px;
+}
+.imgTitle
+{
+        font-family:Arial, Helvetica, Verdana, San-serif;
+        font-size:75%;
+        padding:0px;
+        margin:0px;
+}
+.imgAuthor
+{
+        font-family:Arial, Helvetica, Verdana, San-serif;
+        font-size:70%;
+        padding:2px 0px 0px 0px;
+        margin:0px;
+        font-style:italic;
+}
+a.img, a.img:hover, a.img:visited
+{
+        color:#1f447d;
+        text-decoration:none;
+}
+a.img:hover
+{
+        color:#6eadd8;
+}
+a.img:hover img
+{
+
+        border:solid 1px #6eadd8;
+}
+h3
+{
+        font-family:Arial, Helvetica, sans-serif;
+        font-size:11px;
+        letter-spacing:.15em;
+        color:#b2b2b2;
+        padding:0px;
+        margin:0px;
+}
+p.viewmore
+{
+        font-family:Verdana, Geneva, sans-serif;
+        font-size:11px;
+        padding:0px;
+        margin:0px;
+}

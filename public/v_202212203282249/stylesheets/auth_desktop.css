@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/*
+ * This is a specialization of login used for the desktop app
+ */
+
+@import url("auth.css");
+@import url("styled_button.css");
+
+.Textinsidetable {
+    padding: 0px 5px 0px 5px
+}
+
+body.desktop {
+    margin: 0px;
+}
+
+.desktop .authTable {
+    border: 0px;
+	margin-top:0px;
+	margin-left:0px;
+}
+
+.authTable FORM {
+    margin-top:10px;
+    padding-top:5px;
+    padding-bottom:0px;
+}
